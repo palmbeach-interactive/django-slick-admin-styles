@@ -1,0 +1,28 @@
+@charset "UTF-8"
+
+.inline-group
+  .module
+    padding: 0
+
+.calendarbox.module
+  padding: 0
+
+body.dashboard.django-cms-admin
+  margin-top: $toolbar-height
+
+body.dashboard
+  margin-top: 0
+  #content #content-main
+  .module
+    @include shadow-box()
+
+    caption
+      background-color: darken($white, 2)
+      a
+        color: $color-primary
+
+
+    th, td
+      vertical-align: middle
+      a
+        font-weight: 100
