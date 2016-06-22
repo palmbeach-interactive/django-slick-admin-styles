@@ -1,0 +1,15 @@
+{
+  "name": "django-slick-admin-styles",
+  "version": "0.1.1",
+  "description": "sass stylesheets for django-slick-admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/palmbeach-interactive/django-slick-admin-styles"
+  },
+  "author": "Palmbeach Interactive",
+  "license": "SEE LICENSE IN LICENSE"
+}
