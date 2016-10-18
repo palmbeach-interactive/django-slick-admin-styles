@@ -5,13 +5,22 @@ form .aligned input + p.help, form .aligned textarea + p.help, form .aligned sel
   margin-left: 200px
 
 
+form .wide p.help
+  padding-left: 50px
+
 form button, form input[type=password], form input[type=url], form input[type=number], form input[type=text], form input[type=email], form select, form textarea
   appearance: none
 
 label, .aligned label, input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], textarea, select, .vTextField
   line-height: $form-default-height
-  border-radius: $form-select-border-radius
+  border-radius: $form-default-border-radius
   vertical-align: middle
+
+
+.delete-confirmation
+  form
+    margin-top: 30px
+    background-color: transparent
 
 //errors
 .errors input, .errors select, .errors textarea
@@ -26,23 +35,33 @@ label, .aligned label, input[type=text], input[type=password], input[type=email]
 form select, #changelist .actions select, form #searchbar
   font-size: $font-size-small
   line-height: $btn-default-height
-  height: auto!important
+  height: $form-default-height !important
   min-width: 160px
-  padding: 0px 30px 0px 10px
   background: url(../img/icon_arrow_down.png) right center no-repeat $form-default-bg !important
   background-size: 25px!important
+  padding: 0px 40px 0px 10px !important
   border: 1px solid $form-select-border-color
-  border-radius: $form-select-border-radius
+  margin: 0 0 1rem
+  color: $form-input-color
   background-color: $form-default-bg !important
-  margin-left: 0
+  border-radius: $form-default-border-radius
+  background-position: right -1rem center
+  background-origin: content-box
+  background-repeat: no-repeat
+  padding-right: 1.5rem
+  -webkit-appearance: none
+  -moz-appearance: none
+  text-indent: 1px
+  text-overflow: ''
   vertical-align: middle !important
 
 //toolbar searchfield
 #changelist #toolbar form #searchbar
   line-height: $btn-default-height
-  height: auto!important
+  //height: auto!important
   padding: 0px 10px  !important
   background-image: none !important
+  border-radius: $form-default-border-radius
 
 
 //publication time & date
@@ -93,6 +112,7 @@ form
   .aligned .form-row input
     margin-bottom: 0 !important
 
+
   .module
     background-color: transparent
 
@@ -113,7 +133,11 @@ form
         border-bottom: 0
 
 
+  input
+    height: $form-default-height
 
+  .wide label, label, .aligned label, input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], textarea, select, .vTextField
+    //min-width: 200px
 
 //COLLAPSABLE FIELDSETS //////////////////////////////////////
 form fieldset
@@ -175,50 +199,6 @@ form fieldset
 
 
 
-//INLINE GROUPING ////////////////////////////////
-.inline-group
-  padding: 20px 30px
-  border-top: 1px solid $gray-lighter
-
-  .tabular tr.add-row
-    td
-      background-color: transparent
-      border-bottom: 0
-      padding-left: 0
-
-      a
-        margin-top: 10px
-
-
-  fieldset
-    h2
-      background-color: transparent
-      color: $font-color
-      margin-bottom: 10px
-      padding-left: 0
-
-
-//FILER INLINE    ////////////////////////////////
-body.change-form
-  form .form-row .filer-dropzone
-    background-color: $white
-    border-radius: 0
-    padding: 10px
-    min-height: 75px !important
-
-    img
-      border-radius: 0
-
-    .filerFile
-      top: 20px !important
-      left: 10px !important
-
-
-.ui-sortable-helper
-
-  @include shadow-box()
-  .field-image
-    padding-bottom: 20px !important
 
 
 
@@ -226,43 +206,64 @@ body.change-form
 
 
 
-  //SELECTOR WIDGET ////////////////////////////////
-.related-widget-wrapper
+//SELECTOR WIDGET ////////////////////////////////
+body
+  .related-widget-wrapper
+    float: inherit !important
+    .selector
 
-  .selector
-
-    select
-      margin: 0
-      padding: 0
-      background: none !important
-      background-color: $selector-bg !important
-      border-radius: 0
-
-      option
-        padding: 5px 8px
-        border-bottom: 1px solid $selector-item-border
-
-    .selector-filter
-      padding: 8px
-      > p, input
-        border: 0
-
-      input
-        width: 310px
-        padding: 0 10px
-        margin-bottom: 0 !important
-
-    .selector-available select
-      height: $selector-height !important
-
-    .selector-chosen select
-      height: $selector-height + $selector-filter-height !important
-      option
-        color: $selector-chosen-color
-        text-transform: uppercase
-
-    .selector-available, .selector-chosen
-      h2
-        color: $font-color
-        background-color: $white
+      select
+        margin: 0
+        padding: 0
+        background: none !important
+        background-color: $selector-bg !important
         border-radius: 0
+
+        option
+          padding: 5px 8px
+          border-bottom: 1px solid $selector-item-border
+
+      .selector-filter
+        padding: 8px
+        > p, input
+          border: 0
+
+        input
+          width: 310px
+          padding: 0 10px
+          margin-bottom: 0 !important
+
+      .selector-available select
+        height: $selector-height !important
+
+      .selector-chosen select
+        height: $selector-height + $selector-filter-height !important
+        option
+          color: $selector-chosen-color
+          text-transform: uppercase
+
+      .selector-available, .selector-chosen
+        h2
+          color: $font-color
+          background-color: $white
+          border-radius: 0
+
+
+
+//DATETIME WIDGET ////////////////////////////////
+.form-row.field-publish_time
+  .datetime
+    vertical-align: middle
+    line-height: 40px
+    input
+      margin: 0
+
+    .datetimeshortcuts
+      a
+        margin-left: 10px
+
+
+
+//IE STYLES
+select::-ms-expand
+  display: none

@@ -1,15 +1,3 @@
-//button defintions
-@mixin default-button()
-  height: $btn-default-height !important
-  line-height: $btn-default-height !important
-  border: $btn-border-size !important
-  padding-top: 0 !important
-  padding-bottom: 0 !important
-  box-shadow: none !important
-  display: inline-block
-  vertical-align: middle
-
-
 .admin-action-button
   @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true)
   @include default-button()
@@ -22,21 +10,14 @@
 .light-button
   @include button-variant($btn-light-color, $btn-light-bgcolor, $btn-light-border, true)
   @include default-button()
+  &:hover
+    background-color: darken($btn-light-bgcolor, 12%) !important
 
 .danger-button
   @include button-variant($btn-danger-color, $btn-danger-bgcolor, $btn-danger-border, true)
   @include default-button()
   text-transform: uppercase !important
 
-.dashboard-button
-  @include button-variant($btn-dashboard-color, $btn-dashboard-bgcolor, $btn-dashboard-border, true)
-  @include default-button()
-  border: 1px solid $btn-dashboard-border !important
-
-.dashboard-action-button
-  @include button-variant($btn-dashboard-action-color, $btn-dashboard-action-bgcolor, $btn-dashboard-action-border, true)
-  @include default-button()
-  border: 1px solid $btn-dashboard-border !important
 
 //generic links
 a:link, a:visited
@@ -44,8 +25,9 @@ a:link, a:visited
   &:hover
     color: $link-default-hover-color
 
+//filter color, hover
 #changelist-filter a:focus, #changelist-filter a:hover, #changelist-filter li.selected a:focus, #changelist-filter li.selected a:hover
-  color: $link-highlight-color
+  color: $color-secondary
 
 a.active.selector-chooseall:focus, a.active.selector-clearall:focus, a.active.selector-chooseall:hover, a.active.selector-clearall:hover
   color: $link-highlight-color
@@ -80,14 +62,13 @@ body
 
 //general action button
 #changelist .actions .button
-  @extend .light-button
-  &:hover
-    color: $btn-action-color !important
-    background-color: $btn-action-bgcolor !important
+  @extend .default-button
+  margin-left: 10px !important
 
 //toolbar search button
 #toolbar input[type=submit], .change-list #changelist-search input[type=submit]
   @extend .admin-action-button
+
 
 //delete buttons
 .submit-row a.deletelink
@@ -109,7 +90,6 @@ body
 
 //dashboard
 body.dashboard
-  #content #content-main
   .module
     a.addlink
       @extend .dashboard-action-button
@@ -121,17 +101,48 @@ body.dashboard
       margin-left: $icon-size
 
 
-//admintools dashboard
-.dashboard-module
-  a.addlink
-    @extend .dashboard-action-button
-
-  a.changelink
-    @extend .dashboard-button
-
-
 //login
 body.login
   .submit-row
     input
-      @extend .admin-action-button
+      @extend .default-button
+
+
+
+//filer
+.slick-admin
+  form .form-row .filer-dropzone .filerFile .related-lookup
+    @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true)
+    @include default-button()
+
+  form .form-row .filer-dropzone .filerFile .filerClearer
+    @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border, true)
+    @include default-button()
+    border: 1px solid $btn-default-bgcolor !important
+    background-color: transparent !important
+    padding: 8px 0 !important
+    margin-top: 5px !important
+
+
+
+.delete-confirmation form .cancel-link
+  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true)
+  @include default-button()
+  text-transform: uppercase !important
+  //line-height: 40px !important
+
+.delete-confirmation form input[type="submit"]
+  @include button-variant($btn-danger-color, $btn-danger-bgcolor, $btn-danger-border, true)
+  @include default-button()
+  text-transform: uppercase !important
+
+
+
+//cms pages
+.cms-btn-group
+  @extend .light-button
+  opacity: 1
+  margin-right: 5px
+
+  &.cms-btn-active
+    opacity: 0.7

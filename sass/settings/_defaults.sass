@@ -2,57 +2,58 @@
 
 
 // #COLORS#
-$white: #fff
-$black: #000
+$white: #fff !default
+$black: #000 !default
 
-$color-primary: #0cc2aa
-$color-secondary: #a88add
-$color-success: #75cb8f
-$color-danger: #f55060
-$color-warning: #fcc100
-$color-window: #fcfcfc
+$color-primary: #0cc2aa !default
+$color-secondary: #a88add !default
+$color-success: #75cb8f !default
+$color-danger: #f55060 !default
+$color-warning: #fcc100 !default
+$color-window: #fcfcfc !default
+$color-mark: #dfd !default
 
 // #COLORS gray
-$gray:            lighten($black, 40%) // #666;
-$gray-lightest:   lighten($gray, 55%) // #f2f2f2
-$gray-lighter:    lighten($gray, 46.5%) // #ddd
-$gray-light:      lighten($gray, 20%) // #999
-$gray-darker:     darken($gray, 13%) // #454545
-$gray-darkest:    darken($gray, 20%) // #333
+$gray:            lighten($black, 40%) !default
+$gray-lightest:   lighten($gray, 55%) !default
+$gray-lighter:    lighten($gray, 46.5%) !default
+$gray-light:      lighten($gray, 20%) !default
+$gray-darker:     darken($gray, 13%) !default
+$gray-darkest:    darken($gray, 20%) !default
 $gray-super-light: #f7f7f7
 
-$color-success-dark: darken($color-danger, 20%)
-$color-primary-dark: darken($color-primary, 20%)
+$color-success-dark: darken($color-danger, 20%) !default
+$color-primary-dark: darken($color-primary, 20%) !default
 
 
 //FONTS ////////////////////////////////////
-$font-color: #666
-$font-size-large: 16px
-$font-size-small: 12px
-$font-size-normal: 15px
+$font-color: #666 !default
+$font-size-large: 16px !default
+$font-size-small: 12px !default
+$font-size-normal: 15px !default
 
 
 
 //DEFAULTS ////////////////////////////////////
-$element-default-shadow: 0 0 1px rgba(0,0,0,.15)
-$page-outer-spacing: 5%
-$body-bg: #f0f0f0
+$element-default-shadow: 0 0 1px rgba(0,0,0,.15) !default
+$page-outer-spacing: 5% !default
+$body-bg: #f0f0f0 !default
 
 //LINK STYLES ////////////////////////////////
-$link-default-color: $color-primary
-$link-default-hover-color: darken($color-primary, 15%)
-$link-highlight-color: $color-danger
-$icon-spacing: 7px
-$icon-size: 18px
+$link-default-color: $color-primary !default
+$link-default-hover-color: darken($color-primary, 15%) !default
+$link-highlight-color: $color-danger !default
+$icon-spacing: 7px !default
+$icon-size: 18px !default
 
 //CHANGE-LIST STYLES ////////////////////////////////
-$changelist-hover-color: lighten($color-secondary, 20)
-$changelist-selected-color: lighten($color-secondary, 10)
+$changelist-hover-color: lighten($color-mark, 2)
+$changelist-selected-color: darken($color-mark, 2)
 
 //FORM DEFAULTS ////////////////////////////////////
 $form-default-bg: $white
 $form-select-border-color: $gray-lighter
-$form-select-border-radius: .25rem
+$form-default-border-radius: 0
 $form-default-height: 32px
 $form-input-color: $gray-darker
 $form-outer-spacing: 30px
@@ -63,7 +64,7 @@ $form-focus-color: $gray-darkest
 //DASHBOARD ////////////////////////////////////
 $dashboard-inner-bg: $white
 $dashboard-border-color: $gray-lightest
-$dashboard-hover-bg: lighten(yellow, 40)
+$dashboard-hover-bg: $changelist-hover-color
 $dashboard-link-color: $color-primary
 $dashboard-quicklinks-bg: $white
 $dashboard-postit-bg: $color-secondary
@@ -71,11 +72,11 @@ $dashboard-postit-color: $white
 $dashboard-date-bullet-bg: $color-primary
 $dashboard-date-bullet-color: $white
 $dashboard-date-bullet-size: 64px
-$dashboard-placeholder-border: $color-secondary
+$dashboard-placeholder-border: $color-danger
 $dashboard-placeholder-bg: rgba($white, 0.5)
 $dashboard-panel-heading-color: $font-color
 $dashboard-module-heading-color: $color-secondary
-$dashboard-spacing: 20px 0
+$dashboard-spacing: 20px
 
 
 //BREADCRUMBS TOOLBAR ////////////////////////////////////
@@ -99,7 +100,7 @@ $btn-action-bgcolor: $color-primary
 $btn-action-border: transparent
 
 //button light
-$btn-light-color: $gray-darkest
+$btn-light-color: $gray-light
 $btn-light-bgcolor: $white
 $btn-light-border: transparent
 
@@ -118,23 +119,36 @@ $btn-dashboard-action-color: $color-secondary
 $btn-dashboard-action-bgcolor: $white
 $btn-dashboard-action-border: $gray-lightest
 
+$btn-dashboard-module-action-color: $gray-darkest
+$btn-dashboard-module-action-bgcolor: $changelist-hover-color
+$btn-dashboard-module-action-border: transparent
 
 
+//FILTER PANEL
+$filter-panel-width: 240px
 
 //SUBMIT ROW  ////////////////////////////////
 $submit-row-bg: darken($white, 3)
 
+//CHANGE LIST
+$results-header-border-height: 3px
+$results-header-border-color: $color-primary
+$results-header-sortable-link: $color-primary
+$results-header-link-color: $color-primary
+
 
 //LANGUAGE BAR ////////////////////////////////
+$lang-bar-background-color: $form-default-bg
 $lang-bar-border-height: 3px
 $lang-bar-border-color: $color-primary
 $lang-bar-available-color: $color-primary
-$lang-bar-available-bgcolor: $white
+$lang-bar-available-bgcolor: $gray-lightest
+$lang-bar-available-border-color: $gray-lightest
 $lang-bar-current-color: $white
 $lang-bar-current-bgcolor: $color-primary
-$lang-bar-empty-color: $gray-darker
-$lang-bar-empty-bgcolor: darken($gray-lightest, 15%)
-
+$lang-bar-default-color: $gray-light
+$lang-bar-default-bgcolor: darken($gray-lightest, 15%)
+$lang-bar-default-border-color: darken($gray-lightest, 5%)
 
 //TOOLBAR BAR ////////////////////////////////
 $toolbar-height: 46px
@@ -157,6 +171,7 @@ $branding-hover-color: $color-primary
 //FILER  ////////////////////////////////
 $filer-action-color: $color-primary
 $filer-drag-bg: lighten($color-secondary, 20)
+$filer-border-radius: $btn-border-radius-base
 
 //SIDE-BAR ////////////////////////////////
 $sidebar-width: 25%
@@ -181,3 +196,17 @@ $selector-height: 150px
 $selector-filter-height: 50px
 $selector-item-border: $gray-lightest
 $selector-chosen-color: $color-primary
+
+
+//POPUP CMS ////////////////////////////////
+$popup-cms-bg: $white
+
+
+//ERROR NOTE / LOGIN////////////////////////////////
+$errornote-color: $white
+$errornote-bg: $color-danger
+$errornote-border: 0px solid transparent
+
+
+//FOOTER ////////////////////////////////
+$footer-link-color: $color-secondary

@@ -1,5 +1,147 @@
 @charset "UTF-8"
 
+//FILER INLINE    ////////////////////////////////
+body.change-form
+  form .form-row .filer-dropzone
+    background-color: $white
+    border-radius: 0
+    padding: 10px
+    min-height: 140px !important
+
+    &.js-object-attached
+      min-height: 85px !important
+
+
+    img
+      border-radius: 0
+
+
+    .filerFile
+      top: 20px !important
+      left: 10px !important
+
+
+.ui-sortable-helper
+
+  @include shadow-box()
+  .field-image
+    padding-bottom: 20px !important
+
+
+
+//Basic Styles
+body.filebrowser
+
+  .navigator-table .column-name a
+    color: $filer-action-color
+
+  .filer-dropdown-container .filer-dropdown-menu>li>a, .filer-dropdown-container+.filer-dropdown-menu>li>a
+    color: $filer-action-color
+
+  .navigator-breadcrumbs-folder-name-inner
+    //line-height: 42px
+
+  .navigator-breadcrumbs-name-dropdown-wrapper .filer-dropdown-menu
+    padding-left: 0
+
+    &:hover:before
+      background-color: $filer-action-color
+
+    li a
+      text-align: center
+
+      &:hover
+        background-color: $filer-action-color !important
+        border-radius: $filer-border-radius
+
+  .navigator-breadcrumbs-name-dropdown-wrapper .filer-dropdown-menu
+    right: -75px
+
+  .filer-navigator-breadcrumbs-dropdown-container .navigator-breadcrumbs-dropdown
+    left: -20px !important
+
+  .filer-navigator-breadcrumbs-dropdown-container .navigator-breadcrumbs-dropdown:hover:before
+    background-color: $filer-action-color
+    border-radius: $filer-border-radius
+
+  .filer-navigator-breadcrumbs-dropdown-container .navigator-breadcrumbs-dropdown>li>a:hover
+    background-color: $filer-action-color !important
+    border-radius: $filer-border-radius
+
+  .filer-dropdown-menu, .filer-dropdown-menu li, .filer-dropdown-menu li a
+    border-radius: $filer-border-radius !important
+
+  .js-filer-dropzone-folder:hover img,
+  .filer-dropdown-container a:hover img,
+  .js-filer-dropzone-base.navigator-table tr:hover img
+    opacity: 0.7
+
+
+  .navigator-table .column-action .action-button span
+    font-size: $icon-size
+
+//icons
+.filebrowser, .js-filer-dropzone
+  .fa
+    //font-family: 'Material Icons'
+    font: normal normal normal 14px/1 'Material Icons'
+    font-size: $icon-size
+    &.fa-pencil:before
+      content: "\E254"
+      color: $color-primary
+    &.fa-trash:before
+      content: "\E92B"
+      color: $color-danger
+    &:before
+      vertical-align: top
+    &.fa-chevron-right:before
+      content: "\E5CC"
+      font-size: $icon-size+4
+      margin-left: -5px
+    &.fa-caret-down:before
+      content: '\E5C5'
+      font-size: $icon-size+4
+    &.fa-file-image-o:before, &.fa-picture-o:before
+      content: "\E251"
+    &.fa-file:before
+      content: "\E24D"
+    &.fa-search:before
+      content: "\E8B6"
+    &.fa-close:before
+      content: "\E5CD"
+    &.fa-copy:before
+      content: "\E14D"
+    &.fa-cut:before
+      content: "\E14E"
+    &.fa-ellipsis-h:before
+      content: "\E5D2"
+    &.fa-user:before
+      content: "\E55A"
+    &.fa-arrow-down:before
+      content: "\E5DB"
+    &.fa-cloud-upload:before
+      content: "\E2C3"
+      font-size: 24px
+      color: $color-secondary
+
+
+form .form-row .filer-dropzone .icon
+  vertical-align: bottom
+
+body
+  form .form-row .filer-dropzone .filerFile img
+    padding: 5px !important
+    width: 46px
+    height: 46px
+
+  form .form-row .filer-dropzone .filerFile span.description_text
+    line-height: 46px
+    vertical-align: middle
+    margin-top: 0
+
+
+
+
 body.filebrowser
   &.cms-admin-sideframe
     #container
@@ -13,7 +155,7 @@ body.filebrowser
         padding-left: 20px !important
 
   #container
-    min-width: auto
+    min-width: inherit
     #content
       padding: 0
       @include shadow-box()
@@ -73,3 +215,11 @@ body
   .file-upload a
     padding-left: 10px
 
+
+  form .form-row .filer-dropzone.filer-dropzone-mobile.js-object-attached .filerFile.js-file-selector span, form .form-row .filer-dropzone.filer-dropzone-mobile.js-object-attached .filerFile .dz-name
+    width: calc(100% - 120px)
+
+//TODO: maybe affecting other related fields
+.related-widget-wrapper
+  a.change-related
+    display: none
