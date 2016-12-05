@@ -1,6 +1,6 @@
 {
   "name": "django-slick-admin-styles",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "sass stylesheets for django-slick-admin",
   "main": "index.js",
   "scripts": {
