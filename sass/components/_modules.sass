@@ -9,7 +9,7 @@
 
 
 .module h2, .module caption, .inline-group h2
-  background-color: transparent
+  //background-color: transparent
 
 
 //INLINE GROUPING ////////////////////////////////
@@ -20,9 +20,21 @@
 
   >h2
     margin-top: 20px
-    padding: 20px 30px
+    padding: 20px 30px 0
     color: $form-input-color
     font-weight: bold
+    background-color: transparent
+    color: $form-fieldset-title-color
+    text-transform: uppercase
+
+    &::before
+      @extend .material-icons
+      content: 'menu'
+      vertical-align: middle
+      transition: transform .3s ease-in-out
+      margin-top: -3px
+      margin-right: 5px
+      color: $form-fieldset-title-color
 
   .inline-related
     margin: 30px
@@ -87,3 +99,32 @@ body.dashboard
       vertical-align: middle
       a
         font-weight: 100
+
+
+
+
+//CALENDARBOX MODULE ////////////////////////////////
+.module.calendarbox
+  border-radius: 0 
+  .calendar
+    caption,h2
+      background-color: $calendarbox-caption-bg
+      color: $calendarbox-caption-color
+
+    td.selected a
+      background-color: $calendarbox-selected-bg
+
+    td a:focus, .timelist a:focus, td a:hover, .timelist a:hover
+      background-color: lighten($calendarbox-selected-bg,5)
+
+
+//CLOCKBOX MODULE ////////////////////////////////
+.module.clockbox
+  border-radius: 0
+  h2
+    background-color: $calendarbox-caption-bg
+    color: $calendarbox-caption-color
+
+  ul li
+    a:hover, a:focus
+      background-color: lighten($calendarbox-selected-bg,5)
