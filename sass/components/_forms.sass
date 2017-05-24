@@ -2,11 +2,24 @@
 
 //general form element styling
 form .aligned input + p.help, form .aligned textarea + p.help, form .aligned select + p.help
-  margin-left: 200px
+  //margin-left: 200px
 
 
-form .wide p.help
-  padding-left: 50px
+form
+  .wide
+    label
+      width: 160px
+
+    p.help
+      padding-left: 10px
+
+    p,
+    input + p.help
+      margin-left: 160px
+
+  p.help
+    line-height: 32px
+
 
 form button, form input[type=password], form input[type=url], form input[type=number], form input[type=text], form input[type=email], form select, form textarea
   appearance: none
@@ -132,6 +145,8 @@ form
       &:last-child
         border-bottom: 0
 
+    .description
+      padding: 5px 0 20px 0
 
   input
     height: $form-default-height
