@@ -263,41 +263,75 @@ a[id*="clocklink"]
     padding-right: 10px
 
 
-.related-widget-wrapper .selector
-  .selector-chooser
-    background-color: transparent
+.related-widget-wrapper
+  .selector
+    .selector-chooser
+      background-color: transparent
 
-  .selector-add, .selector-remove
-    background: none
-    text-indent: 0
-    width: $icon-size
-    height: $icon-size
+    .selector-add, .selector-remove
+      background: none
+      text-indent: 0
+      width: $icon-size
+      height: $icon-size
 
-    &:before
-      @extend .material-icons
-      color: $white
-      background-color: $color-primary
-      border-radius: 10px
-      margin-left: 0
-      margin-top: 0
-      vertical-align: top
+      &:before
+        @extend .material-icons
+        color: $white
+        background-color: $color-primary
+        border-radius: 10px
+        margin-left: 0
+        margin-top: 0
+        vertical-align: top
 
-  .selector-clearall, .selector-chooseall
-    &:before
-      @extend .material-icons
-      font-size: 14px
-      margin-top: 1px !important
-      color: $white
-      background-color: $color-primary
-      border-radius: 10px
-      margin-left: 0
-      margin-top: 0
-      vertical-align: top
+    .selector-clearall, .selector-chooseall
+      &:before
+        @extend .material-icons
+        font-size: 14px
+        margin-top: 1px !important
+        color: $white
+        background-color: $color-primary
+        border-radius: 10px
+        margin-left: 0
+        margin-top: 0
+        vertical-align: top
+
+  .related-widget-wrapper-link
+    line-height: 30px
+    height: 30px
+    width: 30px
+    display: inline-block
+    padding: 0
+    margin: 0
+    margin-left: 0px
+    margin-right: 0px
+    font-size: 14px
+    border: 1px solid lighten($gray-light, 30%)
+    background-color: lighten($gray-light, 37%)
+    border-radius: 3px
+    overflow: hidden
+
+    &::before
+      margin-left: 6px
+
+    &.add-related
+      color: $color-primary
+
+      &:hover
+        border-color: $color-primary
+        background-color: $color-primary
+        color: $white
+
+    &.change-related
+      color: $gray-light
+
+      &:hover
+        border-color: $gray-light
+        background-color: $gray-light
+        color: $white
 
 
 
 // retina
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
   .tree .changelink
     background-image: url("../img/icon_changelink_white@2x.png")

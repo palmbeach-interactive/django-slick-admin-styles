@@ -66,7 +66,7 @@ form select, #changelist .actions select, form #searchbar
   -moz-appearance: none
   text-indent: 1px
   text-overflow: ''
-  vertical-align: middle !important
+  vertical-align: top !important
 
 //toolbar searchfield
 #changelist #toolbar form #searchbar
@@ -100,6 +100,7 @@ form
 
   textarea
     line-height: 1.8
+    min-width: 368px
 
   input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], textarea, select, .vTextField
     color: $form-input-color
@@ -293,6 +294,15 @@ body
 
 
 
-//IE STYLES
+//IE STYLES ////////////////////////////////
 select::-ms-expand
   display: none
+
+
+//INLINE GROUP FIXES ////////////////////////////////
+.inline-group .tabular tr td.original
+  display: none
+
+.inline-group .tabular tr td
+  &:first-child + td
+    padding-left: 0
