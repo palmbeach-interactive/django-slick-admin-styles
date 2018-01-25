@@ -1,30 +1,43 @@
 @charset "UTF-8"
 
-//general form element styling
-form .aligned input + p.help, form .aligned textarea + p.help, form .aligned select + p.help
-  //margin-left: 200px
-
-
 form
   .wide
     label
       width: 160px
 
-    p.help
-      padding-left: 10px
+    p
+      &.help
+        padding-left: 10px
 
-    p,
-    input + p.help
-      margin-left: 160px
+      input + p.help
+        margin-left: 160px
 
-  p.help
-    line-height: 32px
+  p
+    &.help
+      line-height: 32px
 
 
-form button, form input[type=password], form input[type=url], form input[type=number], form input[type=text], form input[type=email], form select, form textarea
-  appearance: none
+form
+  button,
+  input[type=password],
+  input[type=url],
+  input[type=number],
+  input[type=text],
+  input[type=email],
+  select,
+  textarea
+    appearance: none
 
-label, .aligned label, input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], textarea, select, .vTextField
+label,
+.aligned label,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number],
+textarea,
+select,
+.vTextField
   line-height: $form-default-height
   border-radius: $form-default-border-radius
   vertical-align: middle
@@ -36,16 +49,25 @@ label, .aligned label, input[type=text], input[type=password], input[type=email]
     background-color: transparent
 
 //errors
-.errors input, .errors select, .errors textarea
-  border-color: $color-danger
-  background-color: lighten($color-danger, 20%)
+.errors
+  input,
+  select,
+  textarea
+    border-color: $color-danger
+    background-color: lighten($color-danger, 20%)
 
-.form-row.errors ul.errorlist li
-  color: $color-danger
+.form-row
+  &.errors
+    ul
+      &.errorlist
+        li
+          color: $color-danger
 
 
 //form selects
-form select, #changelist .actions select, form #searchbar
+form select,
+#changelist .actions select,
+form #searchbar
   font-size: $font-size-small
   line-height: $btn-default-height
   height: $form-default-height !important
@@ -68,13 +90,20 @@ form select, #changelist .actions select, form #searchbar
   text-overflow: ''
   vertical-align: top !important
 
+form
+  select[multiple]
+    background-image: none !important
+    padding-right: 10px !important
+
 //toolbar searchfield
-#changelist #toolbar form #searchbar
-  line-height: $btn-default-height
-  //height: auto!important
-  padding: 0px 10px  !important
-  background-image: none !important
-  border-radius: $form-default-border-radius
+#changelist
+  #toolbar
+    form
+      #searchbar
+        line-height: $btn-default-height
+        padding: 0px 10px  !important
+        background-image: none !important
+        border-radius: $form-default-border-radius
 
 
 //publication time & date
@@ -101,13 +130,21 @@ form
   textarea
     line-height: 1.8
     min-width: 368px
+    min-height: 100px
 
-  input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], textarea, select, .vTextField
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=url],
+  input[type=number],
+  textarea,
+  select,
+  .vTextField
     color: $form-input-color
     background-image: none
     padding: 0px 10px
     border-radius: 0
-    margin-bottom: .5rem!important
+    //margin-bottom: .5rem!important
 
     &:focus
       outline: none
@@ -116,15 +153,19 @@ form
       color: $form-focus-color
 
   .submit-row
-    background-color: $form-bg
+    background-color: $submit-row-bg
     border: 0
     padding: 20px 30px
-    background-color: $submit-row-bg
     border-radius: 0
     margin-bottom: 0
+    border-top: 1px solid $gray-lighter
+
+    &:first-child
+      border-bottom: 1px solid $gray-lighter
+      border-top: 0
 
   .aligned .form-row input
-    margin-bottom: 0 !important
+    //margin-bottom: 0 !important
 
 
   .module
@@ -152,8 +193,9 @@ form
   input
     height: $form-default-height
 
-  .wide label, label, .aligned label, input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], textarea, select, .vTextField
-    //min-width: 200px
+  .wide
+    p
+      margin-left: 0
 
 //COLLAPSABLE FIELDSETS //////////////////////////////////////
 form fieldset
@@ -166,14 +208,20 @@ form fieldset
       color: $form-fieldset-title-color
       border-bottom: 1px solid $form-select-border-color
       text-transform: uppercase
+      font-size: 15px
+      font-weight: 200
+      letter-spacing: 1px
+      padding: 20px 0 10px
+      border-color: #eee
 
       &::before
         @extend .material-icons
-        content: 'menu'
+        //content: ''
         vertical-align: middle
         transition: transform .3s ease-in-out
         margin-top: -3px
         margin-right: 5px
+        margin-left: -20px
         color: $form-fieldset-title-color
 
   &.collapse
@@ -281,16 +329,19 @@ body
 
 
 //DATETIME WIDGET ////////////////////////////////
-.form-row.field-publish_time
+.form-row
   .datetime
     vertical-align: middle
     line-height: 40px
+
     input
       margin: 0
-
     .datetimeshortcuts
+      margin-right: 20px
+
       a
-        margin-left: 10px
+        margin: 0 10px
+
 
 
 
@@ -300,9 +351,14 @@ select::-ms-expand
 
 
 //INLINE GROUP FIXES ////////////////////////////////
-.inline-group .tabular tr td.original
-  display: none
+.inline-group
+  .tabular
+    tr
+      td
+        &.original
+          opacity: 0
+          width: 0
+          overflow: hidden
 
-.inline-group .tabular tr td
-  &:first-child + td
-    padding-left: 0
+        &:first-child + td
+          padding-left: 0

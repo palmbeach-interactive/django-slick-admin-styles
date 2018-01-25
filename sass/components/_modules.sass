@@ -1,15 +1,5 @@
 @charset "UTF-8"
 
-.inline-group
-  .module
-    //padding: 0
-
-.calendarbox.module
-  padding: 0
-
-
-.module h2, .module caption, .inline-group h2
-  //background-color: transparent
 
 
 //INLINE GROUPING ////////////////////////////////
@@ -35,6 +25,13 @@
       margin-top: -3px
       margin-right: 5px
       color: $form-fieldset-title-color
+
+
+  fieldset
+    thead th
+      &:first-child
+        padding-left: 0 !important
+
 
   .inline-related
     margin: 30px
@@ -64,7 +61,6 @@
         background-color: transparent
         border-top: 0px
         color: $gray-light
-
 
   .tabular tr.add-row
     td
@@ -104,18 +100,44 @@ body.dashboard
 
 
 //CALENDARBOX MODULE ////////////////////////////////
-.module.calendarbox
-  border-radius: 0 
-  .calendar
-    caption,h2
-      background-color: $calendarbox-caption-bg
-      color: $calendarbox-caption-color
+.module
+  .vDateField,
+  .vTimeField
+    margin-bottom: 10px
 
-    td.selected a
-      background-color: $calendarbox-selected-bg
+  &.calendarbox
+    padding: 0
+    border-radius: 0
 
-    td a:focus, .timelist a:focus, td a:hover, .timelist a:hover
-      background-color: lighten($calendarbox-selected-bg,5)
+    .calendar
+      tr
+        th,
+        .nonday
+          background-color: transparent
+
+      caption,
+      h2
+        background-color: $calendarbox-caption-bg
+        color: $calendarbox-caption-color
+
+      td
+        &.selected
+          a
+            background-color: $calendarbox-selected-bg
+
+        a
+          &:focus,
+          &:hover
+            background-color: lighten($calendarbox-selected-bg,5)
+
+      .timelist
+        a
+          &:focus,
+          &:hover
+            background-color: lighten($calendarbox-selected-bg,5)
+
+
+
 
 
 //CLOCKBOX MODULE ////////////////////////////////
