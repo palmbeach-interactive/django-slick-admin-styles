@@ -1,15 +1,17 @@
 @charset "UTF-8"
 
 .slick-admin
-  .sizedimage-mod.initial
-    a
-      line-height: $form-default-height
+  .sizedimage-mod
+    &.initial
+      a
+        line-height: $form-default-height
 
-  div.versatileimagefield input[type='file']
-    margin-top: auto
-    margin-bottom: auto
-    padding-left: inherit
-    padding-bottom: inherit
+  div.versatileimagefield
+    input[type='file']
+      margin-top: auto
+      margin-bottom: auto
+      padding-left: inherit
+      padding-bottom: inherit
 
 
   .sizedimage-mod.preview
@@ -19,7 +21,40 @@
 
 
   .versatileimagefield
-    input, label
+    input,
+    label
       margin-right: 10px
       line-height: $form-default-height
       vertical-align: middle
+
+    div.image-wrap.outer
+      border: 1px solid $gray-lighter
+
+
+  .inline-group
+    &.sortable
+      .versatileimagefield
+        .initial,
+        .clear
+          display: none
+
+
+  .ppoi-point
+    background-color: rgba($color-danger, .8)
+    border: 0
+    width: 24px
+    height: 24px
+    border-radius: 999rem
+
+    &::before
+      @extend .material-icons
+      content: 'filter_center_focus'
+      vertical-align: middle
+      margin-top: 3px
+      margin-left: 3px
+      color: $white
+
+
+  //.point-stage
+    width: 150px !important
+    height: 150px !important
