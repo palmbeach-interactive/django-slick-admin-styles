@@ -185,7 +185,8 @@ a[id*="clocklink"]
     color: $color-primary-dark !important
 
 .deletelink,
-.deletelink a
+.deletelink a,
+a.deletelink
   color: $color-danger
 
 .addlink,
@@ -234,14 +235,19 @@ a[id*="clocklink"]
   // vertical align image icons in page tree #220
   .col-navigation
     line-height: 26px !important
+
     img
       vertical-align: middle
       width: 14px
       height: 14px
-  .col-language a
-    vertical-align: top !important
+
+  .col-language
+    a
+      vertical-align: top !important
+
   .changelink
     background-image: url("../img/icon_changelink_white.png")
+
   .addlink,
   .deletelink
     display: inline !important
@@ -249,26 +255,33 @@ a[id*="clocklink"]
       font-size: $font-size-normal
       margin: 0
 
-#sitemap li .col-softroot span.icon
-  width: 15px
-  height: 15px
-  margin: $icon-spacing 5px 0 0
-  background: url("../img/icon_softroot.png") 0 0 no-repeat
+#sitemap li
+  .col-softroot
+    span
+      &.icon
+        width: 15px
+        height: 15px
+        margin: $icon-spacing 5px 0 0
+        background: url("../img/icon_softroot.png") 0 0 no-repeat
+
 
 .cms-pagetree-container
   .cms-icon
     padding: 0 0 0 $icon-spacing
 
-  .cms-icon-home:before
-    padding-right: 10px
+  .cms-icon-home
+    &::before
+      padding-right: 10px
 
 
 .related-widget-wrapper
   .selector
     .selector-chooser
       background-color: transparent
+      margin-top: 90px
 
-    .selector-add, .selector-remove
+    .selector-add,
+    .selector-remove
       background: none
       text-indent: 0
       width: $icon-size
@@ -277,19 +290,20 @@ a[id*="clocklink"]
       &:before
         @extend .material-icons
         color: $white
-        background-color: $color-primary
+        background-color: $selector-chosen-color
         border-radius: 10px
         margin-left: 0
         margin-top: 0
         vertical-align: top
 
-    .selector-clearall, .selector-chooseall
+    .selector-clearall,
+    .selector-chooseall
       &:before
         @extend .material-icons
         font-size: 14px
         margin-top: 1px !important
         color: $white
-        background-color: $color-primary
+        background-color: $selector-chosen-color
         border-radius: 10px
         margin-left: 0
         margin-top: 0
