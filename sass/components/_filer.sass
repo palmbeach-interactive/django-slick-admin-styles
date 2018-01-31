@@ -6,7 +6,10 @@ body.change-form
     background-color: $white
     border-radius: 0
     padding: 10px
-    min-height: 140px !important
+    //min-height: 140px !important
+
+    br
+      display: none
 
     &.js-object-attached
       min-height: 85px !important
@@ -138,6 +141,7 @@ body
     line-height: 46px
     vertical-align: middle
     margin-top: 0
+    display: none
 
 
 
@@ -215,11 +219,32 @@ body
   .file-upload a
     padding-left: 10px
 
-
-  form .form-row .filer-dropzone.filer-dropzone-mobile.js-object-attached .filerFile.js-file-selector span, form .form-row .filer-dropzone.filer-dropzone-mobile.js-object-attached .filerFile .dz-name
+  //TODO: watch if this conflicts with other dropzone styles
+  //form .form-row .filer-dropzone.filer-dropzone-mobile.js-object-attached .filerFile.js-file-selector span, form .form-row .filer-dropzone.filer-dropzone-mobile.js-object-attached .filerFile .dz-name
     width: calc(100% - 120px)
 
 //TODO: maybe affecting other related fields -> yes it does
 //.related-widget-wrapper
   a.change-related
     display: none
+
+form
+  .form-row
+    .related-widget-wrapper
+      a
+        &.related-widget-wrapper-link
+          &.change-related,
+          &.delete-related
+            display: none
+
+
+      .js-file-selector
+        .related-lookup
+          &:not(.js-related-lookup)
+            display: none !important
+
+
+      .filer-dropzone .filerFile a
+        padding-top: 0 !important
+        line-height: 46px
+        vertical-align: middle
