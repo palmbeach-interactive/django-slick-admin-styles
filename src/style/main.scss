@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@import "abstracts/defaults";
+@import "abstracts/root";
+@import "abstracts/typography";
+@import "abstracts/icon-settings";
+@import "abstracts/mixins";
+
+@import "base/icons";
+@import "base/md-icons";
+
+@import "elements/adminlanguagechooser";
+@import "elements/adminshortcuts";
+@import "elements/breadcrumbs";
+@import "elements/buttons";
+@import "elements/changelist";
+@import "elements/charsleft";
+@import "elements/cmspagetree";
+@import "elements/contentrelated";
+@import "elements/dashboard";
+@import "elements/draggable-admin";
+@import "elements/filer";
+@import "elements/footer";
+@import "elements/forms";
+@import "elements/global";
+@import "elements/header";
+@import "elements/login";
+@import "elements/modules";
+@import "elements/nav-sidebar";
+@import "elements/paginator";
+@import "elements/popups";
+@import "elements/tabs";
+@import "elements/versatileimagefield";
+
+@import "patches/fixes";
+@import "patches/work-inprogress";
+
+@import "vendors/admin_tools/buttons";
+@import "vendors/admin_tools/dashboard";
+@import "vendors/admin_tools/recentactivities";

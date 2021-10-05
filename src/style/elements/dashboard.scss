@@ -1,0 +1,17 @@
+//##############################################################################
+// DASHBOARD DJANGO CMS
+
+body.dashboard {
+  #content {
+    margin-top: $toolbar-height;
+
+    #content-main {
+      background-color: transparent;
+      box-shadow: none;
+
+      .module {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

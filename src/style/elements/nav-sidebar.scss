@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#nav-sidebar {
+  .current-app {
+    .section:visited {
+      color: var(--header-color);
+      font-weight: inherit;
+    }
+    tbody {
+      border-top: $results-header-border-height solid $results-header-border-color;
+    }
+  }
+  .module {
+    margin-bottom: 0;
+  }
+}
+

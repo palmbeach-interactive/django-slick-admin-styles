@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+$drag-size: 32px;
+
+.slick-admin {
+  .field-tree_actions {
+    width: 2 * $drag-size;
+
+    > div {
+      height: $drag-size;
+      margin: 0;
+    }
+
+    .drag-handle {
+      width: $drag-size !important;
+    }
+
+    .tree-node {
+      background-position: 0px 9px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.material-icons {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
+  font-weight: normal;
+  font-size: $icon-size;
+  font-family: "Material Icons", sans-serif;
+  font-style: normal;
+  line-height: 1;
+  direction: ltr;
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-transform: none;
+  word-wrap: normal;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga";
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

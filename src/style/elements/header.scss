@@ -1,0 +1,317 @@
+//##############################################################################
+// HEADER
+//##############################################################################
+
+body.slick-admin.login {
+  #header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    overflow: visible;
+  }
+
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    background: $login-background-gradient;
+    background-color: $login-background-color;
+    border: 0px;
+    border-radius: 0px;
+
+    #content {
+
+      //max-height: 300px
+      max-width: 24em;
+
+      background-color: $login-window-background-color;
+      box-shadow: $element-default-shadow;
+    }
+
+    #footer.footer {
+      clear: none;
+      padding: 20px;
+
+      .content {
+        color: $login-footer-color;
+      }
+    }
+  }
+}
+
+body.slick-admin {
+  #header {
+    height: $toolbar-height;
+    padding: 10px $page-outer-spacing;
+
+    color: $toolbar-color;
+
+    background-color: $toolbar-bg;
+
+    h1 {
+      color: $toolbar-color;
+      font-size: 18px;
+    }
+
+    h1, a, span {
+      line-height: 48px;
+    }
+  }
+
+  #branding h1 a:link, #branding h1 a:visited, #header a:link, #header a:visited {
+    color: $toolbar-link-color;
+
+    cursor: pointer;
+
+    &:hover {
+      border-color: $toolbar-link-color;
+    }
+  }
+
+  #header-logo {
+    float: left;
+    margin-right: 15px;
+
+    span {
+      display: none;
+    }
+
+    .graphics.icecream {
+      width: 48px;
+      height: 48px;
+
+      vertical-align: middle;
+    }
+  }
+
+  #header-logo, #header h1 {
+    float: left;
+  }
+
+  #user-tools {
+    a {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  }
+}
+
+body.slick-admin-cms {
+  #header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+
+    width: 100% !important;
+    height: $toolbar-height;
+    padding: 0;
+    overflow: visible;
+
+    color: $gray-darkest !important;
+
+    background-color: $toolbar-bg;
+    background-image: none;
+    box-shadow: $toolbar-shadow;
+
+    h1, a, span {
+      line-height: normal;
+    }
+
+    #branding {
+      width: 100%;
+
+      h1 {
+        // hides h1 because of text appears in list on dropdown menu
+        display: none;
+        float: left;
+        height: $toolbar-height;
+        margin: 0;
+        padding: 0;
+
+        color: $gray-darkest;
+        font-weight: bold;
+        font-size: $font-size-normal;
+        line-height: $toolbar-height;
+      }
+    }
+
+    #user-tools {
+      // user tools are added to dropdown menu
+      display: none;
+      float: right;
+      width: 270px;
+      height: $toolbar-height;
+      padding: 0;
+
+      font-size: 13px;
+      line-height: $toolbar-height;
+
+      strong {
+        font-size: 13px;
+      }
+    }
+
+    a {
+      &:link,
+      &:visited {
+        color: $gray-darkest;
+      }
+    }
+
+    .toolbar-item-navigation-break {
+      height: 1px;
+      margin: 4px 0;
+      padding: 0 0 3px;
+      overflow: hidden;
+
+      text-align: left;
+      text-indent: -119988px;
+
+      border-bottom: 1px solid $gray-lighter;
+    }
+
+    .toolbar-item-navigation {
+      li {
+        position: relative;
+
+        float: left;
+        padding: 0;
+
+        list-style-type: none;
+
+        .menu-item-open {
+          color: $white !important;
+
+          background: $color-primary;
+
+          // removes hover color #289
+          &:hover {
+            color: $white !important;
+          }
+        }
+
+        ul {
+          position: absolute;
+          top: $toolbar-height;
+          left: 0;
+
+          display: none;
+
+          min-width: 180px;
+          margin-left: 0;
+          padding: 4px 0;
+
+          background: rgba($white, 0.97);
+          border: 1px solid $white;
+          border-top: none;
+          border-radius: $toolbar-menu-border-radius;
+          box-shadow: $toolbar-menu-shadow;
+
+          li {
+            float: none;
+
+            a {
+              display: block;
+              float: none;
+              height: 30px;
+              padding: 0 10px 0 15px !important;
+
+              font-weight: normal;
+              line-height: 30px;
+              white-space: nowrap;
+
+              cursor: pointer;
+
+              span {
+                font-weight: bold;
+                font-size: $font-size-normal;
+              }
+
+              &:hover {
+                color: $white !important;
+
+                background: $color-primary;
+              }
+            }
+          }
+
+          &.submenu-open {
+            display: block;
+          }
+        }
+
+        > a {
+          font-weight: bold;
+        }
+
+        a {
+          float: left;
+          height: $toolbar-height;
+          padding: 0 10px;
+
+          color: $black;
+          font-size: $font-size-normal;
+          line-height: $toolbar-height;
+
+          list-style-type: none;
+          cursor: default;
+
+          // removes hover color #289
+          &:hover {
+            color: $black !important;
+          }
+        }
+      }
+    }
+
+    #header-btn {
+      float: right;
+      margin-right: 20px;
+
+      line-height: $toolbar-height;
+    }
+
+    #header-logo {
+      float: left;
+      margin-right: 15px;
+      padding-left: $toolbar-left-space;
+
+      span {
+        display: none;
+      }
+
+      a {
+        display: block;
+        height: $toolbar-height;
+
+        color: $branding-color;
+        font-size: 21px;
+        line-height: $toolbar-height;
+        vertical-align: middle;
+
+        &:hover {
+          color: $branding-hover-color;
+        }
+
+        &:before {
+          box-sizing: border-box;
+          height: $toolbar-height;
+          margin-right: 0;
+
+          font-size: 21px;
+          line-height: $toolbar-height;
+          vertical-align: inherit;
+        }
+      }
+    }
+  }
+}

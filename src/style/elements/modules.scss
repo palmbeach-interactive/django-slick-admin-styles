@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+//INLINE GROUPING ////////////////////////////////
+.inline-group {
+  margin: 0px;
+
+  border-top: 1px solid $gray-lighter;
+
+  //background-color: $gray-lightest
+
+  > h2 {
+    margin-top: 20px;
+    padding: 20px 30px 0;
+
+    color: $form-fieldset-title-color;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    background-color: transparent;
+
+    &::before {
+      @extend .material-icons;
+      margin-top: -3px;
+      margin-right: 5px;
+
+      color: $form-fieldset-title-color;
+      vertical-align: middle;
+
+      transition: transform 0.3s ease-in-out;
+
+      content: "menu";
+    }
+  }
+
+  fieldset {
+    width: auto;
+
+    thead th {
+      color: $gray-light;
+
+      background-color: transparent;
+      border-top: 0;
+
+      &:first-child {
+        padding-left: 0 !important;
+      }
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      padding-left: 0;
+
+      color: $font-color;
+
+      background-color: transparent;
+    }
+
+  }
+
+  .inline-related {
+    margin: 30px;
+
+    border: 1px solid $gray-lighter;
+
+    &.ui-sortable-helper {
+      background-color: $form-default-bg;
+      transform: scale(0.5);
+    }
+
+    h3.ui-sortable-handle {
+      padding: 20px 30px;
+      // background: url(../img/drag-norepeat.png) 12px no-repeat !important;
+      background-size: 8px 30px !important;
+      border-top: 0;
+      cursor: move !important;
+    }
+
+    &.tabular {
+      margin: 0;
+
+      border: 0px;
+    }
+  }
+
+  .tabular tr.add-row {
+    td {
+      padding-left: 0;
+
+      background-color: transparent;
+      border-bottom: 0;
+
+      a {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+body.dashboard,
+#nav-sidebar {
+  margin-top: 0;
+
+  .module {
+    @include shadow-box;
+
+    caption {
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      font-weight: 700;
+      line-height: 30px;
+      vertical-align: middle;
+
+      background-color: darken($white, 2);
+      border-bottom: 1px solid $gray-lighter;
+
+      a {
+        color: $color-primary;
+      }
+    }
+
+    th, td {
+      vertical-align: middle;
+
+      a {
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+//CALENDARBOX MODULE ////////////////////////////////
+.module {
+  .vDateField,
+  .vTimeField {
+    margin-bottom: 10px;
+  }
+
+  &.calendarbox {
+    padding: 0;
+
+    border-radius: 0;
+
+    .calendar {
+      tr {
+        th,
+        .nonday {
+          background-color: transparent;
+        }
+      }
+
+      caption,
+      h2 {
+        color: $calendarbox-caption-color;
+
+        background-color: $calendarbox-caption-bg;
+      }
+
+      td {
+        &.selected {
+          a {
+            background-color: $calendarbox-selected-bg;
+          }
+        }
+
+        a {
+          &:focus,
+          &:hover {
+            background-color: lighten($calendarbox-selected-bg, 5);
+          }
+        }
+      }
+
+      .timelist {
+        a {
+          &:focus,
+          &:hover {
+            background-color: lighten($calendarbox-selected-bg, 5);
+          }
+        }
+      }
+    }
+  }
+}
+
+//CLOCKBOX MODULE ////////////////////////////////
+.module.clockbox {
+  border-radius: 0;
+
+  h2 {
+    color: $calendarbox-caption-color;
+
+    background-color: $calendarbox-caption-bg;
+  }
+
+  ul li {
+    a:hover, a:focus {
+      background-color: lighten($calendarbox-selected-bg, 5);
+    }
+  }
+}

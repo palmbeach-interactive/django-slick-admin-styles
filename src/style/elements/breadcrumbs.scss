@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.cms-admin-modal {
+  .breadcrumbs {
+    display: none;
+  }
+}
+
+body {
+  .breadcrumbs {
+    width: 90%;
+    margin-top: 0;
+    padding: 20px $page-outer-spacing !important;
+
+    color: $font-color;
+
+    background-color: $breadcrumbs-bar-bg;
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+
+    a {
+      color: $link-default-color;
+
+      &:hover {
+        color: $link-default-hover-color;
+      }
+    }
+  }
+}
+
+body.slick-admin-cms {
+  .breadcrumbs {
+    margin-top: $breadcrumbs-bar-height;
+  }
+}

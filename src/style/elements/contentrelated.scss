@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.dashboard {
+  #content-related {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    width: $sidebar-width;
+    height: 100%;
+    margin-top: 66px;
+    margin-right: 0;
+
+    #recent-actions-module {
+      box-shadow: none;
+    }
+  }
+}
+
+body.slick-admin-cms {
+  #content-related {
+    margin-top: 0;
+    padding-top: $toolbar-height;
+  }
+}

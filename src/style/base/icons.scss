@@ -1,0 +1,462 @@
+//##############################################################################
+// ICONS
+//
+// Overwrites background images icons with font icon
+// adds every class which has to be overwritten because of there is no general icon class
+//
+//
+//based on django-cms-admin-style
+//https://github.com/divio/djangocms-admin-style
+//https://github.com/divio/djangocms-admin-style/blob/master/djangocms_admin_style/sass/components/_icons.scss
+//
+//######################################################################################################################
+
+.addlink,
+.changelink,
+.deletelink,
+.inline-deletelink,
+.pastelink,
+.icon-arrow-right,
+.icon-logo,
+.add-row a,
+.related-lookup,
+.backtoroot,
+.movetolink span,
+.file-upload a,
+a.insertlinkButton,
+.field-get_attachment_address a,
+a.selector-clearall,
+a.selector-chooseall,
+.selector-remove,
+.selector-add,
+.add-another,
+.add-related,
+.change-related,
+.delete-related,
+.inlinechangelink,
+a[id*="calendarlink"],
+a[id*="clocklink"],
+.viewsitelink,
+.messagelist li.success,
+.messagelist li.error,
+.messagelist li.info,
+.messagelist li.warning,
+.cms-admin-modal.delete-confirmation .colM > p,
+.delete-confirmation .colM h1 + p,
+.admin_shortcuts .shortcuts li a,
+.dashboard-module ul li a.external-link,
+#changelist-filter a {
+  background-image: none !important;
+
+  &:hover {
+    background-image: none;
+  }
+
+  &:before {
+    @extend %icon;
+    margin-right: 5px;
+
+    //font-size: $font-size-large
+    vertical-align: middle;
+  }
+}
+
+.file-upload a,
+.field-get_attachment_address a {
+  @include icon(picture);
+}
+
+a.selector-clearall,
+.selector-remove {
+  @include icon(chevron-circle-left);
+}
+
+a.selector-chooseall,
+.selector-add {
+  @include icon(chevron-circle-right);
+}
+
+.addlink,
+.add-row a,
+.add-another,
+.add-related {
+  @include icon(plus);
+}
+
+.changelink,
+.change-related,
+.inlinechangelink {
+  @include icon(pencil);
+}
+
+.deletelink,
+.inline-deletelink,
+.delete-related {
+  @include icon(remove);
+}
+
+.deletelink-box .deletelink {
+  @include icon(trashbin);
+}
+
+.viewsitelink {
+  @include icon(eye);
+}
+
+.icon-arrow-right,
+.calendarnav-next {
+  @include icon(arrow-right);
+}
+
+#header-btn .icon-arrow-right {
+  &:after {
+    @extend %icon;
+    margin-right: -$icon-spacing;
+    margin-left: 5px;
+
+    vertical-align: middle;
+  }
+
+  @include icon(arrow-right, after);
+
+  &:before {
+    display: none;
+  }
+}
+
+.icon-search,
+.related-lookup,
+.changelist-search input[type=submit] {
+  @include icon(search);
+}
+
+.icon-logo {
+  @include icon(logo);
+
+  &:before {
+    font-family: "django-admin-iconfont", sans-serif;
+  }
+}
+
+#id_upload_button {
+  @include icon(upload);
+}
+
+#id_new_folder {
+  @include icon(folder);
+}
+
+.backtoroot,
+.calendarnav-previous {
+  @include icon(chevron-left);
+}
+
+.movetolink span {
+  @include icon(scissors);
+}
+
+.pastelink {
+  @include icon(clipboard);
+}
+
+.insertlinkButton {
+  @include icon(arrow-left);
+
+  padding: 0 !important;
+}
+
+a[id*="calendarlink"] {
+  @include icon(calendar);
+
+  img, .date-icon {
+    display: none;
+  }
+}
+
+a[id*="clocklink"] {
+  @include icon(clock);
+
+  img, .clock-icon {
+    display: none;
+  }
+}
+
+.messagelist li.success {
+  @include icon(check-circle);
+}
+
+.messagelist li.error {
+  @include icon(error);
+}
+
+.messagelist li.warning {
+  @include icon(exclamation-triangle);
+}
+
+.messagelist li.info {
+  @include icon(info-circle);
+}
+
+.dashboard-module ul li a.external-link {
+  @include icon(open-in-new);
+}
+
+#changelist-filter a {
+  @include icon(radio-button);
+}
+
+#changelist-filter li.selected a {
+  @include icon(radio-button-checked);
+}
+
+.related-lookup {
+  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+
+  padding: 0;
+
+  &:before {
+    color: $white;
+  }
+}
+
+.addlink,
+.addlink a {
+  color: $color-success;
+
+  &:hover {
+    color: $color-success-dark !important;
+  }
+}
+
+.changelink,
+.changelink a {
+  color: $color-primary;
+
+  &:hover {
+    color: $color-primary-dark !important;
+  }
+}
+
+.deletelink,
+.deletelink a,
+a.deletelink {
+  color: $color-danger;
+}
+
+.addlink,
+.changelink,
+.deletelink {
+  padding-left: 15px;
+}
+
+.related-lookup,
+.add-another {
+  margin: 0 5px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none !important;
+  }
+}
+
+//.add-another,
+//.add-related,
+//.change-related,
+//.delete-related
+// //+button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border, true)
+// display: inline-block
+// // make sure that add another button has correct width and height on advanced setting #293
+// width: $btn-default-height
+// height: $btn-default-height
+// padding: 13px 5px !important
+// margin: 10px 0
+// // make sure that button has correct width and height on advanced setting #291
+// box-sizing: border-box !important
+// vertical-align: middle
+// &:before
+//   color: $gray-darker
+//   vertical-align: top
+//   margin: 0
+// img
+//   display: none
+
+.add-another,
+.add-related,
+.change-related,
+.delete-related {
+  img {
+    display: none;
+  }
+}
+
+.tree {
+  // vertical align image icons in page tree #220
+  .col-navigation {
+    line-height: 26px !important;
+
+    img {
+      width: 14px;
+      height: 14px;
+
+      vertical-align: middle;
+    }
+  }
+
+  .col-language {
+    a {
+      vertical-align: top !important;
+    }
+  }
+
+  .changelink {
+    // background-image: url("../img/icon_changelink_white.png")
+
+  }
+
+  .addlink,
+  .deletelink {
+    display: inline !important;
+
+    &:before {
+      margin: 0;
+
+      font-size: $font-size-normal;
+    }
+  }
+}
+
+#sitemap li {
+  .col-softroot {
+    span {
+      &.icon {
+        width: 15px;
+        height: 15px;
+        margin: $icon-spacing 5px 0 0;
+
+        // background: url("../img/icon_softroot.png") 0 0 no-repeat
+
+      }
+    }
+  }
+}
+
+.cms-pagetree-container {
+  .cms-icon {
+    padding: 0 0 0 $icon-spacing;
+  }
+
+  .cms-icon-home {
+    &::before {
+      padding-right: 10px;
+    }
+  }
+}
+
+.related-widget-wrapper {
+  .selector {
+    .selector-chooser {
+      margin-top: 90px;
+
+      background-color: transparent;
+    }
+
+    .selector-add,
+    .selector-remove {
+      width: $icon-size;
+      height: $icon-size;
+
+      text-indent: 0;
+
+      background: none;
+
+      &:before {
+        @extend .material-icons;
+        margin-top: 0;
+        margin-left: 0;
+
+        color: $white;
+        vertical-align: top;
+
+        background-color: $selector-chosen-color;
+        border-radius: 10px;
+      }
+    }
+
+    .selector-clearall,
+    .selector-chooseall {
+      &:before {
+        @extend .material-icons;
+        margin-top: 1px !important;
+        margin-top: 0;
+        margin-left: 0;
+
+        color: $white;
+
+        font-size: 14px;
+        vertical-align: top;
+
+        background-color: $selector-chosen-color;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .related-widget-wrapper-link {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 0;
+    overflow: hidden;
+
+    font-size: 14px;
+    line-height: 30px;
+
+    background-color: lighten($gray-light, 37%);
+    border: 1px solid lighten($gray-light, 30%);
+    border-radius: 3px;
+
+    &::before {
+      margin-left: 6px;
+    }
+
+    &.add-related {
+      color: $color-primary;
+
+      &:hover {
+        color: $white;
+
+        background-color: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+
+    &.change-related {
+      color: $gray-light;
+
+      &:hover {
+        color: $white;
+
+        background-color: $gray-light;
+        border-color: $gray-light;
+      }
+    }
+  }
+}
+
+// retina
+// stylelint-disable-next-line media-feature-name-no-unknown
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .tree .changelink {
+    // background-image: url("../img/icon_changelink_white@2x.png")
+    background-size: 11px;
+  }
+
+  #sitemap li .col-softroot span.icon {
+    // background-image: url("../img/icon_softroot@2x.png")
+    background-size: 15px;
+  }
+}

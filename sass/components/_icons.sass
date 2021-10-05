@@ -36,8 +36,6 @@ a.selector-chooseall,
 .inlinechangelink,
 a[id*="calendarlink"],
 a[id*="clocklink"],
-//.calendarnav-previous,
-//.calendarnav-next,
 .viewsitelink,
 .messagelist li.success,
 .messagelist li.error,
@@ -149,7 +147,7 @@ a[id*="clocklink"]
   +icon(check-circle)
 
 .messagelist li.error
-  +icon(minus-circle)
+  +icon(error)
 
 .messagelist li.warning
   +icon(exclamation-triangle)
@@ -246,7 +244,7 @@ a.deletelink
       vertical-align: top !important
 
   .changelink
-    background-image: url("../img/icon_changelink_white.png")
+    // background-image: url("../img/icon_changelink_white.png")
 
   .addlink,
   .deletelink
@@ -262,7 +260,7 @@ a.deletelink
         width: 15px
         height: 15px
         margin: $icon-spacing 5px 0 0
-        background: url("../img/icon_softroot.png") 0 0 no-repeat
+        // background: url("../img/icon_softroot.png") 0 0 no-repeat
 
 
 .cms-pagetree-container
@@ -348,10 +346,10 @@ a.deletelink
 // retina
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
   .tree .changelink
-    background-image: url("../img/icon_changelink_white@2x.png")
+    // background-image: url("../img/icon_changelink_white@2x.png")
     background-size: 11px
   #sitemap li .col-softroot span.icon
-    background-image: url("../img/icon_softroot@2x.png")
+    // background-image: url("../img/icon_softroot@2x.png")
     background-size: 15px
 
 

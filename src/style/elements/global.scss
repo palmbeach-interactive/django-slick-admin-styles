@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+html, body {
+  height: 100%;
+
+  font-weight: 200;
+
+  th {
+    font-weight: 400;
+  }
+}
+
+body {
+  &.slick-admin {
+    background-color: $body-bg;
+  }
+
+  abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    margin: 0;
+  }
+
+  #container {
+    min-width: auto;
+  }
+
+  #content {
+    padding: 0 $page-outer-spacing;
+
+    h1 {
+      padding: 30px 0;
+    }
+
+    #content-main {
+      @include shadow-box;
+
+      float: none;
+      width: 100%;
+
+      background-color: $form-bg;
+
+      .row1 {
+        background-color: $form-bg;
+      }
+
+      .row2 {
+        background-color: $form-bg;
+      }
+    }
+  }
+}
+
+body.login #content #content-main {
+  box-shadow: none;
+}
+
+body.slick-admin-cms {
+  #content {
+    //margin-top: $toolbar-height
+ 
+  }
+}
+
+ul.messagelist li {
+  padding: 15px $page-outer-spacing;
+
+  &:before {
+    padding-right: 5px;
+    padding-left: $icon-spacing;
+
+    color: $color-danger;
+    font-size: 24px !important;
+  }
+
+  &.error {
+    background-color: lighten($color-danger, 30);
+  }
+}
+
+.cms-admin-modal {
+  #content-main, #content {
+    padding-top: 0 !important;
+  }
+
+  #content {
+    padding: 0;
+
+    .cms-content-wizard {
+      padding: 30px;
+    }
+  }
+
+  #footer {
+    display: none;
+  }
+}
+
+.errornote {
+  color: $errornote-color;
+  font-weight: normal;
+
+  background-color: $errornote-bg;
+  border: $errornote-border;
+  border-radius: $form-default-border-radius;
+}
+
+ul.errorlist {
+  color: $errornote-bg;
+}

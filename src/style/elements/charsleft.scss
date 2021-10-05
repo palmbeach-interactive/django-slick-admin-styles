@@ -1,0 +1,19 @@
+//CHARSLEFT APP FIXES ////////////////////////////////
+.slick-admin {
+  .charsleft {
+    &.charsleft-input {
+      height: 45px;
+
+      //display: block
+   
+    }
+
+    .charsleft-feedback {
+      position: initial;
+      top: 32px;
+      right: auto;
+
+      font-size: inherit;
+    }
+  }
+}

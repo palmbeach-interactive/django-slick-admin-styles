@@ -1,0 +1,49 @@
+//RECENT ACTIVITIES
+body.admin-tools-dahsboard {
+  .dashboard-module.recent-actions {
+    .dashboard-module-content {
+      ul li, ul li.even, ul li.odd {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        height: $dashboard-date-bullet-size;
+        padding: 15px;
+
+        border-bottom: 1px solid $white;
+        border-bottom: 1px solid $dashboard-border-color;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+
+        a, span {
+          margin-left: 20px;
+
+          line-height: $dashboard-date-bullet-size;
+          vertical-align: middle;
+        }
+
+        //display: block
+
+        div.object-name {
+          margin-left: 20px;
+
+          color: $gray-light;
+        }
+
+        .date-bullet {
+          float: left;
+          width: $dashboard-date-bullet-size;
+          height: $dashboard-date-bullet-size;
+
+          color: $dashboard-date-bullet-color;
+          line-height: $dashboard-date-bullet-size;
+          text-align: center;
+
+          background-color: $dashboard-date-bullet-bg;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
