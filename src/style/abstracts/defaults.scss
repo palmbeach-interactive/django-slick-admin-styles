@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+$breakpoints: (
+  small: 320px,
+  medium: 768px,
+  large:  1024px,
+  xlarge: 1200px,
+  xxlarge: 1441px
+);
+
+
 // #COLORS#
 $white: #fff !default;
 $black: #000 !default;
@@ -34,6 +43,9 @@ $font-size-normal: 15px !default;
 $element-default-shadow: 0 0 1px rgba(0, 0, 0, 0.15) !default;
 $page-outer-spacing: 5% !default;
 $body-bg: #f0f0f0 !default;
+
+//NAV SIDEBAR ////////////////////////////////
+$nav-sidebar-width: 23px;
 
 //LINK STYLES ////////////////////////////////
 $link-default-color: $color-primary !default;
@@ -86,20 +98,20 @@ $breadcrumbs-bar-height: 46px !default;
 $breadcrumbs-bar-bg: $white !default;
 
 //BUTTON STYLES ////////////////////////////////
-$btn-default-height: 30px !default;
-$btn-border-size: 0px !default;
+$btn-default-height: 34px !default;
+$btn-border-size: 1px !default;
 $btn-border-radius-base: 0.25rem !default;
 $btn-active-shadow: 0 !default;
 
 //button default
 $btn-default-color: $gray-darkest !default;
-$btn-default-bgcolor: lighten($gray-lighter, 5%) !default;
-$btn-default-border: transparent !default;
+$btn-default-bgcolor: $gray-lightest !default;
+$btn-default-border-color: transparent !default;
 
 //button action
 $btn-action-color: $white !default;
 $btn-action-bgcolor: $color-primary !default;
-$btn-action-border: transparent !default;
+$btn-action-border-color: transparent !default;
 
 //button light
 $btn-light-color: $gray-light !default;

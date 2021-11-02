@@ -47,14 +47,14 @@
     }
 
     //background-color: $gray-lightest !important
- 
+
   }
 }
 
 body.admin-tools-dahsboard {
   #dashboard-panel {
     h3 a {
-      @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+      @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
       @include default-button;
 
       text-transform: uppercase !important;

@@ -8,9 +8,9 @@
 
 body {
   .breadcrumbs {
-    width: 90%;
+    width: calc(100% - #{$nav-sidebar-width});
     margin-top: 0;
-    padding: 20px $page-outer-spacing !important;
+    padding: 20px $page-outer-spacing 20px $nav-sidebar-width;
 
     color: $font-color;
 

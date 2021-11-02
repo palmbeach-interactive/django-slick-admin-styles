@@ -2,16 +2,48 @@
 
 #nav-sidebar {
   .current-app {
+    caption {
+      border-bottom: 0;
+    }
+
     .section:visited {
       color: var(--header-color);
       font-weight: inherit;
     }
+
     tbody {
       border-top: $results-header-border-height solid $results-header-border-color;
     }
   }
+
   .module {
     margin-bottom: 0;
+
+    tbody {
+      a {
+        &.addlink {
+          position: relative;
+
+          width: 24px;
+          height: 24px;
+          padding-right: 0 !important;
+          padding-left: 0 !important;
+
+          font-size: 0 !important;
+
+          &:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            margin-top: 0;
+            margin-left: 0;
+
+            transform: translateX(-50%) translateY(-50%);
+          }
+        }
+      }
+    }
   }
 }
 

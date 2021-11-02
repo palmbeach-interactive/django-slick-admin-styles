@@ -1,12 +1,119 @@
+//button defintions
+@mixin default-button {
+  display: inline-block;
+  height: $btn-default-height;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  line-height: $btn-default-height;
+  vertical-align: middle;
+
+  border: $btn-border-size solid $btn-default-border-color;
+  border-radius: $btn-border-radius-base;
+  box-shadow: none;
+}
+
+@mixin border-button($color: $gray, $color-hover: $color-primary) {
+  color: $color;
+
+  background-color: transparent;
+  border: 1px solid $color;
+
+  &:hover, &:focus {
+    color: $color-hover;
+
+    background-color: lighten($color-hover, 25);
+    border-color: $color-hover;
+
+    &:before {
+      color: $color-hover;
+    }
+  }
+
+  &:before {
+    color: $color;
+  }
+}
+
+@mixin button-variant($color, $background, $border-color, $important: false) {
+  margin-bottom: 0;
+
+  // For input.btn
+  padding: 6px 20px;
+
+  color: $color;
+  font-weight: normal;
+  font-size: $font-size-small;
+  line-height: $font-size-small;
+  letter-spacing: normal;
+  text-transform: none;
+
+  background-color: $background;
+  background-image: none;
+  border: 1px solid $border-color;
+  border-radius: $btn-border-radius-base;
+
+  appearance: none;
+
+  &:focus {
+    color: $color important($important);
+    text-decoration: none important($important);
+
+    background-color: darken($background, 5%);
+    border-color: darken($border-color, 5%);
+  }
+
+  &:hover {
+    color: $color;
+    text-decoration: none;
+
+    background-color: darken($background, 5%);
+    border-color: darken($border-color, 5%);
+  }
+
+  &:active {
+    color: $color important($important);
+
+    background-color: darken($background, 10%);
+    background-image: none;
+    border-color: darken($border-color, 10%);
+    box-shadow: $btn-active-shadow;
+
+    &:hover,
+    &:focus {
+      color: $color important($important);
+
+      background-color: darken($background, 17%);
+      border-color: darken($border-color, 25%);
+    }
+  }
+
+  &[disabled] {
+    &:active {
+      color: rgba($color, 0.8);
+
+      background-color: rgba($background, 0.4);
+      border-color: rgba($border-color, 0.4);
+      box-shadow: none;
+      cursor: not-allowed;
+
+      &:before {
+        color: rgba($color, 0.4);
+      }
+    }
+  }
+}
+
+
 .admin-action-button {
-  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
   @include default-button;
 
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 .default-button {
-  @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+  @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border-color, true);
   @include default-button;
 }
 
@@ -15,7 +122,7 @@
   @include default-button;
 
   &:hover {
-    background-color: darken($btn-light-bgcolor, 12%) !important;
+    background-color: darken($btn-light-bgcolor, 12%);
   }
 }
 
@@ -23,7 +130,7 @@
   @include button-variant($btn-danger-color, $btn-danger-bgcolor, $btn-danger-border, true);
   @include default-button;
 
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 //generic links
@@ -86,7 +193,7 @@ body {
 #changelist .actions .button {
   @extend .default-button;
 
-  margin-left: 10px !important;
+  margin-left: 10px;
 }
 
 //toolbar search button
@@ -98,7 +205,7 @@ body {
 .submit-row a.deletelink {
   @extend .danger-button;
 
-  height: auto !important;
+  height: auto;
 }
 
 //related admin link
@@ -146,38 +253,38 @@ body.login {
 //filer
 .slick-admin {
   form .form-row .filer-dropzone .filerFile .related-lookup {
-    @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+    @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
     @include default-button;
   }
 
   form .form-row .filer-dropzone .filerFile .filerClearer {
-    @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border-color, true);
     @include default-button;
-    width: 36px !important;
-    height: 36px !important;
-    margin-top: 0px !important;
-    padding: 8px 0 !important;
+    width: 36px;
+    height: 36px;
+    margin-top: 0;
+    padding: 8px 0;
 
-    background-color: transparent !important;
+    background-color: transparent;
 
-    border: 1px solid $btn-default-bgcolor !important;
+    border: 1px solid $btn-default-bgcolor;
   }
 }
 
 .delete-confirmation form .cancel-link {
-  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
   @include default-button;
 
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 
-  //line-height: 40px !important
+  //line-height: 40px
 }
 
 .delete-confirmation form input[type="submit"] {
   @include button-variant($btn-danger-color, $btn-danger-bgcolor, $btn-danger-border, true);
   @include default-button;
 
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 //cms pages
@@ -195,18 +302,18 @@ body.login {
 .backend-language-chooser-button {
   @include button-variant($btn-admin-language-chooser-color, $btn-admin-language-chooser-bgcolor, $btn-admin-language-chooser-border, true);
   @include default-button;
-  height: 20px !important;
-  padding: 1px 6px !important;
+  height: 20px;
+  padding: 1px 6px;
 
-  line-height: 20px !important;
+  line-height: 20px;
 
-  border: 1px solid $btn-admin-language-chooser-border !important;
+  border: 1px solid $btn-admin-language-chooser-border;
 
   &.active {
-    color: $btn-admin-language-chooser-active-color !important;
+    color: $btn-admin-language-chooser-active-color;
 
-    background-color: $btn-admin-language-chooser-active-bgcolor !important;
-    border: 1px solid $btn-admin-language-chooser-active-border !important;
+    background-color: $btn-admin-language-chooser-active-bgcolor;
+    border: 1px solid $btn-admin-language-chooser-active-border;
   }
 }
 

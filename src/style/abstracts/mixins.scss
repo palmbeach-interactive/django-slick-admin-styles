@@ -1,117 +1,45 @@
-//button defintions
-@mixin default-button {
-  display: inline-block;
-  height: $btn-default-height !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 
-  line-height: $btn-default-height !important;
-  vertical-align: middle;
-
-  border: $btn-border-size !important;
-  box-shadow: none !important;
-}
 
 @mixin shadow-box {
   box-shadow: $element-default-shadow;
 }
 
-@mixin border-button($color: $gray, $color-hover: $color-primary) {
-  color: $color;
-
-  background-color: transparent;
-  border: 1px solid $color;
-
-  &:hover, &:focus {
-    color: $color-hover;
-
-    background-color: lighten($color-hover, 25);
-    border-color: $color-hover;
-
-    &:before {
-      color: $color-hover;
+//minimal breakpoint mixins
+//https://benjaminhorn.io/code/responsive-sass-mixin-helpers/
+@mixin breakpoint-from($media) {
+  @each $breakpoint in $breakpoints {
+    @if $media == nth($breakpoint, 1) {
+      @media (min-width: #{nth($breakpoint, 2)})  { @content; }
     }
   }
-
-  &:before {
-    color: $color;
-  }
 }
+@mixin breakpoint-to($media) {
+  @for $i from 1 through length($breakpoints) {
+    $breakpoint: nth($breakpoints, $i);
+    $name: nth($breakpoint, 1);
+    $value: nth($breakpoint, 2);
 
-@function important($important) {
-  @if $important == true {
-    @return !important;
-  }
-  @else {
-    @return true;
-  }
-}
+    @if $media == $name {
+      @if $i == 1 {
+        $next_breakpoint: nth($breakpoints, $i + 1);
+        $next_value: nth($next_breakpoint, 2);
+        @media (max-width: #{$next_value - 1px})  { @content; }
+      } @else if $i == length($breakpoints) {
+        @media (min-width: #{$value})  { @content; }
+      } @else {
+        $next_breakpoint: nth($breakpoints, $i + 1);
+        $next_value: nth($next_breakpoint, 2);
 
-@mixin button-variant($color, $background, $border, $important: false) {
-  margin-bottom: 0;
-
-  // For input.btn
-  padding: 6px 20px important($important);
-
-  color: $color important($important);
-  font-weight: normal;
-  font-size: $font-size-small important($important);
-  line-height: $font-size-small;
-  letter-spacing: normal important($important);
-  text-transform: none important($important);
-
-  background-color: $background important($important);
-  background-image: none important($important);
-  border: 1px solid $border important($important);
-  border-radius: $btn-border-radius-base important($important);
-
-  appearance: none;
-
-  &:focus {
-    color: $color important($important);
-    text-decoration: none important($important);
-
-    background-color: darken($background, 5%) important($important);
-    border-color: darken($border, 5%) important($important);
-  }
-
-  &:hover {
-    color: $color important($important);
-    text-decoration: none important($important);
-
-    background-color: darken($background, 5%) important($important);
-    border-color: darken($border, 5%) important($important);
-  }
-
-  &:active {
-    color: $color important($important);
-
-    background-color: darken($background, 10%) important($important);
-    background-image: none important($important);
-    border-color: darken($border, 10%) important($important);
-    box-shadow: $btn-active-shadow important($important);
-
-    &:hover,
-    &:focus {
-      color: $color important($important);
-
-      background-color: darken($background, 17%) important($important);
-      border-color: darken($border, 25%) important($important);
-    }
-  }
-
-  &[disabled] {
-    &:active {
-      color: rgba($color, 0.8) important(1);
-
-      background-color: rgba($background, 0.4) important($important);
-      border-color: rgba($border, 0.4) important($important);
-      box-shadow: none important($important);
-      cursor: not-allowed;
-
-      &:before {
-        color: rgba($color, 0.4) important(1);
+        @media (min-width: #{$value}) and (max-width: #{$next_value - 1px}) { @content; }
       }
+    }
+  }
+}
+
+@mixin breakpoint-until($media) {
+  @each $breakpoint in $breakpoints {
+    @if $media == nth($breakpoint, 1) {
+      @media (max-width: #{nth($breakpoint, 2)})  { @content; }
     }
   }
 }

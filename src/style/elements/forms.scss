@@ -53,6 +53,18 @@ select,
   border-radius: $form-default-border-radius;
 }
 
+//mark parler translatable fields
+label.translatable-field {
+  &:after {
+    @extend %icon;
+    margin-left: 5px;
+
+    vertical-align: middle;
+
+    content: "" !important;
+  }
+}
+
 .delete-confirmation {
   form {
     margin-top: 30px;
@@ -80,6 +92,13 @@ select,
         }
       }
     }
+  }
+}
+
+//add rows
+tr {
+  &.add-row {
+    background-color: transparent;
   }
 }
 
@@ -246,7 +265,7 @@ form {
   }
 
   input {
-    height: $form-default-height;
+    // height: $form-default-height;
   }
 }
 
@@ -433,11 +452,22 @@ body {
 /* stylelint-disable-next-line no-duplicate-selectors */
 .form-row {
   .datetime {
+    position: relative;
+
+    padding-left: calc(10em + 40px);
+
     line-height: 40px;
     vertical-align: middle;
 
     input {
-      margin: 0;
+      &.vTimeField,
+      &.vDateField {
+        position: absolute;
+        left: 0;
+
+        width: 10em;
+        margin-left: 0;
+      }
     }
 
     .datetimeshortcuts {

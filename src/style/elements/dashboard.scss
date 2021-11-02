@@ -3,14 +3,23 @@
 
 body.dashboard {
   #content {
+    width: 65%;
     margin-top: $toolbar-height;
 
     #content-main {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: 1fr;
+
       background-color: transparent;
       box-shadow: none;
 
+      @include breakpoint-from(large) {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .module {
-        margin-bottom: 30px;
+        margin-bottom: 0px;
       }
     }
   }
