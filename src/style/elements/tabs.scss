@@ -4,45 +4,46 @@ body {
   .hvad-language-tabs, .nani-language-tabs, .parler-language-tabs {
     padding: 0 20px;
 
-    background-color: $form-default-bg;
-    border-bottom: $lang-bar-border-height solid $lang-bar-border-color;
+    background-color: var(--content-bg);
+    border-bottom: var(--default-border-size-large) solid var(--primary);
 
     span {
       margin: 10px;
       padding: 0px 20px;
 
-      line-height: $btn-default-height;
+      line-height: var(--button-height);
 
-      border: 1px solid $lang-bar-default-border-color;
-      border-radius: $btn-border-radius-base;
+      background-color: var(--lang-bar-default-bg);
+      border: 1px solid var(--lang-bar-default-border);
+      border-radius: var(--button-border-radius);
 
       a {
-        color: $lang-bar-default-color;
+        color: var(--lang-bar-default-fg);
       }
 
       &:hover {
-        background-color: $lang-bar-current-bgcolor !important;
+        background-color: var(--lang-bar-current-bg) !important;
         border-color: transparent !important;
 
         a {
-          color: $lang-bar-current-color !important;
+          color: var(--lang-bar-current-fg) !important;
         }
       }
 
       &.current {
-        color: $lang-bar-current-color;
+        color: var(--lang-bar-current-fg);
         font-weight: 400;
 
-        background-color: $lang-bar-current-bgcolor;
+        background-color: var(--lang-bar-current-bg);
         border-color: transparent;
       }
 
       &.available {
-        background-color: $lang-bar-available-bgcolor;
-        border: 1px solid $lang-bar-available-border-color;
+        background-color: var(--lang-bar-available-bg);
+        border: 1px solid var(--lang-bar-available-border);
 
         a {
-          color: $lang-bar-available-color;
+          color: var(--lang-bar-available-fg);
           font-weight: 400;
         }
       }
@@ -66,7 +67,7 @@ body {
       border-radius: 14px;
 
       &:hover {
-        background-color: $btn-danger-bgcolor;
+        background-color: var(--button-danger-bg);
 
         &:before {
           color: white;
@@ -77,7 +78,7 @@ body {
         position: relative;
         left: 7.5px;
 
-        color: $btn-danger-bgcolor;
+        color: var(--button-danger-fg);
         font-size: 14px;
       }
     }
@@ -90,32 +91,32 @@ body {
   #page_form_lang_tabs {
     padding: 0 20px;
 
-    background-color: $form-default-bg;
-    border-bottom: $lang-bar-border-height solid $lang-bar-border-color;
+    background-color: var(--content-bg);
+    border-bottom: var(--default-border-size-large) solid var(--primary);
 
     input {
       margin: 10px !important;
       padding: 0px 20px !important;
 
-      color: $lang-bar-default-color !important;
+      color: var(--lang-bar-default-fg) !important;
       font-size: 14px !important;
-      line-height: $btn-default-height !important;
+      line-height: var(--button-height) !important;
 
       background-color: transparent !important;
-      border: 1px solid $lang-bar-default-border-color !important;
-      border-radius: $btn-border-radius-base !important;
+      border: 1px solid var(--lang-bar-default-border) !important;
+      border-radius: var(--button-border-radius) !important;
 
       &:hover {
         color: white !important;
 
-        background-color: $lang-bar-current-bgcolor !important;
+        background-color: var(--lang-bar-current-bg) !important;
         border-color: transparent !important;
       }
 
       &.selected {
         color: white !important;
 
-        background-color: $lang-bar-current-bgcolor !important;
+        background-color: var(--lang-bar-current-bg) !important;
         border-color: transparent !important;
       }
     }
@@ -123,10 +124,10 @@ body {
 
   //parler
   .parler-language-tabs span.available, .parler-language-tabs span.current, .parler-language-tabs span.empty {
-    border-radius: $btn-border-radius-base;
+    border-radius: var(--button-border-radius);
   }
 
   .lang-code.active {
-    background-color: $color-secondary;
+    background-color: var(--secondary);
   }
 }

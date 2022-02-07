@@ -54,10 +54,10 @@ body.change-list {
       }
 
       h2 {
-        color: $font-color;
+        color: var(--body-quiet-color);
 
         background-color: transparent;
-        border-bottom: 1px solid $gray-lightest;
+        border-bottom: 1px solid var(--border-color);
       }
 
       li {
@@ -68,7 +68,7 @@ body.change-list {
           border-left: 0;
 
           a {
-            color: $results-header-link-color;
+            color: var(--primary);
             font-weight: 400;
           }
         }
@@ -86,7 +86,7 @@ body.change-list {
     }
 
     #result_list {
-      background-color: white;
+      background-color: var(--content-bg);
       border-bottom: 0;
 
       hr {
@@ -95,8 +95,8 @@ body.change-list {
 
       thead {
         th {
-          background-color: transparent;
-          border-bottom: $results-header-border-height solid $results-header-border-color;
+          background-color: var(--content-bg);
+          border-bottom: var(--default-border-size-large) solid var(--primary);
 
           .text {
             span {
@@ -104,23 +104,17 @@ body.change-list {
             }
 
             a {
-              color: $results-header-sortable-link;
+              color: var(--primary);
             }
           }
         }
       }
 
-      .row1, .row2 {
-        td, th {
-          vertical-align: middle;
-        }
-
-        &:hover {
-          background-color: $changelist-hover-color;
-        }
-
-        &.selected {
-          background-color: $changelist-selected-color;
+      tbody {
+        tr {
+          &:hover {
+            background-color: var(--active-row);
+          }
         }
       }
     }
@@ -132,5 +126,5 @@ body.change-list {
 }
 
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-  margin-right: $filter-panel-width;
+  margin-right: var(--filter-panel-width);
 }

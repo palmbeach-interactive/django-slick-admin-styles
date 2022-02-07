@@ -1,13 +1,19 @@
 @charset "UTF-8";
 
-@import "abstracts/defaults";
+@import "abstracts/breakpoints";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/color-palette";
 @import "abstracts/root";
 @import "abstracts/typography";
 @import "abstracts/icon-settings";
-@import "abstracts/mixins";
+
 
 @import "base/icons";
 @import "base/md-icons";
+@import "base/django-admin-base";
+@import "base/django-admin-forms";
+@import "base/django-admin-responsive";
 
 @import "elements/adminlanguagechooser";
 @import "elements/adminshortcuts";
@@ -18,8 +24,9 @@
 @import "elements/cmspagetree";
 @import "elements/contentrelated";
 @import "elements/dashboard";
+@import "elements/date-time-field.scss";
 @import "elements/draggable-admin";
-@import "elements/filer";
+@import "elements/errors";
 @import "elements/footer";
 @import "elements/forms";
 @import "elements/global";
@@ -34,7 +41,3 @@
 
 @import "patches/fixes";
 @import "patches/work-inprogress";
-
-@import "vendors/admin_tools/buttons";
-@import "vendors/admin_tools/dashboard";
-@import "vendors/admin_tools/recentactivities";

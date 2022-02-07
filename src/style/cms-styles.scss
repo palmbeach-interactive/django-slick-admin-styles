@@ -1,20 +1,21 @@
-@import "abstracts/defaults";
-@import "abstracts/typography";
+@import "abstracts/functions";
 @import "abstracts/mixins";
+@import "abstracts/color-palette";
+@import "abstracts/root";
+@import "abstracts/breakpoints";
+@import "abstracts/typography";
 
-//@import components/buttons
-
-@mixin cms-button($bg-color: $black, $color: $gray) {
+@mixin cms-button($bg-color: var(--button-bg), $color: var(--button-fg)) {
   color: $color;
 
   background-color: $bg-color;
-  border: 1px solid $bg-color;
+  border: var(--button-border-size) solid $bg-color;
 
   &:hover, &:focus {
     color: $color;
 
-    background-color: darken($bg-color, 5);
-    border-color: darken($bg-color, 10);
+    //background-color: darken($bg-color, 5);
+    //border-color: darken($bg-color, 10);
 
     &:before {
       color: $color;
@@ -31,10 +32,10 @@ body div.cms {
     // toolbar logo
     .cms-toolbar-item.cms-toolbar-item-logo {
       a {
-        color: $gray;
+        color: var(--gray-2);
 
         &:hover {
-          color: $color-primary;
+          color: var(--primary);
         }
       }
     }
@@ -43,7 +44,7 @@ body div.cms {
     .cms-toolbar-item-navigation {
       .cms-toolbar-item-navigation-hover {
         > a {
-          background-color: $color-primary;
+          background-color: var(--primary);
         }
 
         > ul {
@@ -60,29 +61,42 @@ body div.cms {
     }
   }
 
+  &.cms-toolbar-debug {
+    .cms-debug-bar {
+      background-color: var(--primary);
+    }
+    .cms-toolbar {
+      .cms-btn {
+        &.cms-btn-switch-edit {
+          @include cms-button(var(--primary), var(--primary-fg));
+        }
+      }
+    }
+  }
+
   // structure mode context menu
   .cms-submenu-dropdown-settings .cms-submenu-item {
     a:hover,
     a.hover {
-      background-color: $color-primary;
+      background-color: var(--primary);
     }
   }
 
   // structure mode plugin placeholder
   .cms-add-plugin-placeholder {
-    color: $color-primary;
+    color: var(--primary);
 
-    background-color: lighten($color-primary, 45);
-    border-color: $color-primary;
+    background-color: var(--accent);
+    border-color: var(--primary);
   }
 
   // dragbar
   .cms-structure .cms-dragbar .cms-dragbar-toggler {
     a {
-      color: $color-primary !important;
+      color: var(--link-fg) !important;
 
       &:hover {
-        color: darken($color-primary, 5) !important;
+        color: var(--link-hover-color) !important;
       }
     }
   }
@@ -90,10 +104,10 @@ body div.cms {
   // modal breadcrumbs
   .cms-modal-has-breadcrumb .cms-modal-breadcrumb {
     a {
-      color: $color-primary;
+      color: var(--primary);
 
       &.active {
-        color: $gray-light;
+        color: var(--gray-3);
       }
     }
   }
@@ -102,7 +116,7 @@ body div.cms {
   .cms-modal .cms-modal-head {
     .cms-icon[class^="cms-modal-"] {
       &:hover {
-        color: $color-primary;
+        color: var(--primary);
       }
     }
   }
@@ -110,20 +124,20 @@ body div.cms {
   // plugin picker
   .cms-plugin-picker .cms-submenu-item {
     a:hover {
-      color: $color-primary;
+      color: var(--primary);
 
-      border-color: $color-primary;
+      border-color: var(--primary);
     }
   }
 
   // buttons
   .cms-btn {
     &.cms-btn-action {
-      @include cms-button($color-primary, $white);
+      @include cms-button(var(--primary), var(--primary-fg));
     }
 
     &.cms-btn-caution {
-      @include cms-button($color-danger, $white);
+      @include cms-button(var(--danger), var(--primary-fg));
     }
   }
 

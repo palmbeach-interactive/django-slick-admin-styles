@@ -4,7 +4,7 @@
   .sizedimage-mod {
     &.initial {
       a {
-        line-height: $form-default-height;
+        line-height: var(--form-input-height);
       }
     }
   }
@@ -29,12 +29,12 @@
     label {
       margin-right: 10px;
 
-      line-height: $form-default-height;
+      line-height: var(--form-input-height);
       vertical-align: middle;
     }
 
     div.image-wrap.outer {
-      border: 1px solid $gray-lighter;
+      border: 1px solid var(--hairline-color);
     }
   }
 
@@ -53,7 +53,7 @@
     width: 24px;
     height: 24px;
 
-    background-color: rgba($color-danger, 0.8);
+    background-color: color-alpha(var(--danger), 0.8);
     border: 0;
     border-radius: 999rem;
 
@@ -62,7 +62,7 @@
       margin-top: 3px;
       margin-left: 3px;
 
-      color: $white;
+      color: var(--primary-fg);
       vertical-align: middle;
 
       content: "filtercenterfocus";

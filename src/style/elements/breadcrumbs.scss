@@ -8,21 +8,19 @@
 
 body {
   .breadcrumbs {
-    width: calc(100% - #{$nav-sidebar-width});
     margin-top: 0;
-    padding: 20px $page-outer-spacing 20px $nav-sidebar-width;
+    padding: 20px;
 
-    color: $font-color;
+    color: var(--body-quiet-color);
 
-    background-color: $breadcrumbs-bar-bg;
-    border-top: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 
     a {
-      color: $link-default-color;
+      color: var(--link-fg);
 
       &:hover {
-        color: $link-default-hover-color;
+        color: var(--link-hover-color);
       }
     }
   }
@@ -30,6 +28,6 @@ body {
 
 body.slick-admin-cms {
   .breadcrumbs {
-    margin-top: $breadcrumbs-bar-height;
+    margin-top: var(--header-height);
   }
 }

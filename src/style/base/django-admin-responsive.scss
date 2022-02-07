@@ -1,0 +1,13 @@
+@media (max-width: 1024px) {
+  .form-row input[type=text],
+  .form-row input[type=password],
+  .form-row input[type=email],
+  .form-row input[type=url],
+  .form-row input[type=tel],
+  .form-row input[type=number],
+  .form-row textarea,
+  .form-row select,
+  .form-row .vTextField {
+    padding: 0 8px !important;
+  }
+}

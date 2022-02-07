@@ -1,15 +1,15 @@
 //button defintions
 @mixin default-button {
   display: inline-block;
-  height: $btn-default-height;
+  height: var(--button-height);
   padding-top: 0;
   padding-bottom: 0;
 
-  line-height: $btn-default-height;
+  line-height: var(--button-height);
   vertical-align: middle;
 
-  border: $btn-border-size solid $btn-default-border-color;
-  border-radius: $btn-border-radius-base;
+  border: var(--button-border-size) solid var(--button-default-border);
+  border-radius: var(--button-border-radius);
   box-shadow: none;
 }
 
@@ -17,12 +17,12 @@
   color: $color;
 
   background-color: transparent;
-  border: 1px solid $color;
+  border: var(--button-border-size) solid $color;
 
   &:hover, &:focus {
     color: $color-hover;
 
-    background-color: lighten($color-hover, 25);
+    // background-color: lighten($color-hover, 25);
     border-color: $color-hover;
 
     &:before {
@@ -43,15 +43,15 @@
 
   color: $color;
   font-weight: normal;
-  font-size: $font-size-small;
-  line-height: $font-size-small;
+  // font-size: $font-size-small;
+  // line-height: $font-size-small;
   letter-spacing: normal;
   text-transform: none;
 
   background-color: $background;
   background-image: none;
-  border: 1px solid $border-color;
-  border-radius: $btn-border-radius-base;
+  border: var(--button-border-size) solid $border-color;
+  border-radius: var(--button-border-radius);
 
   appearance: none;
 
@@ -59,46 +59,46 @@
     color: $color important($important);
     text-decoration: none important($important);
 
-    background-color: darken($background, 5%);
-    border-color: darken($border-color, 5%);
+    //background-color: #{color-lighten($background, 0.95)};
+    //border-color: #{color-lighten($border-color, 0.95)};
   }
 
   &:hover {
     color: $color;
     text-decoration: none;
 
-    background-color: darken($background, 5%);
-    border-color: darken($border-color, 5%);
+    //background-color: #{color-lighten($background, 0.95)};
+    //border-color: #{color-lighten($border-color, 0.95)};
   }
 
   &:active {
     color: $color important($important);
 
-    background-color: darken($background, 10%);
+    //background-color: #{color-lighten($background, 0.9)};
     background-image: none;
-    border-color: darken($border-color, 10%);
-    box-shadow: $btn-active-shadow;
+    //border-color: #{color-lighten($border-color, 0.9)};
+    //box-shadow: $btn-active-shadow;
 
     &:hover,
     &:focus {
       color: $color important($important);
 
-      background-color: darken($background, 17%);
-      border-color: darken($border-color, 25%);
+      //background-color: #{color-lighten($background, 0.83)};
+      //border-color: #{color-lighten($border-color, 0.75)};
     }
   }
 
   &[disabled] {
     &:active {
-      color: rgba($color, 0.8);
+      //color: rgba($color, 0.8);
 
-      background-color: rgba($background, 0.4);
-      border-color: rgba($border-color, 0.4);
+      //background-color: color-alpha($background, 0.4);
+      //border-color: color-alpha($border-color, 0.4);
       box-shadow: none;
       cursor: not-allowed;
 
       &:before {
-        color: rgba($color, 0.4);
+        //color: rgba($color, 0.4);
       }
     }
   }
@@ -106,28 +106,28 @@
 
 
 .admin-action-button {
-  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
+  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
   @include default-button;
 
   text-transform: uppercase;
 }
 
 .default-button {
-  @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border-color, true);
+  @include button-variant(var(--button-default-fg), var(--button-default-bg), var(--button-default-border), true);
   @include default-button;
 }
 
 .light-button {
-  @include button-variant($btn-light-color, $btn-light-bgcolor, $btn-light-border, true);
+  @include button-variant(var(--button-light-fg), var(--button-light-bg), var(--button-default-border), true);
   @include default-button;
 
   &:hover {
-    background-color: darken($btn-light-bgcolor, 12%);
+    //background-color: #{color-lighten($btn-light-bgcolor, 0.88)};
   }
 }
 
 .danger-button {
-  @include button-variant($btn-danger-color, $btn-danger-bgcolor, $btn-danger-border, true);
+  @include button-variant(var(--button-danger-fg), var(--button-danger-bg), var(--button-default-border), true);
   @include default-button;
 
   text-transform: uppercase;
@@ -135,20 +135,20 @@
 
 //generic links
 a:link, a:visited {
-  color: $link-default-color;
+  color: var(--link-fg);
 
   &:hover {
-    color: $link-default-hover-color;
+    color: var(--link-hover-color);
   }
 }
 
 //filter color, hover
 #changelist-filter a:focus, #changelist-filter a:hover, #changelist-filter li.selected a:focus, #changelist-filter li.selected a:hover {
-  color: $color-secondary;
+  color: var(--secondary);
 }
 
 a.active.selector-chooseall:focus, a.active.selector-clearall:focus, a.active.selector-chooseall:hover, a.active.selector-clearall:hover {
-  color: $link-highlight-color;
+  color: var(--link-highlight-fg);
 }
 
 //generic buttons
@@ -166,9 +166,9 @@ ul.object-tools a.viewsitelink, ul.object-tools a.golink {
 }
 
 #content .submit-row input {
-  height: $btn-default-height;
+  height: var(--button-height);
 
-  line-height: $btn-default-height / 2;
+  line-height: calc(var(--button-height / 2));
 
   //margin: 0 0 0 5px
 }
@@ -228,15 +228,15 @@ body.dashboard,
 #nav-sidebar {
   .module {
     a.addlink {
-      @extend .dashboard-action-button;
+      //@extend .dashboard-action-button;
     }
 
     a.changelink {
-      @extend .dashboard-button;
+      //@extend .dashboard-button;
     }
 
     .quiet, a.quiet:link, a.quiet:visited {
-      margin-left: $icon-size;
+      margin-left: var(--icon-size);
     }
   }
 }
@@ -253,12 +253,12 @@ body.login {
 //filer
 .slick-admin {
   form .form-row .filer-dropzone .filerFile .related-lookup {
-    @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
+    @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
     @include default-button;
   }
 
   form .form-row .filer-dropzone .filerFile .filerClearer {
-    @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border-color, true);
+    @include button-variant(var(--button-default-fg), var(--button-default-bg), var(--button-default-border), true);
     @include default-button;
     width: 36px;
     height: 36px;
@@ -267,12 +267,12 @@ body.login {
 
     background-color: transparent;
 
-    border: 1px solid $btn-default-bgcolor;
+    border: var(--button-border-size) solid var(--button-default-border);
   }
 }
 
 .delete-confirmation form .cancel-link {
-  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
+  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
   @include default-button;
 
   text-transform: uppercase;
@@ -281,7 +281,7 @@ body.login {
 }
 
 .delete-confirmation form input[type="submit"] {
-  @include button-variant($btn-danger-color, $btn-danger-bgcolor, $btn-danger-border, true);
+  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
   @include default-button;
 
   text-transform: uppercase;
@@ -300,20 +300,20 @@ body.login {
 }
 
 .backend-language-chooser-button {
-  @include button-variant($btn-admin-language-chooser-color, $btn-admin-language-chooser-bgcolor, $btn-admin-language-chooser-border, true);
+  @include button-variant(var(--button-lang-fg), var(--button-lang-bg), var(--button-lang-border), true);
   @include default-button;
   height: 20px;
   padding: 1px 6px;
 
   line-height: 20px;
 
-  border: 1px solid $btn-admin-language-chooser-border;
+  border: var(--button-border-size) solid var(--button-lang-border);
 
   &.active {
-    color: $btn-admin-language-chooser-active-color;
+    color: var(--button-lang-active-fg);
 
-    background-color: $btn-admin-language-chooser-active-bgcolor;
-    border: 1px solid $btn-admin-language-chooser-active-border;
+    background-color: var(--button-lang-active-bg);
+    border: var(--button-border-size) solid var(--button-lang-active-border);
   }
 }
 

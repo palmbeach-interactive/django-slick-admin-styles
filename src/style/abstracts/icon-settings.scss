@@ -10,10 +10,10 @@
 %icon {
   display: inline-block;
   margin-top: -2px;
-  margin-left: -$icon-spacing;
+  margin-left: calc(var(--icon-spacing) * -1);
 
   font-weight: normal;
-  font-size: $icon-size;
+  font-size: var(--icon-size);
   font-family: "Material Icons", sans-serif;
   font-style: normal;
   line-height: 0;

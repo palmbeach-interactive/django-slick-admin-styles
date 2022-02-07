@@ -4,7 +4,7 @@
 body.dashboard {
   #content {
     width: 65%;
-    margin-top: $toolbar-height;
+    margin-top: var(--header-height);
 
     #content-main {
       display: grid;

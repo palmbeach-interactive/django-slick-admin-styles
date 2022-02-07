@@ -113,7 +113,7 @@ a.selector-chooseall,
 #header-btn .icon-arrow-right {
   &:after {
     @extend %icon;
-    margin-right: -$icon-spacing;
+    margin-right: calc(var(--icon-spacing) * -1);
     margin-left: 5px;
 
     vertical-align: middle;
@@ -212,37 +212,37 @@ a[id*="clocklink"] {
 }
 
 .related-lookup {
-  @include button-variant($btn-action-color, $btn-action-bgcolor, $btn-action-border-color, true);
+  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
 
   padding: 0;
 
   &:before {
-    color: $white;
+    color: var(--button-action-fg);
   }
 }
 
 .addlink,
 .addlink a {
-  color: $color-success;
+  color: var(--success);
 
   &:hover {
-    color: $color-success-dark !important;
+    color: color-lighten(var(--success), 0.2) !important;
   }
 }
 
 .changelink,
 .changelink a {
-  color: $color-primary;
+  color: var(--primary);
 
   &:hover {
-    color: $color-primary-dark !important;
+    color: color-lighten(var(--success), 0.2) !important;
   }
 }
 
 .deletelink,
 .deletelink a,
 a.deletelink {
-  color: $color-danger;
+  color: var(--danger);
 }
 
 .addlink,
@@ -266,11 +266,11 @@ a.deletelink {
 //.add-related,
 //.change-related,
 //.delete-related
-// //+button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border, true)
+// //+button-variant(var(--button-default-fg), var(--button-default-bg), $btn-default-border, true)
 // display: inline-block
 // // make sure that add another button has correct width and height on advanced setting #293
-// width: $btn-default-height
-// height: $btn-default-height
+// width: var(--button-height)
+// height: var(--button-height)
 // padding: 13px 5px !important
 // margin: 10px 0
 // // make sure that button has correct width and height on advanced setting #291
@@ -323,7 +323,7 @@ a.deletelink {
     &:before {
       margin: 0;
 
-      font-size: $font-size-normal;
+      font-size: var(--font-size-large);
     }
   }
 }
@@ -334,7 +334,7 @@ a.deletelink {
       &.icon {
         width: 15px;
         height: 15px;
-        margin: $icon-spacing 5px 0 0;
+        margin: var(--icon-spacing) 5px 0 0;
 
         // background: url("../img/icon_softroot.png") 0 0 no-repeat
 
@@ -345,7 +345,7 @@ a.deletelink {
 
 .cms-pagetree-container {
   .cms-icon {
-    padding: 0 0 0 $icon-spacing;
+    padding: 0 0 0 var(--icon-spacing);
   }
 
   .cms-icon-home {
@@ -365,8 +365,8 @@ a.deletelink {
 
     .selector-add,
     .selector-remove {
-      width: $icon-size;
-      height: $icon-size;
+      width: var(--icon-size);
+      height: var(--icon-size);
 
       text-indent: 0;
 
@@ -377,10 +377,10 @@ a.deletelink {
         margin-top: 0;
         margin-left: 0;
 
-        color: $white;
+        color: var(--primary-fg);
         vertical-align: top;
 
-        background-color: $selector-chosen-color;
+        background-color: var(--primary);
         border-radius: 10px;
       }
     }
@@ -393,12 +393,12 @@ a.deletelink {
         margin-top: 0;
         margin-left: 0;
 
-        color: $white;
+        color: var(--primary-fg);
 
         font-size: 14px;
         vertical-align: top;
 
-        background-color: $selector-chosen-color;
+        background-color: var(--primary);
         border-radius: 10px;
       }
     }
@@ -417,8 +417,8 @@ a.deletelink {
     font-size: 14px;
     line-height: 30px;
 
-    background-color: lighten($gray-light, 37%);
-    border: 1px solid lighten($gray-light, 30%);
+    //background-color: lighten($gray-light, 37%);
+    //border: 1px solid lighten($gray-light, 30%);
     border-radius: 3px;
 
     &::before {
@@ -426,24 +426,24 @@ a.deletelink {
     }
 
     &.add-related {
-      color: $color-primary;
+      color: var(--primary);
 
       &:hover {
-        color: $white;
+        color: var(--body-bg);
 
-        background-color: $color-primary;
-        border-color: $color-primary;
+        background-color: var(--primary);
+        border-color: var(--primary);
       }
     }
 
     &.change-related {
-      color: $gray-light;
+      color: var(--gray-3);
 
       &:hover {
-        color: $white;
+        color: var(--body-bg);
 
-        background-color: $gray-light;
-        border-color: $gray-light;
+        background-color: var(--gray-3);
+        border-color: var(--gray-3);
       }
     }
   }

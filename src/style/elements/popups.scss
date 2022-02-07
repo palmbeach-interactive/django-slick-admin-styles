@@ -1,13 +1,17 @@
 @charset "UTF-8";
 
 body.popup, body.slick-admin-cms.popup {
-  background-color: $popup-cms-bg;
+  background-color: var(--content-bg);
 
   #content {
     margin-top: 0;
 
     h1 {
-      padding: $form-outer-spacing 0;
+      padding: var(--form-spacing) 0;
+    }
+    h2 {
+      margin-top: 20px;
+      padding: 10px var(--form-spacing);
     }
   }
 
@@ -24,14 +28,14 @@ body.popup, body.slick-admin-cms.popup {
 
     a.cke_dialog_ui_button {
       display: inline-block;
-      height: $btn-default-height !important;
+      height: var(--button-height) !important;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
 
-      line-height: $btn-default-height !important;
+      line-height: var(--button-height) !important;
       vertical-align: middle;
 
-      border: $btn-border-size !important;
+      border: var(--button-border-size) !important;
       box-shadow: none !important;
     }
   }
@@ -42,7 +46,7 @@ body.popup.change-form {
     padding: 0;
 
     h1 {
-      padding: ($form-outer-spacing / 2) $form-outer-spacing;
+      padding: calc(var(--form-spacing) / 2) var(--form-spacing);
     }
   }
 

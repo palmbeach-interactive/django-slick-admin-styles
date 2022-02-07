@@ -19,7 +19,7 @@ body.filebrowser {
       margin-bottom: 0px !important;
 
       &:focus {
-        border-color: $color-primary;
+        border-color: var(--primary);
       }
     }
   }

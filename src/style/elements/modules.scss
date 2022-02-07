@@ -2,15 +2,15 @@
 
 //INLINE GROUPING ////////////////////////////////
 .inline-group {
-  margin: 0px;
+  margin: 0;
 
-  border-top: 1px solid $gray-lighter;
+  border-top: 1px solid var(--border-color);
 
   > h2 {
     margin-top: 20px;
     padding: 20px 30px 0;
 
-    color: $form-fieldset-title-color;
+    color: var(--form-fieldset-fg);
     font-weight: bold;
     text-transform: uppercase;
 
@@ -21,7 +21,7 @@
       margin-top: -3px;
       margin-right: 5px;
 
-      color: $form-fieldset-title-color;
+      color: var(--form-fieldset-fg);
       vertical-align: middle;
 
       transition: transform 0.3s ease-in-out;
@@ -34,7 +34,7 @@
     width: auto;
 
     thead th {
-      color: $gray-light;
+      color: var(--gray-3);
 
       background-color: transparent;
       border-top: 0;
@@ -48,7 +48,7 @@
       margin-bottom: 10px;
       padding-left: 0;
 
-      color: $font-color;
+      color: var(--body-quiet-color);
 
       background-color: transparent;
     }
@@ -56,12 +56,12 @@
   }
 
   .inline-related {
-    margin: 30px;
+    margin-top: var(--form-spacing);
 
-    border: 1px solid $gray-lighter;
+    border: 1px solid var(--hairline-color);
 
     &.ui-sortable-helper {
-      background-color: $form-default-bg;
+      background-color: var(--content-bg);
       transform: scale(0.5);
     }
 
@@ -100,6 +100,10 @@ body.dashboard,
 
   .module {
     @include shadow-box;
+    overflow: hidden;
+
+    background-color: var(--content-bg);
+    border-radius: var(--module-border-radius);
 
     caption {
       padding-top: 8px;
@@ -109,17 +113,17 @@ body.dashboard,
       line-height: 30px;
       vertical-align: middle;
 
-      background-color: darken($white, 2);
-      border-bottom: 1px solid $gray-lighter;
+      background-color: var(--accent);
 
       a {
-        color: $color-primary;
+        color: var(--primary);
       }
     }
 
     tr {
+      background-color: var(--content-bg);
       &:hover {
-        background-color: lighten($color-mark, 3);
+        background-color: var(--accent);
       }
     }
 
@@ -133,73 +137,4 @@ body.dashboard,
   }
 }
 
-//CALENDARBOX MODULE ////////////////////////////////
-.module {
-  .vDateField,
-  .vTimeField {
-    margin-bottom: 10px;
-  }
 
-  &.calendarbox {
-    padding: 0;
-
-    border-radius: 0;
-
-    .calendar {
-      tr {
-        th,
-        .nonday {
-          background-color: transparent;
-        }
-      }
-
-      caption,
-      h2 {
-        color: $calendarbox-caption-color;
-
-        background-color: $calendarbox-caption-bg;
-      }
-
-      td {
-        &.selected {
-          a {
-            background-color: $calendarbox-selected-bg;
-          }
-        }
-
-        a {
-          &:focus,
-          &:hover {
-            background-color: lighten($calendarbox-selected-bg, 5);
-          }
-        }
-      }
-
-      .timelist {
-        a {
-          &:focus,
-          &:hover {
-            background-color: lighten($calendarbox-selected-bg, 5);
-          }
-        }
-      }
-    }
-  }
-}
-
-//CLOCKBOX MODULE ////////////////////////////////
-.module.clockbox {
-  border-radius: 0;
-
-  h2 {
-    color: $calendarbox-caption-color;
-
-    background-color: $calendarbox-caption-bg;
-  }
-
-  ul li {
-    a:hover, a:focus {
-      background-color: lighten($calendarbox-selected-bg, 5);
-    }
-  }
-}

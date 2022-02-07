@@ -1,0 +1,19 @@
+/*
+DJANGO Admin styles
+direct overwrites
+*/
+
+tr.alt {
+  background: var(--content-bg);
+}
+
+tr:nth-child(odd), .row-form-errors {
+  background: var(--content-bg);
+}
+
+tr:nth-child(even),
+tr:nth-child(even) .errorlist,
+tr:nth-child(odd) + .row-form-errors,
+tr:nth-child(odd) + .row-form-errors .errorlist {
+  background: var(--content-bg);
+}

@@ -1,0 +1,71 @@
+//CALENDARBOX MODULE ////////////////////////////////
+.module {
+  .vDateField,
+  .vTimeField {
+    margin-bottom: 10px;
+  }
+
+  &.calendarbox {
+    padding: 0;
+
+    border-radius: 0;
+
+    .calendar {
+      tr {
+        th,
+        .nonday {
+          background-color: transparent;
+        }
+      }
+
+      caption,
+      h2 {
+        color: var(--date-time-caption-fg);
+
+        background-color: var(--date-time-caption-bg);
+      }
+
+      td {
+        &.selected {
+          a {
+            background-color: var(--date-time-selected-bg);
+          }
+        }
+
+        a {
+          &:focus,
+          &:hover {
+            background-color: var(--date-time-selected-bg);
+          }
+        }
+      }
+
+      .timelist {
+        a {
+          &:focus,
+          &:hover {
+            background-color:  var(--date-time-selected-bg);
+          }
+        }
+      }
+    }
+  }
+}
+
+//CLOCKBOX MODULE ////////////////////////////////
+.module.clockbox {
+  border-radius: 0;
+
+  h2 {
+    color: var(--date-time-caption-fg);
+
+    background-color: var(--date-time-caption-bg);
+  }
+
+  ul li {
+    a:hover,
+    a:focus {
+      background-color:  var(--date-time-selected-bg);
+    }
+  }
+}

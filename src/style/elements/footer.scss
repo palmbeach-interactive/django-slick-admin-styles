@@ -3,15 +3,15 @@
 body {
   #footer {
     &.footer {
-      padding: 15px $page-outer-spacing;
+      padding: 15px var(--page-outer-spacing);
 
       p {
-        color: $gray-light;
-        font-size: $font-size-small;
+        color: var(--gray-3);
+        // font-size: $font-size-small;
       }
 
       a {
-        color: $footer-link-color;
+        color: var(--secondary);
       }
 
       .copyleft {

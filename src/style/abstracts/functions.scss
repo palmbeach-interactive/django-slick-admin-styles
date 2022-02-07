@@ -1,0 +1,62 @@
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+//-------------------------------------------------------
+// COLOR FUNCTIONS (HSL / CSS Custom Properties)
+//-------------------------------------------------------
+
+// return css color variable with different opacity value
+@function color-alpha($color, $opacity){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+// return css color variable with different luminosity value
+@function color-lighten($color, $lightness-multiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, $color-s, calc(#{$color-l} + #{($lightness-multiplier * 100)}#{'%'}));
+}
+
+// return css color variable with different luminosity value
+@function color-darken($color, $lightness-multiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, $color-s, calc(#{$color-l} + #{($lightness-multiplier * 100)}#{'%'}));
+}
+
+// return css color variable with different saturation value
+@function color-saturation($color, $saturation-multiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, calc(#{$color-s} * #{$saturation-multiplier}), $color-l);
+}
+
+//Outputs HEX colors as HSL color - with separated properties (H/S/L)
+@function color-hsl($color){
+  $hue: hue($color);
+  $saturation: saturation($color);
+  $lightness: lightness($color);
+
+  @return unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+}

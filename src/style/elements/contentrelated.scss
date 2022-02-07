@@ -7,7 +7,7 @@
     right: 0;
     z-index: 2;
 
-    width: $sidebar-width;
+    width: var(--sidebar-width);
     height: 100%;
     margin-top: 66px;
     margin-right: 0;
@@ -21,6 +21,6 @@
 body.slick-admin-cms {
   #content-related {
     margin-top: 0;
-    padding-top: $toolbar-height;
+    padding-top: var(--header-height);
   }
 }

@@ -1,0 +1,12 @@
+.errornote {
+  color: var(--surface-fg);
+  font-weight: normal;
+
+  background-color: var(--danger);
+  border: 0px solid transparent;
+  border-radius: var(--form-border-radius);
+}
+
+ul.errorlist {
+  color: var(--danger);
+}

@@ -1,6 +1,7 @@
 body.slick-admin {
   .cms-pagetree-root {
-    margin-top: $toolbar-height;
+    display: block !important;
+    margin-top: var(--header-height);
 
     box-shadow: none !important;
   }
@@ -10,8 +11,8 @@ body.slick-admin {
   }
 
   .cms-pagetree-section {
-    border-top: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 
     &.cms-pagetree-legend {
       border-top: 0;
@@ -21,10 +22,10 @@ body.slick-admin {
   .cms-pagetree-header {
     background-color: transparent;
     .cms-btn {
-      line-height: $btn-default-height;
+      line-height: var(--button-height);
 
       border-color: transparent !important;
-      border-radius: $btn-border-radius-base !important;
+      border-radius: var(--button-border-radius) !important;
     }
   }
 
@@ -34,7 +35,7 @@ body.slick-admin {
 
   .cms-icon {
     &.cms-icon-info {
-      color: $link-default-color !important;
+      color: var(--link-fg) !important;
     }
   }
 
@@ -50,11 +51,11 @@ body.slick-admin {
     width: 39px;
     height: 37px;
 
-    background-color: $btn-action-bgcolor !important;
+    background-color: var(--button-action-bg) !important;
     cursor: pointer;
 
     &:hover {
-      background-color: darken($btn-action-bgcolor, 10%) !important;
+      background-color: color-darken(var(--button-action-bg), 0.1) !important;
     }
   }
 
@@ -63,33 +64,33 @@ body.slick-admin {
   }
 
   .cms-btn-action {
-    background-color: $btn-action-bgcolor !important;
+    background-color: var(--button-action-bg) !important;
 
     &:hover {
-      background-color: darken($btn-action-bgcolor, 10%) !important;
+      background-color: color-darken(var(--button-action-bg), 0.1) !important;
     }
   }
 
   .cms-pagetree-header-filter-container .selected a {
-    color: $link-default-color;
+    color: var(--link-fg);
   }
 
   .cms-pagetree-dropdown-menu a:active, .cms-pagetree-dropdown-menu a:focus, .cms-pagetree-dropdown-menu a:hover {
-    background-color: $btn-action-bgcolor !important;
+    background-color: var(--button-action-bg) !important;
   }
 
   //publish states
   .cms-pagetree-node-state-published {
-    background-color: $color-success;
-    border-color: $color-success;
+    background-color: var(--success);
+    border-color: var(--success);
   }
 
   .cms-tree-item-menu .cms-icon-check-square:before {
-    color: $color-success;
+    color: var(--success);
   }
 
   .cms-pagetree-node-state-dirty {
-    background-color: $color-warning;
-    border-color: $color-warning;
+    background-color: var(--warning);
+    border-color: var(--warning);
   }
 }

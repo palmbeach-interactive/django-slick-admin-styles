@@ -12,7 +12,7 @@ html, body {
 
 body {
   &.slick-admin {
-    background-color: $body-bg;
+    background-color: var(--body-bg);
   }
 
   abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
@@ -24,7 +24,7 @@ body {
   }
 
   #content {
-    padding: 0 $page-outer-spacing;
+    padding: 0 var(--page-outer-spacing);
 
     > h1 {
       padding: 30px 0;
@@ -40,14 +40,14 @@ body {
       float: none;
       width: 100%;
 
-      background-color: $form-bg;
+      background-color: var(--content-bg);
 
       .row1 {
-        background-color: $form-bg;
+        background-color: var(--content-bg);
       }
 
       .row2 {
-        background-color: $form-bg;
+        background-color: var(--content-bg);
       }
     }
   }
@@ -59,24 +59,24 @@ body.login #content #content-main {
 
 body.slick-admin-cms {
   #content {
-    //margin-top: $toolbar-height
+    //margin-top: var(--header-height)
 
   }
 }
 
 ul.messagelist li {
-  padding: 15px $page-outer-spacing;
+  padding: 15px var(--page-outer-spacing);
 
   &:before {
     padding-right: 5px;
-    padding-left: $icon-spacing;
+    padding-left: var(--icon-spacing);
 
-    color: $color-danger;
+    color: var(--danger);
     font-size: 24px !important;
   }
 
   &.error {
-    background-color: lighten($color-danger, 30);
+    background-color: color-lighten(var(--danger), 0.3);
   }
 }
 
@@ -98,15 +98,3 @@ ul.messagelist li {
   }
 }
 
-.errornote {
-  color: $errornote-color;
-  font-weight: normal;
-
-  background-color: $errornote-bg;
-  border: $errornote-border;
-  border-radius: $form-default-border-radius;
-}
-
-ul.errorlist {
-  color: $errornote-bg;
-}

@@ -1,7 +1,7 @@
 
 
 @mixin shadow-box {
-  box-shadow: $element-default-shadow;
+  box-shadow: var(--default-shadow);
 }
 
 //minimal breakpoint mixins
@@ -42,4 +42,16 @@
       @media (max-width: #{nth($breakpoint, 2)})  { @content; }
     }
   }
+}
+
+//Outputs HEX colors as HSL color - with separated properties (H/S/L)
+@mixin define-hsl-color($color-property, $color){
+  $hue: hue($color);
+  $saturation: saturation($color);
+  $lightness: lightness($color);
+
+  #{$color-property}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+  #{$color-property}-h: #{$hue};
+  #{$color-property}-s: #{$saturation};
+  #{$color-property}-l: #{$lightness};
 }

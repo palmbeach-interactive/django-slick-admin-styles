@@ -47,17 +47,24 @@ input[type=number],
 textarea,
 select,
 .vTextField {
-  line-height: $form-default-height;
+  line-height: var(--form-input-height);
   vertical-align: middle;
 
-  border-radius: $form-default-border-radius;
+  border-radius: var(--form-border-radius);
 }
 
 //mark parler translatable fields
 label.translatable-field {
-  &:after {
+  color: var(--primary);
+
+  &:before {
     @extend %icon;
-    margin-left: 5px;
+    position: absolute;
+
+    margin-top: 15px;
+    margin-left: -24px;
+
+    color: var(--primary);
 
     vertical-align: middle;
 
@@ -78,8 +85,8 @@ label.translatable-field {
   input,
   select,
   textarea {
-    background-color: lighten($color-danger, 20%);
-    border-color: $color-danger;
+    background-color: color-lighten(var(--danger), 0.2);
+    border-color: var(--danger);
   }
 }
 
@@ -88,7 +95,7 @@ label.translatable-field {
     ul {
       &.errorlist {
         li {
-          color: $color-danger;
+          color: var(--danger);
         }
       }
     }
@@ -107,26 +114,26 @@ form select,
 #changelist .actions select,
 form #searchbar {
   min-width: 160px;
-  height: $form-default-height !important;
+  height: var(--form-input-height) !important;
   margin: 0 0 1rem;
   padding: 0px 40px 0px 10px !important;
   padding-right: 1.5rem;
 
-  color: $form-input-color;
-  font-size: $font-size-small;
-  line-height: $btn-default-height;
+  color: var(--form-input-fg);
+  // font-size: $font-size-small;
+  line-height: var(--button-height);
   text-indent: 1px;
   text-overflow: "";
   vertical-align: top !important;
 
-  background-color: $form-default-bg !important;
+  background-color: var(--content-bg) !important;
   background-repeat: no-repeat;
   background-position: right -1rem center;
-  // background: url(../img/icon_arrow_down.png) right center no-repeat $form-default-bg !important;
+  // background: url(../img/icon_arrow_down.png) right center no-repeat var(--content-bg) !important;
   background-size: 25px !important;
   background-origin: content-box;
-  border: 1px solid $form-select-border-color;
-  border-radius: $form-default-border-radius;
+  border: 1px solid var(--border-color);
+  border-radius: var(--form-border-radius);
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -149,10 +156,10 @@ form {
         margin-bottom: 0 !important;
         padding: 0 10px !important;
 
-        line-height: $btn-default-height;
+        line-height: var(--button-height);
 
         background-image: none !important;
-        border-radius: $form-default-border-radius;
+        border-radius: var(--form-border-radius);
       }
     }
   }
@@ -179,7 +186,7 @@ body.change-form {
 //form defaults
 /* stylelint-disable-next-line no-duplicate-selectors */
 form {
-  background-color: $form-bg;
+  background-color: var(--content-bg);
 
   textarea {
     min-width: 368px;
@@ -198,18 +205,17 @@ form {
   .vTextField {
     padding: 0px 10px;
 
-    color: $form-input-color;
+    color: var(--form-input-fg);
 
+    background-color: var(--content-bg);
     background-image: none;
     border-radius: 0;
 
     //margin-bottom: .5rem!important
 
     &:focus {
-      color: $form-focus-color;
-
-      background-color: $form-focus-background-color;
-      border-color: $form-focus-border-color;
+      background-color: var(--form-input-focus-bg);
+      border-color: var(--form-input-focus-fg);
       outline: none;
     }
   }
@@ -218,14 +224,14 @@ form {
     margin-bottom: 0;
     padding: 20px 30px;
 
-    background-color: $submit-row-bg;
+    background-color: var(--form-submit-row);
     border: 0;
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px solid var(--border-color);
     border-radius: 0;
 
     &:first-child {
       border-top: 0;
-      border-bottom: 1px solid $gray-lighter;
+      border-bottom: 1px solid var(--border-color);
     }
   }
 
@@ -239,15 +245,15 @@ form {
   }
 
   .errornote {
-    color: $white;
+    color: var(--primary-fg);
 
-    background-color: $color-danger;
+    background-color: var(--danger);
     border: 0;
     border-radius: 0;
   }
 
   fieldset {
-    padding: 10px $form-outer-spacing;
+    padding: 10px var(--form-spacing);
 
     border-radius: 0 !important;
 
@@ -265,7 +271,7 @@ form {
   }
 
   input {
-    // height: $form-default-height;
+    // height: var(--form-input-height);
   }
 }
 
@@ -277,7 +283,7 @@ form fieldset {
       padding: 20px 0 10px;
       padding-left: 0;
 
-      color: $form-fieldset-title-color;
+      color: var(--form-fieldset-fg);
       font-weight: 200;
       font-size: 15px;
       letter-spacing: 1px;
@@ -285,7 +291,7 @@ form fieldset {
 
       background-color: transparent;
       border-color: #eee;
-      border-bottom: 1px solid $form-select-border-color;
+      border-bottom: 1px solid var(--hairline-color);
 
       &::before {
         @extend .material-icons;
@@ -293,7 +299,7 @@ form fieldset {
         margin-right: 5px;
         margin-left: -20px;
 
-        color: $form-fieldset-title-color;
+        color: var(--form-fieldset-fg);
 
         //content: ''
         vertical-align: middle;
@@ -305,41 +311,46 @@ form fieldset {
 
   &.collapse {
     margin-bottom: 0;
-    padding: 15px ($form-outer-spacing - $collapse-border-left-size);
+    padding: 15px calc(var(--form-spacing) - var(--collapse-border-left-size));
 
-    background-color: $collapse-background-color;
+    background-color: var(--content-bg);
     border: 0;
-    border-top: 1px solid $collapse-border-color;
-    border-left: $collapse-border-left-size solid $expanded-border-color;
+    // border-top: 1px solid var(--border-color);
+    border-left: var(--default-border-size-large) solid var(--primary);
 
     &:hover {
-      background-color: $collapse-background-color;
+      background-color: var(--content-bg);
     }
 
     h2 {
-      color: $collapse-hilight-color;
+      color: var(--primary);
+      line-height: var(--button-height);
       text-transform: uppercase;
 
-      background-color: $collapse-header-bg;
+      background-color: var(--content-bg);
 
       a.collapse-toggle, a.collapse-toggle:focus {
         position: absolute;
 
         margin: 0 -5px;
         margin-top: -1px;
-        padding: 0 4px;
+        padding: 0 20px;
 
-        color: $collapse-toggle-color;
+        color: var(--body-quiet-color);
+        font-weight: 400;
+        font-size: var(--font-size);
+
+        line-height: var(--button-height);
+        text-transform: capitalize;
+
         text-decoration: none;
 
-        background-color: $collapse-toggle-bg;
-        border: 1px solid $collapse-border-color;
-        border-radius: $btn-border-radius-base;
+        background-color:var(--content-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--button-border-radius);
 
         &:hover {
-          color: $collapse-toggle-hover-color;
-
-          background-color: $collapse-hilight-color;
+          background-color: var(--border-color);
         }
       }
     }
@@ -355,7 +366,7 @@ form fieldset {
         margin-top: -3px;
         margin-right: 5px;
 
-        color: $collapse-hilight-color;
+        color: var(--primary);
         vertical-align: middle;
 
         transition: transform 0.3s ease-in-out;
@@ -370,8 +381,8 @@ form fieldset {
 
     background-color: transparent;
     border: 0;
-    border-top: 1px solid $collapse-border-color;
-    border-left: $collapse-border-left-size solid transparent;
+    // border-top: 1px solid var(--border-color);
+    border-left: var(--default-border-size-large) solid transparent;
 
     > h2 {
       margin-bottom: 0;
@@ -398,14 +409,13 @@ body {
         margin: 0;
         padding: 0;
 
-        background: none !important;
-        background-color: $selector-bg !important;
+        background-color: var(--content-bg);
         border-radius: 0;
 
         option {
           padding: 5px 8px;
 
-          border-bottom: 1px solid $selector-item-border;
+          border-bottom: 1px solid var(--border-color);
         }
       }
 
@@ -424,23 +434,23 @@ body {
       }
 
       .selector-available select {
-        height: $selector-height !important;
+        height: 150px !important;
       }
 
       .selector-chosen select {
-        height: ($selector-height + $selector-filter-height) !important;
+        height: 200px !important;
 
         option {
-          color: $selector-chosen-color;
+          color: var(--primary);
           text-transform: uppercase;
         }
       }
 
       .selector-available, .selector-chosen {
         h2 {
-          color: $font-color;
+          color: var(--body-quiet-color);
 
-          background-color: $white;
+          background-color: var(--content-bg);
           border-radius: 0;
         }
       }

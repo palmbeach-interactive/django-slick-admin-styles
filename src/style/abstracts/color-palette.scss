@@ -1,0 +1,121 @@
+/* VARIABLE DEFINITIONS */
+$color-palette: (
+  "primary": #5cb630,
+  "secondary": #4751cc,
+  "accent": #e9fdd4,
+  "success": #66cc33,
+  "danger": #e05162,
+  "warning": #f28622,
+
+
+  "white": #ffffff,
+  "black": #000000,
+  "gray-0": #{color-lighten(var(--body-bg), 0.1)},
+  "gray-1": #{color-lighten(var(--black), 0.2)},
+  "gray-2": #{color-lighten(var(--black), 0.3)},
+  "gray-3": #{color-lighten(var(--black), 0.4)},
+  "gray-4": #{color-lighten(var(--black), 0.5)},
+  "gray-5": #{color-lighten(var(--black), 0.6)},
+  "gray-6": #{color-lighten(var(--black), 0.7)},
+  "gray-7": #{color-lighten(var(--black), 0.8)},
+  "gray-8": #{color-lighten(var(--black), 0.9)},
+  "gray-9": #{color-lighten(var(--black), 0.93)},
+
+
+  "primary-fg": var(--white),
+  "body-fg": var(--gray-3),
+  "body-bg": var(--gray-9),
+  "body-quiet-color": #666,
+  "body-loud-color": #000,
+  "header-color": var(--gray-8),
+  "header-branding-color": var(--primary),
+  "header-bg": var(--gray-1),
+  "header-link-color": var(--gray-8),
+  "breadcrumbs-fg": #c4dce8,
+  "breadcrumbs-link-fg": var(--body-bg),
+  "breadcrumbs-bg": var(--white),
+  "link-fg": var(--primary),
+  "link-hover-color": #{color-lighten(var(--primary), 0.1)},
+  "link-selected-fg": #{color-darken(var(--primary), 0.1)},
+  "hairline-color": var(--gray-9),
+  "border-color": var(--gray-7),
+  "error-fg": #ba2121,
+  "message-success-bg": #{color-lighten(var(--primary), 0.38)},
+  "message-warning-bg": #{color-lighten(var(--warning), 0.38)},
+  "message-error-bg": #{color-lighten(var(--error), 0.38)},
+  "darkened-bg": #f8f8f8,
+  "selected-bg": #e4e4e4,
+  "selected-row": #{color-lighten(var(--primary), 0.45)},
+  "button-fg": var(--white),
+  "button-bg": var(--gray-7),
+  "button-hover-bg":  var(--gray-8),
+  "default-button-bg": var(--primary),
+  "default-button-hover-bg":  #{color-lighten(var(--primary), 0.05)},
+  "close-button-bg": #888,
+  "close-button-hover-bg": #747474,
+  "delete-button-bg": var(--danger),
+  "delete-button-hover-bg": #a41515,
+  "object-tools-fg": var(--button-fg),
+  "object-tools-bg": var(--close-button-bg),
+  "object-tools-hover-bg": var(--close-button-hover-bg),
+
+
+  "link-highlight-fg": var(--danger),
+  "login-bg": linear-gradient(var(--primary), #{color-lighten(var(--primary), 0.4)},),
+  "login-modal-bg": var(--white),
+  "active-row": var(--accent),
+  "content-bg": var(--white),
+  "surface-fg": var(--white),
+
+  "form-input-fg": var(--gray-2),
+  "form-input-focus-fg": var(--primary),
+  "form-input-focus-bg": var(--accent),
+  "form-fieldset-fg": var(--primary),
+  "form-submit-row": #{color-lighten(var(--black), 0.96)},
+
+  "lang-bar-available-fg": var(--primary),
+  "lang-bar-available-bg": var(--gray-5),
+  "lang-bar-available-border": var(--gray-5),
+  "lang-bar-current-fg": var(--white),
+  "lang-bar-current-bg": var(--primary),
+  "lang-bar-default-fg": var(--gray-3),
+  "lang-bar-default-bg": var(--gray-4),
+  "lang-bar-default-border": var(--gray-4),
+
+  "button-default-fg": var(--gray-3),
+  "button-default-bg": var(--gray-7),
+  "button-default-border": transparent,
+
+  "button-action-fg": var(--white),
+  "button-action-bg": var(--primary),
+
+  "button-light-fg": var(--gray-3),
+  "button-light-bg": var(--white),
+
+  "button-danger-fg": var(--white),
+  "button-danger-bg": var(--danger),
+
+  "button-lang-fg": var(--gray-3),
+  "button-lang-bg": var(--white),
+  "button-lang-border": var(--gray-4),
+
+  "button-lang-active-fg": var(--white),
+  "button-lang-active-bg": var(--primary),
+  "button-lang-active-border": transparent,
+
+  "date-time-caption-bg": var(--primary),
+  "date-time-caption-fg": var(--white),
+  "date-time-selected-bg": var(--primary),
+);
+
+:root {
+  @each $color-name, $color in $color-palette {
+    @debug str-index(quote($color), "#");
+    @if str-index(quote($color), "#") == 1 {
+      @include define-hsl-color(--#{$color-name}, $color);
+    }
+    @else {
+      --#{$color-name}: #{$color};
+    }
+  }
+}

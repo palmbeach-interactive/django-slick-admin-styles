@@ -2,61 +2,17 @@
 // HEADER
 //##############################################################################
 
-body.slick-admin.login {
-  #header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-
-    overflow: visible;
-  }
-
-  #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-
-    background: $login-background-gradient;
-    background-color: $login-background-color;
-    border: 0px;
-    border-radius: 0px;
-
-    #content {
-
-      //max-height: 300px
-      max-width: 24em;
-
-      background-color: $login-window-background-color;
-      box-shadow: $element-default-shadow;
-    }
-
-    #footer.footer {
-      clear: none;
-      padding: 20px;
-
-      .content {
-        color: $login-footer-color;
-      }
-    }
-  }
-}
-
 body.slick-admin {
   #header {
-    height: $toolbar-height;
-    padding: 10px $page-outer-spacing;
+    height: var(--header-height);
+    padding: 10px var(--page-outer-spacing);
 
-    color: $toolbar-color;
+    color: var(--header-branding-color);
 
-    background-color: $toolbar-bg;
+    background-color: var(--header-bg);
 
     h1 {
-      color: $toolbar-color;
+      color: var(--header-branding-color);
       font-size: 18px;
     }
 
@@ -65,13 +21,16 @@ body.slick-admin {
     }
   }
 
-  #branding h1 a:link, #branding h1 a:visited, #header a:link, #header a:visited {
-    color: $toolbar-link-color;
+  #branding h1 a:link,
+  #branding h1 a:visited,
+  #header a:link,
+  #header a:visited {
+    color: var(--header-link-color);
 
     cursor: pointer;
 
     &:hover {
-      border-color: $toolbar-link-color;
+      border-color: var(--header-link-color);
     }
   }
 
@@ -91,7 +50,8 @@ body.slick-admin {
     }
   }
 
-  #header-logo, #header h1 {
+  #header-logo,
+  #header h1 {
     float: left;
   }
 
@@ -112,15 +72,15 @@ body.slick-admin-cms {
     z-index: 9999;
 
     width: 100% !important;
-    height: $toolbar-height;
+    height: var(--header-height);
     padding: 0;
     overflow: visible;
 
-    color: $gray-darkest !important;
+    color: var(--header-color);
 
-    background-color: $toolbar-bg;
+    background-color: var(--header-bg);
     background-image: none;
-    box-shadow: $toolbar-shadow;
+    box-shadow: var(--default-shadow);
 
     h1, a, span {
       line-height: normal;
@@ -132,15 +92,6 @@ body.slick-admin-cms {
       h1 {
         // hides h1 because of text appears in list on dropdown menu
         display: none;
-        float: left;
-        height: $toolbar-height;
-        margin: 0;
-        padding: 0;
-
-        color: $gray-darkest;
-        font-weight: bold;
-        font-size: $font-size-normal;
-        line-height: $toolbar-height;
       }
     }
 
@@ -149,11 +100,11 @@ body.slick-admin-cms {
       display: none;
       float: right;
       width: 270px;
-      height: $toolbar-height;
+      height: var(--header-height);
       padding: 0;
 
       font-size: 13px;
-      line-height: $toolbar-height;
+      line-height: var(--header-height);
 
       strong {
         font-size: 13px;
@@ -163,20 +114,20 @@ body.slick-admin-cms {
     a {
       &:link,
       &:visited {
-        color: $gray-darkest;
+        color: var(--header-link-color);
       }
     }
 
     .toolbar-item-navigation-break {
       height: 1px;
-      margin: 4px 0;
+      margin: 0;
       padding: 0 0 3px;
       overflow: hidden;
 
       text-align: left;
       text-indent: -119988px;
 
-      border-bottom: 1px solid $gray-lighter;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .toolbar-item-navigation {
@@ -189,32 +140,32 @@ body.slick-admin-cms {
         list-style-type: none;
 
         .menu-item-open {
-          color: $white !important;
+          color: var(--surface-fg);
 
-          background: $color-primary;
+          background: var(--primary);
 
           // removes hover color #289
           &:hover {
-            color: $white !important;
+            color: var(--surface-fg);
           }
         }
 
         ul {
           position: absolute;
-          top: $toolbar-height;
+          top: var(--header-height);
           left: 0;
 
           display: none;
 
           min-width: 180px;
           margin-left: 0;
-          padding: 4px 0;
+          padding: 0;
 
-          background: rgba($white, 0.97);
-          border: 1px solid $white;
+          background: var(--header-bg);
+          border: 1px solid var(--hairline-color);
           border-top: none;
-          border-radius: $toolbar-menu-border-radius;
-          box-shadow: $toolbar-menu-shadow;
+          border-radius: 0;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 
           li {
             float: none;
@@ -223,7 +174,6 @@ body.slick-admin-cms {
               display: block;
               float: none;
               height: 30px;
-              padding: 0 10px 0 15px !important;
 
               font-weight: normal;
               line-height: 30px;
@@ -233,13 +183,13 @@ body.slick-admin-cms {
 
               span {
                 font-weight: bold;
-                font-size: $font-size-normal;
+                font-size: var(--font-size-large);
               }
 
               &:hover {
-                color: $white !important;
+                color: var(--surface-fg);
 
-                background: $color-primary;
+                background: var(--primary);
               }
             }
           }
@@ -255,20 +205,14 @@ body.slick-admin-cms {
 
         a {
           float: left;
-          height: $toolbar-height;
+          height: var(--header-height);
           padding: 0 10px;
 
-          color: $black;
-          font-size: $font-size-normal;
-          line-height: $toolbar-height;
+          font-size: var(--font-size-large);
+          line-height: var(--header-height);
 
           list-style-type: none;
           cursor: default;
-
-          // removes hover color #289
-          &:hover {
-            color: $black !important;
-          }
         }
       }
     }
@@ -277,13 +221,17 @@ body.slick-admin-cms {
       float: right;
       margin-right: 20px;
 
-      line-height: $toolbar-height;
+      line-height: var(--header-height);
+
+      a {
+        @extend .admin-action-button;
+      }
     }
 
     #header-logo {
       float: left;
       margin-right: 15px;
-      padding-left: $toolbar-left-space;
+      padding-left: 20px;
 
       span {
         display: none;
@@ -291,24 +239,24 @@ body.slick-admin-cms {
 
       a {
         display: block;
-        height: $toolbar-height;
+        height: var(--header-height);
 
-        color: $branding-color;
+        color: var(--primary);
         font-size: 21px;
-        line-height: $toolbar-height;
+        line-height: var(--header-height);
         vertical-align: middle;
 
         &:hover {
-          color: $branding-hover-color;
+          color: #{color-lighten(var(--primary), 0.1)};
         }
 
         &:before {
           box-sizing: border-box;
-          height: $toolbar-height;
+          height: var(--header-height);
           margin-right: 0;
 
           font-size: 21px;
-          line-height: $toolbar-height;
+          line-height: var(--header-height);
           vertical-align: inherit;
         }
       }

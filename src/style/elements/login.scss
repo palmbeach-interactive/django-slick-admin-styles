@@ -1,5 +1,42 @@
+body.slick-admin.login {
+  #header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    overflow: visible;
+  }
+
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    background: var(--login-bg);
+    border: 0px;
+    border-radius: 0px;
+
+    #content {
+      min-width: 300px;
+      max-width: 24em;
+
+      background-color: var(--login-modal-bg);
+      box-shadow: var(--default-shadow);
+    }
+
+    #footer.footer {
+      padding: 20px;
+    }
+  }
+}
+
 body.login {
-  background-color: $body-bg;
+  background-color: var(--body-bg);
 
   #site-name {
     display: none;
@@ -37,7 +74,7 @@ body.login {
       background: 0 0;
       background-color: transparent;
       border: 0;
-      border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+      border-bottom: 1px solid var(--border-color);
       border-radius: 0;
       box-shadow: none;
 
@@ -46,7 +83,7 @@ body.login {
       &:focus {
         padding-bottom: 1px !important;
 
-        border-bottom: 2px solid $color-primary;
+        border-bottom: 2px solid var(--primary);
       }
 
       label {

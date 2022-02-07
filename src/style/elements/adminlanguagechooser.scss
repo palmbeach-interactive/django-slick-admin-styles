@@ -3,7 +3,20 @@
     .label {
       margin-right: 15px;
 
-      color: $gray-light;
+      color: var(--gray-3);
     }
   }
+}
+
+#content-main .available-languages {
+  font-size: 100%;
+}
+
+#content-main .available-languages .lang-code {
+  background: var(--content-bg);
+  filter: grayscale(100%);
+}
+
+#content-main .available-languages .lang-code.current {
+  filter: grayscale(0);
 }

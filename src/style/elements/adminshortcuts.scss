@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 .admin_shortcuts .shortcuts {
-  margin-top: $toolbar-height;
-  padding: 0 $page-outer-spacing;
+  margin-top: var(--header-height);
+  padding: 0 var(--page-outer-spacing);
 
-  background-color: $body-bg;
+  background-color: var(--body-bg);
   box-shadow: none;
 
   h2 {
