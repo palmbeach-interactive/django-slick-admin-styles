@@ -312,7 +312,7 @@ a.deletelink {
   }
 
   .changelink {
-    // background-image: url("../img/icon_changelink_white.png")
+    background-image: url("./../asset/img/icon_changelink_white.png");
 
   }
 
@@ -336,7 +336,7 @@ a.deletelink {
         height: 15px;
         margin: var(--icon-spacing) 5px 0 0;
 
-        // background: url("../img/icon_softroot.png") 0 0 no-repeat
+        background: url("./../asset/img/icon_softroot.png") 0 0 no-repeat;
 
       }
     }
@@ -437,13 +437,13 @@ a.deletelink {
     }
 
     &.change-related {
-      color: var(--gray-3);
+      color: var(--button-default-fg);
 
       &:hover {
-        color: var(--body-bg);
+        color: var(--button-default-fg);
 
-        background-color: var(--gray-3);
-        border-color: var(--gray-3);
+        background-color: var(--button-default-bg);
+        border-color: var(--button-default-bg);
       }
     }
   }
@@ -453,12 +453,12 @@ a.deletelink {
 // stylelint-disable-next-line media-feature-name-no-unknown
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .tree .changelink {
-    // background-image: url("../img/icon_changelink_white@2x.png")
+    background-image: url("./../asset/img/icon_changelink_white@2x.png");
     background-size: 11px;
   }
 
   #sitemap li .col-softroot span.icon {
-    // background-image: url("../img/icon_softroot@2x.png")
+    background-image: url("./../asset/img/icon_softroot@2x.png");
     background-size: 15px;
   }
 }

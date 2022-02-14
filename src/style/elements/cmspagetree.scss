@@ -93,4 +93,9 @@ body.slick-admin {
     background-color: var(--warning);
     border-color: var(--warning);
   }
+
+  &.cms-admin-sideframe:not(.djangocms-admin-style) {
+    margin-top: 0;
+  }
 }
+

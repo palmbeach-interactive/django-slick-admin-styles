@@ -17,3 +17,40 @@ tr:nth-child(odd) + .row-form-errors,
 tr:nth-child(odd) + .row-form-errors .errorlist {
   background: var(--content-bg);
 }
+
+td, th {
+  font-size: var(--font-size);
+  line-height: calc(var(--font-size) + (var(--font-size) / 3));
+}
+
+input,
+textarea,
+select,
+.form-row p,
+form .button {
+  font-size: var(--font-size);
+}
+
+li,
+dt,
+dd {
+  font-size: var(--font-size);
+  line-height: calc(var(--font-size) + (var(--font-size) / 2));
+}
+
+#content-related h4 {
+  font-size: var(--font-size);
+}
+
+ul.errorlist li {
+  font-size: var(--font-size);
+}
+
+.module h2,
+.module caption, .inline-group h2 {
+  font-size: var(--font-size);
+}
+
+ul.messagelist li {
+  font-size: var(--font-size);
+}

@@ -55,7 +55,7 @@ select,
 
 //mark parler translatable fields
 label.translatable-field {
-  color: var(--primary);
+  color: var(--lang-bar-fg);
 
   &:before {
     @extend %icon;
@@ -64,7 +64,7 @@ label.translatable-field {
     margin-top: 15px;
     margin-left: -24px;
 
-    color: var(--primary);
+    color: var(--lang-bar-fg);
 
     vertical-align: middle;
 
@@ -126,10 +126,11 @@ form #searchbar {
   text-overflow: "";
   vertical-align: top !important;
 
+  background: url('./../asset/img/icon_arrow_down.png') right center no-repeat var(--content-bg) !important;
+
   background-color: var(--content-bg) !important;
   background-repeat: no-repeat;
   background-position: right -1rem center;
-  // background: url(../img/icon_arrow_down.png) right center no-repeat var(--content-bg) !important;
   background-size: 25px !important;
   background-origin: content-box;
   border: 1px solid var(--border-color);
@@ -179,7 +180,7 @@ form {
 //change form boxed
 body.change-form {
   form {
-    @include shadow-box;
+    box-shadow: var(--default-shadow);
   }
 }
 

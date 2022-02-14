@@ -80,6 +80,7 @@ body.slick-admin-cms {
 
     background-color: var(--header-bg);
     background-image: none;
+    border-bottom: 1px solid var(--border-color);
     box-shadow: var(--default-shadow);
 
     h1, a, span {
@@ -88,6 +89,7 @@ body.slick-admin-cms {
 
     #branding {
       width: 100%;
+      height: 100%;
 
       h1 {
         // hides h1 because of text appears in list on dropdown menu
@@ -218,13 +220,19 @@ body.slick-admin-cms {
     }
 
     #header-btn {
+      display: flex;
+      align-items: center;
       float: right;
+      height: 100%;
       margin-right: 20px;
 
-      line-height: var(--header-height);
-
       a {
-        @extend .admin-action-button;
+        @extend .button-action;
+        overflow: hidden;
+
+        font-size: var(--font-size);
+
+        border: 0;
       }
     }
 

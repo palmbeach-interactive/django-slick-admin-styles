@@ -1,9 +1,3 @@
-
-
-@mixin shadow-box {
-  box-shadow: var(--default-shadow);
-}
-
 //minimal breakpoint mixins
 //https://benjaminhorn.io/code/responsive-sass-mixin-helpers/
 @mixin breakpoint-from($media) {

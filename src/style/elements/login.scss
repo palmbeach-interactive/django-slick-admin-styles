@@ -99,7 +99,7 @@ body.login {
       border-top: 0;
 
       input[type=submit] {
-        @extend .admin-action-button;
+        @extend .button-action;
       }
     }
   }

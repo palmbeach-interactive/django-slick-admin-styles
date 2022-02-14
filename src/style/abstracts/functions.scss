@@ -39,7 +39,7 @@
   $color-h: var(#{$color+'-h'});
   $color-s: var(#{$color+'-s'});
   $color-l: var(#{$color+'-l'});
-  @return hsl($color-h, $color-s, calc(#{$color-l} + #{($lightness-multiplier * 100)}#{'%'}));
+  @return hsl($color-h, $color-s, calc(#{$color-l} - #{($lightness-multiplier * 100)}#{'%'}));
 }
 
 // return css color variable with different saturation value
@@ -59,4 +59,25 @@
   $lightness: lightness($color);
 
   @return unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+}
+
+@function tint($color, $percentage) {
+  @return mix(#FFF, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}
+
+@function color-shades($color: #efefef,  $steps: 5, $range: 50%) {
+  $map: ();
+  @for $i from 0 through $steps {
+    $amount: (($steps - $i) * (100 / $steps) / 100 * $range);
+    $map: map-merge($map, ($i : shade($color, $amount)));
+  }
+  @for $i from 0 through $steps {
+    $amount:  ($i * (100 / $steps) / 100 * $range);
+    $map: map-merge($map, ($steps + $i : tint($color, $amount)));
+  }
+  @return $map;
 }

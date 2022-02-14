@@ -35,12 +35,12 @@ body {
     }
 
     #content-main {
-      @include shadow-box;
 
       float: none;
       width: 100%;
 
       background-color: var(--content-bg);
+      box-shadow: var(--default-shadow);
 
       .row1 {
         background-color: var(--content-bg);

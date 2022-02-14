@@ -1,116 +1,123 @@
-/* VARIABLE DEFINITIONS */
-$color-palette: (
-  "primary": #5cb630,
-  "secondary": #4751cc,
-  "accent": #e9fdd4,
-  "success": #66cc33,
-  "danger": #e05162,
-  "warning": #f28622,
+/* COLOR DEFINITIONS */
+// https://mdigi.tools/color-shades/
 
+// shades calculated from source color, steps from source to target (light/dark)
+$primary: #5cb630;
+$primary-shades: color-shades($color: $primary, $steps: 5, $range: 90%);
+// generated values for reference purposes only
+@debug "$primary-shades:" $primary-shades;
+$primary-generated: (0: #0c1308, 1: #203616, 2: #355823, 3: #4a7b31, 4: #5e9d3f, 5: #73c04d, 6: #8ccb6d, 7: #a5d78d, 8: #bfe2ad, 9: #d8edcd, 10: #f1f9ed);
+
+$secondary: #4b4ad1;
+$secondary-shades: color-shades($secondary, 5, 70%);
+// generated values for reference purposes only
+@debug "$secondary-shades:" $secondary-shades;
+$secondary-generated:  (0: #21183f, 1: #31245c, 2: #402f79, 3: #503a96, 4: #5f46b4, 5: #6f51d1, 6: #8369d7, 7: #9782de, 8: #ab9ae4, 9: #c0b2eb, 10: #d4cbf1);
+
+$gray-shades: color-shades(#7f7f7f, 5, 99.55%);
+// generated values for reference purposes only
+@debug "$gray-shades:" $gray-shades;
+$gray-shades-generated: (0: #010101, 1: #1a1a1a, 2: #333333, 3: #4c4c4c, 4: #666666, 5: #7f7f7f, 6: #989898, 7: #b2b2b2, 8: #cbcbcb, 9: #e5e5e5, 10: #fefefe);
+
+
+$danger: #e05162;
+$warning:  #f28622;
+$accent: saturate(map-get($primary-shades, 10), 20%);
+$success: map-get($primary-shades, 6);
+
+$color-palette: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent": $accent,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
 
   "white": #ffffff,
   "black": #000000,
-  "gray-0": #{color-lighten(var(--body-bg), 0.1)},
-  "gray-1": #{color-lighten(var(--black), 0.2)},
-  "gray-2": #{color-lighten(var(--black), 0.3)},
-  "gray-3": #{color-lighten(var(--black), 0.4)},
-  "gray-4": #{color-lighten(var(--black), 0.5)},
-  "gray-5": #{color-lighten(var(--black), 0.6)},
-  "gray-6": #{color-lighten(var(--black), 0.7)},
-  "gray-7": #{color-lighten(var(--black), 0.8)},
-  "gray-8": #{color-lighten(var(--black), 0.9)},
-  "gray-9": #{color-lighten(var(--black), 0.93)},
+
+  "primary-fg": #ffffff,
+  "body-fg": map-get($gray-shades, 3),
+  "body-bg":  tint(map-get($gray-shades, 9), 50%),
+  "body-quiet-color": map-get($gray-shades, 5),
+  "body-loud-color":map-get($gray-shades, 1),
+  "header-color": map-get($gray-shades, 4),
+  "header-branding-color": $primary,
+  "header-bg": #ffffff,
+  "header-link-color": map-get($gray-shades, 3),
+  "breadcrumbs-fg": map-get($gray-shades, 3),
+  "breadcrumbs-link-fg": map-get($gray-shades, 8),
+  "breadcrumbs-bg":  #ffffff,
+  "link-fg": map-get($primary-shades, 5),
+  "link-hover-color": map-get($primary-shades, 6),
+  "link-selected-fg": map-get($primary-shades, 3),
+  "hairline-color": map-get($gray-shades, 9),
+  "border-color": #dddddd,
+  "error-fg": $danger,
+  "message-success-bg": map-get($primary-shades, 9),
+  "message-warning-bg": tint($warning, 0.38),
+  "message-error-bg": tint($danger, 0.38),
+  "darkened-bg": map-get($gray-shades, 10),
+  "selected-bg": map-get($gray-shades, 8),
+  "selected-row": map-get($secondary-shades, 10),
+  "button-fg": map-get($gray-shades, 4),
+  "button-bg": map-get($gray-shades, 9),
+  "button-hover-bg":  map-get($gray-shades, 10),
+  "default-button-bg": $primary,
+  "default-button-hover-bg": map-get($primary-shades, 6),
+  "close-button-bg": map-get($gray-shades, 6),
+  "close-button-hover-bg": map-get($gray-shades, 7),
+  "delete-button-bg": $danger,
+  "delete-button-hover-bg": tint($danger, 0.1),
+  "object-tools-fg": #ffffff,
+  "object-tools-bg": map-get($gray-shades, 6),
+  "object-tools-hover-bg": map-get($gray-shades, 7),
 
 
-  "primary-fg": var(--white),
-  "body-fg": var(--gray-3),
-  "body-bg": var(--gray-9),
-  "body-quiet-color": #666,
-  "body-loud-color": #000,
-  "header-color": var(--gray-8),
-  "header-branding-color": var(--primary),
-  "header-bg": var(--gray-1),
-  "header-link-color": var(--gray-8),
-  "breadcrumbs-fg": #c4dce8,
-  "breadcrumbs-link-fg": var(--body-bg),
-  "breadcrumbs-bg": var(--white),
-  "link-fg": var(--primary),
-  "link-hover-color": #{color-lighten(var(--primary), 0.1)},
-  "link-selected-fg": #{color-darken(var(--primary), 0.1)},
-  "hairline-color": var(--gray-9),
-  "border-color": var(--gray-7),
-  "error-fg": #ba2121,
-  "message-success-bg": #{color-lighten(var(--primary), 0.38)},
-  "message-warning-bg": #{color-lighten(var(--warning), 0.38)},
-  "message-error-bg": #{color-lighten(var(--error), 0.38)},
-  "darkened-bg": #f8f8f8,
-  "selected-bg": #e4e4e4,
-  "selected-row": #{color-lighten(var(--primary), 0.45)},
-  "button-fg": var(--white),
-  "button-bg": var(--gray-7),
-  "button-hover-bg":  var(--gray-8),
-  "default-button-bg": var(--primary),
-  "default-button-hover-bg":  #{color-lighten(var(--primary), 0.05)},
-  "close-button-bg": #888,
-  "close-button-hover-bg": #747474,
-  "delete-button-bg": var(--danger),
-  "delete-button-hover-bg": #a41515,
-  "object-tools-fg": var(--button-fg),
-  "object-tools-bg": var(--close-button-bg),
-  "object-tools-hover-bg": var(--close-button-hover-bg),
+  "link-highlight-fg": $danger,
+  "login-bg": linear-gradient($primary, map-get($secondary-shades, 8),),
+  "login-modal-bg": #ffffff,
+  "active-row": $accent,
+  "content-bg":  #ffffff,
+  "surface-fg":  #ffffff,
 
+  "form-input-fg": map-get($gray-shades, 4),
+  "form-input-focus-fg": $primary,
+  "form-input-focus-bg": $accent,
+  "form-fieldset-fg": $primary,
+  "form-submit-row":  map-get($gray-shades, 10),
 
-  "link-highlight-fg": var(--danger),
-  "login-bg": linear-gradient(var(--primary), #{color-lighten(var(--primary), 0.4)},),
-  "login-modal-bg": var(--white),
-  "active-row": var(--accent),
-  "content-bg": var(--white),
-  "surface-fg": var(--white),
+  "lang-bar-fg": $secondary,
+  "lang-bar-border-color": map-get($secondary-shades, 8),
 
-  "form-input-fg": var(--gray-2),
-  "form-input-focus-fg": var(--primary),
-  "form-input-focus-bg": var(--accent),
-  "form-fieldset-fg": var(--primary),
-  "form-submit-row": #{color-lighten(var(--black), 0.96)},
-
-  "lang-bar-available-fg": var(--primary),
-  "lang-bar-available-bg": var(--gray-5),
-  "lang-bar-available-border": var(--gray-5),
-  "lang-bar-current-fg": var(--white),
-  "lang-bar-current-bg": var(--primary),
-  "lang-bar-default-fg": var(--gray-3),
-  "lang-bar-default-bg": var(--gray-4),
-  "lang-bar-default-border": var(--gray-4),
-
-  "button-default-fg": var(--gray-3),
-  "button-default-bg": var(--gray-7),
+  "button-default-fg": map-get($gray-shades, 4),
+  "button-default-bg": map-get($gray-shades, 9),
   "button-default-border": transparent,
 
-  "button-action-fg": var(--white),
-  "button-action-bg": var(--primary),
+  "button-action-fg": #ffffff,
+  "button-action-bg": $primary,
 
-  "button-light-fg": var(--gray-3),
-  "button-light-bg": var(--white),
+  "button-light-fg": map-get($gray-shades, 4),
+  "button-light-bg": #ffffff,
 
-  "button-danger-fg": var(--white),
-  "button-danger-bg": var(--danger),
+  "button-danger-fg": #ffffff,
+  "button-danger-bg": $danger,
 
-  "button-lang-fg": var(--gray-3),
-  "button-lang-bg": var(--white),
-  "button-lang-border": var(--gray-4),
+  "button-selected-fg": $primary,
+  "button-selected-bg": $accent,
+  "button-selected-border": map-get($primary-shades, 7),
 
-  "button-lang-active-fg": var(--white),
-  "button-lang-active-bg": var(--primary),
-  "button-lang-active-border": transparent,
+  "button-selected-lang-fg": $secondary,
+  "button-selected-lang-bg":  map-get($secondary-shades, 10),
+  "button-selected-lang-border": map-get($secondary-shades, 10),
 
-  "date-time-caption-bg": var(--primary),
-  "date-time-caption-fg": var(--white),
-  "date-time-selected-bg": var(--primary),
+  "date-time-caption-bg": $primary,
+  "date-time-caption-fg": #ffffff,
+  "date-time-selected-bg": $primary,
 );
 
 :root {
   @each $color-name, $color in $color-palette {
-    @debug str-index(quote($color), "#");
     @if str-index(quote($color), "#") == 1 {
       @include define-hsl-color(--#{$color-name}, $color);
     }

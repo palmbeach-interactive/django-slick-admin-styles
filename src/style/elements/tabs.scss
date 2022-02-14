@@ -1,51 +1,24 @@
 @charset "UTF-8";
 
 body {
-  .hvad-language-tabs, .nani-language-tabs, .parler-language-tabs {
+  .hvad-language-tabs,
+  .nani-language-tabs,
+  .parler-language-tabs {
     padding: 0 20px;
 
     background-color: var(--content-bg);
-    border-bottom: var(--default-border-size-large) solid var(--primary);
+    border-bottom: var(--default-border-size-large) solid var(--lang-bar-border-color);
 
     span {
-      margin: 10px;
-      padding: 0px 20px;
-
-      line-height: var(--button-height);
-
-      background-color: var(--lang-bar-default-bg);
-      border: 1px solid var(--lang-bar-default-border);
-      border-radius: var(--button-border-radius);
-
-      a {
-        color: var(--lang-bar-default-fg);
-      }
-
-      &:hover {
-        background-color: var(--lang-bar-current-bg) !important;
-        border-color: transparent !important;
-
-        a {
-          color: var(--lang-bar-current-fg) !important;
-        }
-      }
+      @extend .button-light;
+      margin: 10px !important;
 
       &.current {
-        color: var(--lang-bar-current-fg);
-        font-weight: 400;
-
-        background-color: var(--lang-bar-current-bg);
-        border-color: transparent;
+        @extend .button-selected-lang;
       }
 
       &.available {
-        background-color: var(--lang-bar-available-bg);
-        border: 1px solid var(--lang-bar-available-border);
-
-        a {
-          color: var(--lang-bar-available-fg);
-          font-weight: 400;
-        }
+        @extend .button-default;
       }
 
       &.empty {
@@ -54,20 +27,21 @@ body {
     }
 
     a.deletelink {
-      bottom: 0;
+      right: -10px;
+      bottom: 2px;
 
-      margin: 0;
+      width: 24px;
+      height: 24px;
       padding: 0;
-      padding: 0 2px;
-      overflow: hidden;
 
-      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
 
-      background-color: white;
-      border-radius: 14px;
+      background-color: var(--danger);
+      border-radius: 999rem;
 
       &:hover {
-        background-color: var(--button-danger-bg);
+        background-color: color-lighten(var(--danger), .2);
 
         &:before {
           color: white;
@@ -95,35 +69,20 @@ body {
     border-bottom: var(--default-border-size-large) solid var(--primary);
 
     input {
-      margin: 10px !important;
-      padding: 0px 20px !important;
-
-      color: var(--lang-bar-default-fg) !important;
-      font-size: 14px !important;
-      line-height: var(--button-height) !important;
-
-      background-color: transparent !important;
-      border: 1px solid var(--lang-bar-default-border) !important;
-      border-radius: var(--button-border-radius) !important;
-
-      &:hover {
-        color: white !important;
-
-        background-color: var(--lang-bar-current-bg) !important;
-        border-color: transparent !important;
-      }
+      @extend .button-light;
+      margin: 10px ;
 
       &.selected {
-        color: white !important;
-
-        background-color: var(--lang-bar-current-bg) !important;
-        border-color: transparent !important;
+        @extend .button-selected-lang;
+        margin-bottom: 10px;
       }
     }
   }
 
   //parler
-  .parler-language-tabs span.available, .parler-language-tabs span.current, .parler-language-tabs span.empty {
+  .parler-language-tabs span.available,
+  .parler-language-tabs span.current,
+  .parler-language-tabs span.empty {
     border-radius: var(--button-border-radius);
   }
 

@@ -34,7 +34,7 @@
     width: auto;
 
     thead th {
-      color: var(--gray-3);
+      color: var(--body-quiet-color);
 
       background-color: transparent;
       border-top: 0;
@@ -67,7 +67,8 @@
 
     h3.ui-sortable-handle {
       padding: 20px 30px;
-      // background: url(../img/drag-norepeat.png) 12px no-repeat !important;
+
+      background: url('./../asset/img/drag-norepeat.png') 12px no-repeat !important;
       background-size: 8px 30px !important;
       border-top: 0;
       cursor: move !important;
@@ -99,11 +100,11 @@ body.dashboard,
   margin-top: 0;
 
   .module {
-    @include shadow-box;
     overflow: hidden;
 
     background-color: var(--content-bg);
     border-radius: var(--module-border-radius);
+    box-shadow: var(--default-shadow);
 
     caption {
       padding-top: 8px;
@@ -114,6 +115,7 @@ body.dashboard,
       vertical-align: middle;
 
       background-color: var(--accent);
+      border-bottom: 1px solid color-lighten(var(--primary), 0.35);
 
       a {
         color: var(--primary);

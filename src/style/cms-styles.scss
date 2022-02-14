@@ -32,7 +32,7 @@ body div.cms {
     // toolbar logo
     .cms-toolbar-item.cms-toolbar-item-logo {
       a {
-        color: var(--gray-2);
+        color: var(--header-branding-color);
 
         &:hover {
           color: var(--primary);
@@ -61,6 +61,7 @@ body div.cms {
     }
   }
 
+  /*
   &.cms-toolbar-debug {
     .cms-debug-bar {
       background-color: var(--primary);
@@ -73,6 +74,7 @@ body div.cms {
       }
     }
   }
+  */
 
   // structure mode context menu
   .cms-submenu-dropdown-settings .cms-submenu-item {
@@ -104,10 +106,10 @@ body div.cms {
   // modal breadcrumbs
   .cms-modal-has-breadcrumb .cms-modal-breadcrumb {
     a {
-      color: var(--primary);
+      color: var(--link-fg);
 
       &.active {
-        color: var(--gray-3);
+        color: var(--link-selected-fg);
       }
     }
   }
