@@ -101,32 +101,32 @@
 
 .button-action {
   @include button-defaults;
-  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
+  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), false);
   text-transform: uppercase;
 }
 
 .button-default {
   @include button-defaults;
-  @include button-variant(var(--button-default-fg), var(--button-default-bg), var(--button-default-border), true);
+  @include button-variant(var(--button-default-fg), var(--button-default-bg), var(--button-default-border), false);
 }
 
 .button-light {
   @include button-defaults;
-  @include button-variant(var(--button-light-fg), var(--button-light-bg), var(--hairline-color), true);
+  @include button-variant(var(--button-light-fg), var(--button-light-bg), var(--hairline-color), false);
 }
 
 .button-selected {
   @include button-defaults;
-  @include button-variant(var(--button-selected-fg), var(--button-selected-bg), var(--button-selected-border), true);
+  @include button-variant(var(--button-selected-fg), var(--button-selected-bg), var(--button-selected-border), false);
 }
 
 .button-selected-lang {
   @include button-defaults;
-  @include button-variant(var(--button-selected-lang-fg), var(--button-selected-lang-bg), var(--button-selected-lang-border), true);
+  @include button-variant(var(--button-selected-lang-fg), var(--button-selected-lang-bg), var(--button-selected-lang-border), false);
 }
 
 .button-danger {
-  @include button-variant(var(--button-danger-fg), var(--button-danger-bg), var(--button-default-border), true);
+  @include button-variant(var(--button-danger-fg), var(--button-danger-bg), var(--button-default-border), false);
   @include button-defaults;
   text-transform: uppercase;
 }
@@ -134,7 +134,7 @@
 .button-icon-default {
   @include button-defaults;
   @include button-icon-defaults;
-  @include button-variant(var(--button-light-fg), var(--button-light-bg), var(--hairline-color), true);
+  @include button-variant(var(--button-light-fg), var(--button-light-bg), var(--hairline-color), false);
   @include button-icon-defaults;
 
   &:hover {
@@ -147,7 +147,7 @@
 
 .button-icon-action {
   @include button-defaults;
-  @include button-variant(var(--primary), var(--button-light-bg), var(--hairline-color), true);
+  @include button-variant(var(--primary), var(--button-light-bg), var(--hairline-color), false);
   @include button-icon-defaults;
 
   &:hover {
@@ -160,7 +160,7 @@
 
 .button-icon-danger {
   @include button-defaults;
-  @include button-variant(var(--button-danger-bg), var(--button-light-bg), var(--hairline-color), true);
+  @include button-variant(var(--button-danger-bg), var(--button-light-bg), var(--hairline-color), false);
   @include button-icon-defaults;
 
   &:hover {
@@ -279,14 +279,14 @@ body.login {
 }
 
 .delete-confirmation form .cancel-link {
-  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
+  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), false);
   @include button-defaults;
 
   text-transform: uppercase;
 }
 
 .delete-confirmation form input[type="submit"] {
-  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), true);
+  @include button-variant(var(--button-action-fg), var(--button-action-bg), var(--button-default-border), false);
   @include button-defaults;
 
   text-transform: uppercase;

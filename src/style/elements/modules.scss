@@ -135,10 +135,24 @@ body.dashboard,
 
       .addlink {
         color: var(--primary);
+
+        &:hover {
+          color: var(--primary-fg) !important;
+
+          background-color: var(--primary);
+          border-color: var(--primary);
+        }
       }
 
       .changelink {
         color: var(--button-light-fg);
+
+        &:hover {
+          color: var(--primary-fg) !important;
+
+          background-color: var(--primary);
+          border-color: var(--primary);
+        }
       }
 
 
