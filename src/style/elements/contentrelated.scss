@@ -15,6 +15,12 @@
     #recent-actions-module {
       box-shadow: none;
     }
+
+    @media (max-width: 768px) {
+      position: inherit;
+      top: inherit;
+      right: inherit;
+    }
   }
 }
 
@@ -22,5 +28,12 @@ body.slick-admin-cms {
   #content-related {
     margin-top: 0;
     padding-top: var(--header-height);
+
+    @media (max-width: 768px) {
+      margin-top: 30px;
+      padding-top: 0;
+    }
   }
 }
+
+

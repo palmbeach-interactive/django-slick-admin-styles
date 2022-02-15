@@ -117,6 +117,15 @@ body.change-list {
           }
         }
       }
+
+      &.ui-sortable {
+        tbody {
+          td,
+          th {
+            vertical-align: middle;
+          }
+        }
+      }
     }
   }
 
@@ -125,6 +134,8 @@ body.change-list {
   }
 }
 
-.change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
+.change-list .filtered .results,
+.filtered #toolbar,
+.filtered div.xfull {
   margin-right: var(--filter-panel-width);
 }

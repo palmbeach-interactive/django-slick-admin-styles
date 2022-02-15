@@ -54,3 +54,25 @@ ul.errorlist li {
 ul.messagelist li {
   font-size: var(--font-size);
 }
+
+#content-related .actionlist {
+  li {
+    margin-bottom: 0;
+    padding: 12px 8px;
+
+    font-weight: 400;
+
+    border-bottom: 1px solid var(--border-color);
+
+    &:first-child {
+      border-top: 1px solid var(--border-color);
+    }
+
+    span.mini {
+      float: right;
+    }
+    br {
+      display: none;
+    }
+  }
+}

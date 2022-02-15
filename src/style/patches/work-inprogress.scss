@@ -1,10 +1,12 @@
 #change-history tbody td.drag,
+#result_list div.drag,
 .change-list table tbody td.drag,
 .dashboard table tbody td.drag,
 .results table tbody td.drag,
 .tabular table tbody td.drag,
 .field-tree_actions .drag-handle {
-  width: 10px !important;
+  width: 16px !important;
+  min-height: 30px;
   padding: 0 !important;
 
   background: url(./../asset/img/drag-norepeat.png) 5px no-repeat !important;
@@ -15,14 +17,15 @@
 
 
 .cms-admin-modal {
-  background-color: white;
+  background-color: var(--content-bg);
 
   #header {
     display: none;
   }
 
   .object-tools {
-    .historylink, .viewsitelink {
+    .historylink,
+    .viewsitelink {
       display: none;
     }
   }
@@ -53,8 +56,6 @@
       border-bottom: 1px solid var(--primary);
       border-left: 1px solid var(--primary);
 
-      //background-color: rgba($color-primary, .1) !important
-
       option {
         padding-left: 0;
       }
@@ -64,9 +65,6 @@
       border-top: 1px solid var(--primary);
       border-right: 1px solid var(--primary);
       border-left: 1px solid var(--primary);
-
-      //background-color: rgba($color-primary, .1) !important
-
     }
   }
 }

@@ -3,8 +3,12 @@
 
 body.dashboard {
   #content {
-    width: 65%;
+    width: calc(100% - var(--sidebar-width) - 10%);
     margin-top: var(--header-height);
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
 
     #content-main {
       display: grid;

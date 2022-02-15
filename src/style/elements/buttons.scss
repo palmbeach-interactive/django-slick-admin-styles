@@ -12,6 +12,18 @@
   box-shadow: none;
 }
 
+@mixin button-icon-defaults {
+  margin: 0 3px;
+  padding: 0 7px;
+
+  vertical-align: inherit;
+
+  &:before {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 @mixin button-variant($color, $background, $border-color, $important: false) {
   margin-bottom: 0;
 
@@ -119,6 +131,47 @@
   text-transform: uppercase;
 }
 
+.button-icon-default {
+  @include button-defaults;
+  @include button-icon-defaults;
+  @include button-variant(var(--button-light-fg), var(--button-light-bg), var(--hairline-color), true);
+  @include button-icon-defaults;
+
+  &:hover {
+    color: var(--primary-fg);
+
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+}
+
+.button-icon-action {
+  @include button-defaults;
+  @include button-variant(var(--primary), var(--button-light-bg), var(--hairline-color), true);
+  @include button-icon-defaults;
+
+  &:hover {
+    color: var(--primary-fg);
+
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+}
+
+.button-icon-danger {
+  @include button-defaults;
+  @include button-variant(var(--button-danger-bg), var(--button-light-bg), var(--hairline-color), true);
+  @include button-icon-defaults;
+
+  &:hover {
+    color: var(--button-danger-fg);
+
+    background-color: var(--button-danger-bg);
+    border-color: var(--button-danger-bg);
+  }
+}
+
+
 //filter color, hover
 #changelist-filter a:focus,
 #changelist-filter a:hover,
@@ -173,6 +226,8 @@ body {
   ul.object-tools {
     .addlink {
       @extend .button-action;
+
+      font-size: var(--font-size);
     }
   }
 }

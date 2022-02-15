@@ -10,13 +10,20 @@
 
 #content-main .available-languages {
   font-size: 100%;
-}
 
-#content-main .available-languages .lang-code {
-  background: var(--content-bg);
-  filter: grayscale(100%);
-}
+  .lang-code {
+    &.active {
+      @extend .button-selected-lang;
+      height: auto !important;
 
-#content-main .available-languages .lang-code.current {
-  filter: grayscale(0);
+      padding: 5px !important;
+
+      line-height: 1 !important;
+
+      opacity:  0.7;
+    }
+    &.current {
+      opacity: 1;
+    }
+  }
 }

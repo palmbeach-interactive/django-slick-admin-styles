@@ -62,7 +62,7 @@ label.translatable-field {
     position: absolute;
 
     margin-top: 15px;
-    margin-left: -24px;
+    margin-left: -18px;
 
     color: var(--lang-bar-fg);
 
@@ -181,6 +181,10 @@ form {
 body.change-form {
   form {
     box-shadow: var(--default-shadow);
+
+    > p {
+      padding: var(--form-spacing) var(--form-spacing) 0;
+    }
   }
 }
 

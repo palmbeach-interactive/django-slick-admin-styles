@@ -405,46 +405,16 @@ a.deletelink {
   }
 
   .related-widget-wrapper-link {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin: 0;
-    margin-right: 0px;
-    margin-left: 0px;
-    padding: 0;
-    overflow: hidden;
-
-    font-size: 14px;
-    line-height: 30px;
-
-    //background-color: lighten($gray-light, 37%);
-    //border: 1px solid lighten($gray-light, 30%);
-    border-radius: 3px;
-
-    &::before {
-      margin-left: 6px;
-    }
-
     &.add-related {
-      color: var(--primary);
-
-      &:hover {
-        color: var(--body-bg);
-
-        background-color: var(--primary);
-        border-color: var(--primary);
-      }
+      @extend .button-icon-action;
     }
 
     &.change-related {
-      color: var(--button-default-fg);
+      @extend .button-icon-default;
+    }
 
-      &:hover {
-        color: var(--button-default-fg);
-
-        background-color: var(--button-default-bg);
-        border-color: var(--button-default-bg);
-      }
+    &.delete-related {
+      @extend .button-icon-danger;
     }
   }
 }

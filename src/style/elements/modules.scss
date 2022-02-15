@@ -127,6 +127,31 @@ body.dashboard,
       &:hover {
         background-color: var(--accent);
       }
+
+      .addlink,
+      .changelink {
+        @extend .button-light;
+      }
+
+      .addlink {
+        color: var(--primary);
+      }
+
+      .changelink {
+        color: var(--button-light-fg);
+      }
+
+
+      th {
+        a {
+          color: var(--body-quiet-color);
+          font-weight: 400;
+
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
     }
 
     th, td {

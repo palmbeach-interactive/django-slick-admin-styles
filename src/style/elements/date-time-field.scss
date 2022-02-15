@@ -5,6 +5,16 @@
     margin-bottom: 10px;
   }
 
+  &.clockbox,
+  &.calendarbox {
+    background-color: var(--content-bg);
+
+    .calendar-cancel,
+    .calendar-shortcuts {
+      background-color: var(--form-submit-row);
+    }
+  }
+
   &.calendarbox {
     padding: 0;
 

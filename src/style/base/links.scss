@@ -1,0 +1,8 @@
+//generic links
+a:link, a:visited {
+  color: var(--link-fg);
+
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}

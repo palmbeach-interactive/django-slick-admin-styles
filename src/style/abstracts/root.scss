@@ -45,3 +45,15 @@
   //MODULE
   --module-border-radius: 4px;
 }
+
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100%;
+  }
+}

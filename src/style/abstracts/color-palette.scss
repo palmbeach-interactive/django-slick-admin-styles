@@ -85,7 +85,7 @@ $color-palette: (
   "form-input-focus-fg": $primary,
   "form-input-focus-bg": $accent,
   "form-fieldset-fg": $primary,
-  "form-submit-row":  map-get($gray-shades, 10),
+  "form-submit-row":  tint(map-get($gray-shades, 9), 75%),
 
   "lang-bar-fg": $secondary,
   "lang-bar-border-color": map-get($secondary-shades, 8),
@@ -97,7 +97,7 @@ $color-palette: (
   "button-action-fg": #ffffff,
   "button-action-bg": $primary,
 
-  "button-light-fg": map-get($gray-shades, 4),
+  "button-light-fg": map-get($gray-shades, 5),
   "button-light-bg": #ffffff,
 
   "button-danger-fg": #ffffff,

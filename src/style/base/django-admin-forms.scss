@@ -15,7 +15,6 @@ direct overwrites
 }
 
 .inline-related h3 {
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,4 +35,8 @@ direct overwrites
   span.delete {
     float: none;
   }
+}
+
+.inline-group .tabular tr.has_original td {
+  // padding-top: 8px;
 }
