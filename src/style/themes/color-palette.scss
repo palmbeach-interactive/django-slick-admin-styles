@@ -2,17 +2,17 @@
 // https://mdigi.tools/color-shades/
 
 // shades calculated from source color, steps from source to target (light/dark)
-$primary: #00b39b;
+$primary: #5cb630;
 $primary-shades: color-shades($color: $primary, $steps: 5, $range: 90%);
 // generated values for reference purposes only
 @debug "$primary-shades:" $primary-shades;
-$primary-generated: (0: #001311, 1: #00352e, 2: #00584c, 3: #007a6a, 4: #009d87, 5: #00bfa5, 6: #2ecbb5, 7: #5cd6c5, 8: #8ae2d6, 9: #b8ede6, 10: #e6f9f6);
+$primary-generated: (0: #0c1308, 1: #203616, 2: #355823, 3: #4a7b31, 4: #5e9d3f, 5: #73c04d, 6: #8ccb6d, 7: #a5d78d, 8: #bfe2ad, 9: #d8edcd, 10: #f1f9ed);
 
-$secondary: #415704;
+$secondary: #4b4ad1;
 $secondary-shades: color-shades($secondary, 5, 70%);
 // generated values for reference purposes only
 @debug "$secondary-shades:" $secondary-shades;
-$secondary-generated:  (0: #17163f, 1: #21215c, 2: #2c2b79, 3: #363596, 4: #4140b4, 5: #4b4ad1, 6: #6463d7, 7: #7d7dde, 8: #9796e4, 9: #b0afeb, 10: #c9c9f1);
+$secondary-generated:  (0: #21183f, 1: #31245c, 2: #402f79, 3: #503a96, 4: #5f46b4, 5: #6f51d1, 6: #8369d7, 7: #9782de, 8: #ab9ae4, 9: #c0b2eb, 10: #d4cbf1);
 
 $gray-shades: color-shades(#7f7f7f, 5, 99.55%);
 // generated values for reference purposes only

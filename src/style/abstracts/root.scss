@@ -1,12 +1,12 @@
 :root {
   //GLOBAL
   --page-outer-spacing: 5%;
-  --default-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  --default-shadow: #{0 0 1px rgba(0, 0, 0, 0.15)};
   --default-border-size-large: 3px;
 
   //HEADER
   --header-height: 46px;
-  --header-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  --header-shadow: #{0 0 5px rgba(0, 0, 0, 0.2)};
   --header-border: 1px solid var(--border-color);
   --header-spacing: 20px;
 

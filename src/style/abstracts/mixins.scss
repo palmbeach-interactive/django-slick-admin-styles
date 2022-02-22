@@ -49,3 +49,21 @@
   #{$color-property}-s: #{$saturation};
   #{$color-property}-l: #{$lightness};
 }
+
+//Outputs HEX
+@mixin color-property-hex($color-property, $color){
+  #{$color-property}: $color;
+}
+
+//Render color palette
+@mixin render-color-palette($color-palette) {
+  :root {
+    @each $color-name, $color in $color-palette {
+      @if str-index(unquote(#{$color}), "#") == 1 {
+        @include define-hsl-color(--#{$color-name}, $color);
+      } @else {
+        @include color-property-hex(--#{$color-name}, $color);
+      }
+    }
+  }
+}
