@@ -167,7 +167,7 @@ $color-palette-dark: (
 
   "link-highlight-fg": $danger,
   "login-bg": linear-gradient($primary, map-get($secondary-shades, 8)),
-  "login-modal-bg": #ffffff,
+  "login-modal-bg": var(--content-bg),
   "active-row": saturate(map-get($primary-shades, 1), 10%),
   "content-bg":  map-get($gray-shades, 2),
   "surface-fg":  #ffffff,
