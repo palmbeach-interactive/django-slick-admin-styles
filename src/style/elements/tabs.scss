@@ -72,6 +72,8 @@ body {
       @extend .button-light;
       margin: 10px ;
 
+      font-size: var(--font-size-small);
+
       &.selected {
         @extend .button-selected-lang;
         margin-bottom: 10px;

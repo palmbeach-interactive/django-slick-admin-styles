@@ -2,17 +2,17 @@
 // https://mdigi.tools/color-shades/
 
 // shades calculated from source color, steps from source to target (light/dark)
-$primary: #00b39b;
+$primary: #26a69a;
 $primary-shades: color-shades($color: $primary, $steps: 5, $range: 90%);
 // generated values for reference purposes only
 @debug "$primary-shades:" $primary-shades;
-$primary-generated: (0: #001311, 1: #00352e, 2: #00584c, 3: #007a6a, 4: #009d87, 5: #00bfa5, 6: #2ecbb5, 7: #5cd6c5, 8: #8ae2d6, 9: #b8ede6, 10: #e6f9f6);
+$primary-generated: (0: #04110f, 1: #0b2e2b, 2: #114c47, 3: #186a63, 4: #1f887e, 5: #26a69a, 6: #4db6ac, 7: #74c6be, 8: #9bd6d1, 9: #c2e6e3, 10: #e9f6f5);
 
-$secondary: #415704;
+$secondary: #512da8;
 $secondary-shades: color-shades($secondary, 5, 70%);
 // generated values for reference purposes only
 @debug "$secondary-shades:" $secondary-shades;
-$secondary-generated:  (0: #17163f, 1: #21215c, 2: #2c2b79, 3: #363596, 4: #4140b4, 5: #4b4ad1, 6: #6463d7, 7: #7d7dde, 8: #9796e4, 9: #b0afeb, 10: #c9c9f1);
+$secondary-generated:  (0: #180e32, 1: #24144a, 2: #2f1a61, 3: #3a2079, 4: #462790, 5: #512da8, 6: #694ab4, 7: #8268c0, 8: #9a85cd, 9: #b2a3d9, 10: #cbc0e5);
 
 $gray-shades: color-shades(#7f7f7f, 5, 99.55%);
 // generated values for reference purposes only
@@ -116,4 +116,99 @@ $color-palette: (
   "date-time-selected-bg": $primary,
 );
 
+$color-palette-dark: (
+  "primary": map-get($primary-shades, 5),
+  "secondary": $secondary,
+  "accent": saturate(map-get($primary-shades, 1), 10%),
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+
+  "white": #ffffff,
+  "black": #000000,
+
+  "primary-fg": #ffffff,
+  "body-fg": map-get($gray-shades, 7),
+  "body-bg":  map-get($gray-shades, 1),
+  "body-quiet-color": map-get($gray-shades, 8),
+  "body-loud-color":map-get($gray-shades, 10),
+  "header-color": map-get($gray-shades, 4),
+  "header-branding-color": $primary,
+  "header-bg": map-get($gray-shades, 2),
+  "header-link-color": map-get($gray-shades, 9),
+  "breadcrumbs-fg": map-get($gray-shades, 3),
+  "breadcrumbs-link-fg": map-get($gray-shades, 8),
+  "breadcrumbs-bg":  map-get($gray-shades, 2),
+  "link-fg": map-get($primary-shades, 5),
+  "link-hover-color": map-get($primary-shades, 6),
+  "link-selected-fg": map-get($primary-shades, 3),
+  "hairline-color": map-get($gray-shades, 4),
+  "border-color": map-get($gray-shades, 5),
+  "error-fg": $danger,
+  "message-success-bg": map-get($primary-shades, 1),
+  "message-warning-bg": tint($warning, 0.38),
+  "message-error-bg": tint($danger, 0.38),
+  "darkened-bg": map-get($gray-shades, 2),
+  "selected-bg": map-get($gray-shades, 8),
+  "selected-row": map-get($secondary-shades, 10),
+  "button-fg": map-get($gray-shades, 4),
+  "button-bg": map-get($gray-shades, 9),
+  "button-hover-bg":  map-get($gray-shades, 10),
+  "default-button-bg": $primary,
+  "default-button-hover-bg": map-get($primary-shades, 6),
+  "close-button-bg": map-get($gray-shades, 6),
+  "close-button-hover-bg": map-get($gray-shades, 7),
+  "delete-button-bg": $danger,
+  "delete-button-hover-bg": tint($danger, 0.1),
+  "object-tools-fg": #ffffff,
+  "object-tools-bg": map-get($gray-shades, 6),
+  "object-tools-hover-bg": map-get($gray-shades, 7),
+
+
+  "link-highlight-fg": $danger,
+  "login-bg": linear-gradient($primary, map-get($secondary-shades, 8)),
+  "login-modal-bg": #ffffff,
+  "active-row": saturate(map-get($primary-shades, 1), 10%),
+  "content-bg":  map-get($gray-shades, 2),
+  "surface-fg":  #ffffff,
+
+  "form-input-fg": map-get($gray-shades, 8),
+  "form-input-focus-fg": $primary,
+  "form-input-focus-bg": saturate(map-get($primary-shades, 1), 10%),
+  "form-fieldset-fg": $primary,
+  "form-submit-row":  map-get($gray-shades, 3),
+
+  "lang-bar-fg": map-get($secondary-shades, 8),
+  "lang-bar-border-color": map-get($secondary-shades, 8),
+
+  "button-default-fg": map-get($gray-shades, 7),
+  "button-default-bg": map-get($gray-shades, 2),
+  "button-default-border": transparent,
+
+  "button-action-fg": map-get($gray-shades, 9),
+  "button-action-bg": map-get($primary-shades, 4),
+
+  "button-light-fg": map-get($gray-shades, 8),
+  "button-light-bg": map-get($gray-shades, 2),
+
+  "button-danger-fg": #ffffff,
+  "button-danger-bg": $danger,
+
+  "button-selected-fg": $primary,
+  "button-selected-bg": $accent,
+  "button-selected-border": map-get($primary-shades, 7),
+
+  "button-selected-lang-fg": $secondary,
+  "button-selected-lang-bg":  map-get($secondary-shades, 10),
+  "button-selected-lang-border": map-get($secondary-shades, 10),
+
+  "date-time-caption-bg": $primary,
+  "date-time-caption-fg": #ffffff,
+  "date-time-selected-bg": $primary,
+);
+
 @include render-color-palette($color-palette);
+
+@media (prefers-color-scheme: dark) {
+  @include render-color-palette($color-palette-dark);
+}

@@ -72,6 +72,20 @@
       }
     }
   }
+
+  #nav-filter {
+    width: calc(100% - 32px);
+    margin: 16px;
+    padding: 8px;
+
+    border-radius: var(--form-border-radius);
+
+    &.no-results {
+      color: var(--primary-fg);
+
+      background-color: var(--danger);
+    }
+  }
 }
 
 .toggle-nav-sidebar {

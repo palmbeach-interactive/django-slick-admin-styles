@@ -4,12 +4,15 @@
 
 body.slick-admin {
   #header {
+    z-index: 3;
+
     height: var(--header-height);
-    padding: 10px var(--page-outer-spacing);
+    padding: 10px ;
 
     color: var(--header-branding-color);
 
     background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
 
     h1 {
       color: var(--header-branding-color);

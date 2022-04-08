@@ -9,19 +9,19 @@ body.change-list {
     display: flex;
     align-items: stretch;
 
+    padding: 0;
+    overflow: hidden;
+
+    background: transparent;
+
     .actions, #toolbar, #changelist-search {
-      //padding: 0px 10px 10px 0
+      width: 100%;
+
       background-color: transparent;
     }
 
-    padding: 0;
-
-    background: transparent;
-    background-color: transparent;
-
     #changelist-form {
       background: transparent;
-      background-color: transparent;
       box-shadow: none;
 
       label {

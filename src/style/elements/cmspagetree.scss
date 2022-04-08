@@ -11,6 +11,7 @@ body.slick-admin {
   }
 
   .cms-pagetree-section {
+    background-color: var(--content-bg);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 
@@ -21,6 +22,7 @@ body.slick-admin {
 
   .cms-pagetree-header {
     background-color: transparent;
+
     .cms-btn {
       line-height: var(--button-height);
 
@@ -97,5 +99,84 @@ body.slick-admin {
   &.cms-admin-sideframe:not(.djangocms-admin-style) {
     margin-top: 0;
   }
+
+  .jstree-grid-wrapper {
+    background-color: var(--content-bg);
+  }
+
+  .jstree-django-cms .jstree-anchor {
+    color: var(--body-loud-color);
+
+    background-color: var(--content-bg);
+    border: 1px solid var(--hairline-color);
+
+    &.jstree-hovered,
+    &.jstree-clicked {
+      background-color: var(--body-bg) !important;
+    }
+  }
+
+  .jstree-django-cms .jstree-grid-header {
+    color: var(--body-quiet-color);
+
+    background-color: var(--content-bg);
+    border-bottom: 1px solid var(--hairline-color);
+  }
+
+  .jstree-django-cms .cms-tree-node-shared-false > .jstree-anchor {
+    color: var(--body-loud-color);
+
+    background-color: var(--content-bg) !important;
+    border-bottom: 1px solid var(--hairline-color);
+  }
+
+  .jstree-django-cms .jstree-grid-cell {
+    background-color: var(--content-bg);
+    border-bottom: 1px solid var(--hairline-color);
+
+    &.jstree-hovered,
+    &.jstree-clicked {
+      background-color: var(--body-bg) !important;
+    }
+  }
+
+  .jstree-django-cms .jstree-grid-cell.jstree-django-cms {
+    border: none;
+  }
+
+  .jstree-django-cms .jstree-grid-cell-regular {
+    border-left: 1px solid var(--hairline-color);
+  }
+
+  .jstree-django-cms .jstree-grid-cell-regular-options {
+    border-left: none;
+  }
+
+
+  .cms-pagetree-header-filter-trigger {
+    top: -4px;
+  }
+
+  &.cms-pagetree-wrapper .cms-btn.cms-btn-default  {
+    color: var(--button-default-fg) !important;
+
+    background-color: var(--button-default-bg) !important;
+    border: 1px solid var(--hairline-color) !important;
+
+    &:hover, &:focus {
+      color: var(--primary-fg) !important;
+
+      background-color: var(--primary) !important;
+
+      &:before {
+        color: var(--button-default-fg) !important;
+      }
+    }
+
+    &:before {
+      color: var(--button-default-fg) !important;
+    }
+  }
 }
+
 

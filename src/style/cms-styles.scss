@@ -134,6 +134,10 @@ body div.cms {
 
   // buttons
   .cms-btn {
+    &.cms-btn-default {
+      @include cms-button(var(--button-default-bg), var(--button-default-fg));
+    }
+
     &.cms-btn-action {
       @include cms-button(var(--primary), var(--primary-fg));
     }

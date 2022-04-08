@@ -115,7 +115,7 @@ body.dashboard,
       vertical-align: middle;
 
       background-color: var(--accent);
-      border-bottom: 1px solid color-lighten(var(--primary), 0.35);
+      border-bottom: 1px solid var(--hairline-color);
 
       a {
         color: var(--primary);
