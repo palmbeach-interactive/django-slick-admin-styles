@@ -62,11 +62,11 @@
 }
 
 @function tint($color, $percentage) {
-  @return mix(#FFF, $color, $percentage);
+  @return mix(white, $color, $percentage);
 }
 
 @function shade($color, $percentage) {
-  @return mix(#000, $color, $percentage);
+  @return mix(black, $color, $percentage);
 }
 
 @function color-shades($color: #efefef,  $steps: 5, $range: 50%) {

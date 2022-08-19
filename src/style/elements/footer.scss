@@ -5,13 +5,14 @@ body {
     &.footer {
       padding: 15px var(--page-outer-spacing);
 
+      font-weight: bolder;
+
       p {
-        color: var(--body-fg);
-        // font-size: $font-size-small;
+        color: var(--footer-color);
       }
 
       a {
-        color: var(--secondary);
+        color: var(--footer-link-color);
       }
 
       .copyleft {

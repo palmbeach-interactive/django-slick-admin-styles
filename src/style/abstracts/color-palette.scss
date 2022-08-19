@@ -2,17 +2,17 @@
 // https://mdigi.tools/color-shades/
 
 // shades calculated from source color, steps from source to target (light/dark)
-$primary: #26a69a;
+$primary: #1eb980;
 $primary-shades: color-shades($color: $primary, $steps: 5, $range: 90%);
 // generated values for reference purposes only
 @debug "$primary-shades:" $primary-shades;
-$primary-generated: (0: #04110f, 1: #0b2e2b, 2: #114c47, 3: #186a63, 4: #1f887e, 5: #26a69a, 6: #4db6ac, 7: #74c6be, 8: #9bd6d1, 9: #c2e6e3, 10: #e9f6f5);
+$primary-generated: (0: #03130d, 1: #083424, 2: #0e553b, 3: #137652, 4: #199869, 5: #1eb980, 6: #47c697, 7: #6fd2ae, 8: #98dfc5, 9: #c0ebdb, 10: #e9f8f2);
 
-$secondary: #512da8;
-$secondary-shades: color-shades($secondary, 5, 70%);
+$secondary: #9e9513;
+$secondary-shades: color-shades($secondary, 5, 65%);
 // generated values for reference purposes only
 @debug "$secondary-shades:" $secondary-shades;
-$secondary-generated:  (0: #180e32, 1: #24144a, 2: #2f1a61, 3: #3a2079, 4: #462790, 5: #512da8, 6: #694ab4, 7: #8268c0, 8: #9a85cd, 9: #b2a3d9, 10: #cbc0e5);
+$secondary-generated: (0: #3c3511, 1: #584d1a, 2: #736622, 3: #8f7e2a, 4: #ab9732, 5: #c7af3a, 6: #cfba56, 7: #d7c571, 8: #dfd18d, 9: #e6dca8, 10: #eee7c4);
 
 $gray-shades: color-shades(#7f7f7f, 5, 99.55%);
 // generated values for reference purposes only
@@ -22,7 +22,8 @@ $gray-shades-generated: (0: #010101, 1: #1a1a1a, 2: #333333, 3: #4c4c4c, 4: #666
 
 $danger: #e05162;
 $warning:  #f28622;
-$accent: saturate(map-get($primary-shades, 10), 20%);
+$accent: map-get($primary-shades, 9);
+@debug "$accent:" $accent;
 $success: map-get($primary-shades, 6);
 
 $color-palette: (
@@ -33,12 +34,9 @@ $color-palette: (
   "danger": $danger,
   "warning": $warning,
 
-  "white": #ffffff,
-  "black": #000000,
-
-  "primary-fg": #ffffff,
+  "primary-fg": map-get($gray-shades, 10),
   "body-fg": map-get($gray-shades, 3),
-  "body-bg":  tint(map-get($gray-shades, 9), 50%),
+  "body-bg":  tint(map-get($gray-shades, 9), 50),
   "body-quiet-color": map-get($gray-shades, 5),
   "body-loud-color":map-get($gray-shades, 1),
   "header-color": map-get($gray-shades, 4),
@@ -52,11 +50,11 @@ $color-palette: (
   "link-hover-color": map-get($primary-shades, 6),
   "link-selected-fg": map-get($primary-shades, 3),
   "hairline-color": map-get($gray-shades, 9),
-  "border-color": #dddddd,
+  "border-color": map-get($gray-shades, 9),
   "error-fg": $danger,
   "message-success-bg": map-get($primary-shades, 9),
-  "message-warning-bg": tint($warning, 0.38),
-  "message-error-bg": tint($danger, 0.38),
+  "message-warning-bg": tint($warning, 38),
+  "message-error-bg": tint($danger, 38),
   "darkened-bg": map-get($gray-shades, 10),
   "selected-bg": map-get($gray-shades, 8),
   "selected-row": map-get($secondary-shades, 10),
@@ -68,11 +66,10 @@ $color-palette: (
   "close-button-bg": map-get($gray-shades, 6),
   "close-button-hover-bg": map-get($gray-shades, 7),
   "delete-button-bg": $danger,
-  "delete-button-hover-bg": tint($danger, 0.1),
+  "delete-button-hover-bg": tint($danger, 10),
   "object-tools-fg": #ffffff,
   "object-tools-bg": map-get($gray-shades, 6),
   "object-tools-hover-bg": map-get($gray-shades, 7),
-
 
   "link-highlight-fg": $danger,
   "login-bg": linear-gradient($primary, map-get($secondary-shades, 8)),
@@ -85,7 +82,7 @@ $color-palette: (
   "form-input-focus-fg": $primary,
   "form-input-focus-bg": $accent,
   "form-fieldset-fg": $primary,
-  "form-submit-row":  tint(map-get($gray-shades, 9), 75%),
+  "form-submit-row":  tint(map-get($gray-shades, 9), 75),
 
   "lang-bar-fg": $secondary,
   "lang-bar-border-color": map-get($secondary-shades, 8),
@@ -107,25 +104,25 @@ $color-palette: (
   "button-selected-bg": $accent,
   "button-selected-border": map-get($primary-shades, 7),
 
-  "button-selected-lang-fg": $secondary,
-  "button-selected-lang-bg":  map-get($secondary-shades, 10),
-  "button-selected-lang-border": map-get($secondary-shades, 10),
+  "button-selected-lang-fg": #ffffff,
+  "button-selected-lang-bg":  map-get($secondary-shades, 7),
+  "button-selected-lang-border": map-get($secondary-shades, 7),
 
   "date-time-caption-bg": $primary,
   "date-time-caption-fg": #ffffff,
   "date-time-selected-bg": $primary,
+
+  "footer-color": map-get($gray-shades, 5),
+  "footer-link-color": map-get($primary-shades, 6),
 );
 
 $color-palette-dark: (
   "primary": map-get($primary-shades, 5),
   "secondary": $secondary,
-  "accent": saturate(map-get($primary-shades, 1), 10%),
+  "accent": map-get($primary-shades, 2),
   "success": $success,
   "danger": $danger,
   "warning": $warning,
-
-  "white": #ffffff,
-  "black": #000000,
 
   "primary-fg": #ffffff,
   "body-fg": map-get($gray-shades, 7),
@@ -146,8 +143,8 @@ $color-palette-dark: (
   "border-color": map-get($gray-shades, 5),
   "error-fg": $danger,
   "message-success-bg": map-get($primary-shades, 1),
-  "message-warning-bg": tint($warning, 0.38),
-  "message-error-bg": tint($danger, 0.38),
+  "message-warning-bg": tint($warning, 38),
+  "message-error-bg": tint($danger, 38),
   "darkened-bg": map-get($gray-shades, 2),
   "selected-bg": map-get($gray-shades, 8),
   "selected-row": map-get($secondary-shades, 10),
@@ -159,15 +156,14 @@ $color-palette-dark: (
   "close-button-bg": map-get($gray-shades, 6),
   "close-button-hover-bg": map-get($gray-shades, 7),
   "delete-button-bg": $danger,
-  "delete-button-hover-bg": tint($danger, 0.1),
+  "delete-button-hover-bg": tint($danger, 10),
   "object-tools-fg": #ffffff,
   "object-tools-bg": map-get($gray-shades, 6),
   "object-tools-hover-bg": map-get($gray-shades, 7),
 
-
   "link-highlight-fg": $danger,
   "login-bg": linear-gradient($primary, map-get($secondary-shades, 8)),
-  "login-modal-bg": var(--content-bg),
+  "login-modal-bg": map-get($gray-shades, 2),
   "active-row": saturate(map-get($primary-shades, 1), 10%),
   "content-bg":  map-get($gray-shades, 2),
   "surface-fg":  #ffffff,
@@ -205,6 +201,9 @@ $color-palette-dark: (
   "date-time-caption-bg": $primary,
   "date-time-caption-fg": #ffffff,
   "date-time-selected-bg": $primary,
+
+  "footer-color": map-get($gray-shades, 4),
+  "footer-link-color": map-get($primary-shades, 6),
 );
 
 @include render-color-palette($color-palette);
